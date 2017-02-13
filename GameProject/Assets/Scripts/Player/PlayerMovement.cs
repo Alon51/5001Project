@@ -10,6 +10,14 @@ public float jumpSpeed; // how high player jumps
 
 private Rigidbody2D myRigidBody; // rigid body used for moving and jumping
 
+private Animator anim;
+
+//Animation States 
+	const int STATE_IDLE = 0;
+	const int STATE_RIGHT = 1;
+	const int STATE_LEFT = 2;
+	int currentAnimState = STATE_IDLE;
+
 
 ////variables for checking if player is on ground or not
 //public Transform groundCheck;
@@ -24,7 +32,7 @@ private Rigidbody2D myRigidBody; // rigid body used for moving and jumping
 	// Use this for initialization
 	void Start () {
 		myRigidBody = GetComponent<Rigidbody2D> (); // rigid body for physics
-
+		anim = GetComponent<Animator> ();
 	}
 
 	// Update is called once per frame
@@ -37,18 +45,43 @@ private Rigidbody2D myRigidBody; // rigid body used for moving and jumping
 		//checking RIGHT input
 		if (Input.GetAxisRaw ("Horizontal") > 0f) {         //don't change y value
 			myRigidBody.velocity = new Vector3 (moveSpeed, myRigidBody.velocity.y, 0f);
-			transform.localScale = new Vector3 (1f, 1f, 1f); // 3 b/c that's the sprites scale
+			transform.localScale = new Vector3 (2f, 2f, 1f); // 3 b/c that's the sprites scale
+			changeState(STATE_RIGHT);
 		} 
 
 		//Checking LEFT input
 		else if (Input.GetAxisRaw ("Horizontal") < 0f) {
 			myRigidBody.velocity = new Vector3 (-moveSpeed, myRigidBody.velocity.y, 0f);
-			transform.localScale = new Vector3 (-1f, 1f, 1f);
+			transform.localScale = new Vector3 (2f, 2f, 1f);
+			changeState (STATE_LEFT);
 		} 
 		//NO INPUT
 		else {
 			myRigidBody.velocity = new Vector3 (0f, myRigidBody.velocity.y, 0f);
+			changeState(STATE_IDLE);
 		}
+	}
+
+		void changeState(int state){
+			if (currentAnimState == state) {
+				return;
+			}
+			switch (state) {
+
+				case STATE_RIGHT:
+					anim.SetInteger ("state", STATE_RIGHT);
+					break;
+
+				case STATE_LEFT:
+					anim.SetInteger ("state", STATE_LEFT);
+					break;
+
+				case STATE_IDLE:
+					anim.SetInteger ("state", STATE_IDLE);
+					break;
+			}
+
+		currentAnimState = state;
 	}
 
 }

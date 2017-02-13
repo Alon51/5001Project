@@ -1,0 +1,353 @@
+fileFormatVersion: 2
+guid: da2ac9e91ca291c48a514a7cea8316b1
+timeCreated: 1479701037
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: CodeBits_0
+    21300002: CodeBits_1
+    21300004: CodeBits_2
+    21300006: CodeBits_3
+    21300008: CodeBits_4
+    21300010: CodeBits_5
+    21300012: CodeBits_6
+    21300014: CodeBits_7
+    21300016: CodeBits_8
+    21300018: CodeBits_9
+    21300020: CodeBits_10
+    21300022: CodeBits_11
+    21300024: CodeBits_12
+    21300026: CodeBits_13
+    21300028: CodeBits_14
+    21300030: CodeBits_15
+    21300032: CodeBits_16
+    21300034: CodeBits_17
+    21300036: CodeBits_18
+    21300038: CodeBits_19
+    21300040: CodeBits_20
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CodeBits_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1923
+        width: 14
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 1535
+        width: 384
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_2
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 1535
+        width: 374
+        height: 335
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_3
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 1541
+        width: 377
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_4
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1535
+        width: 357
+        height: 347
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_5
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 1178
+        width: 378
+        height: 345
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_6
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 1172
+        width: 389
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_7
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 1178
+        width: 380
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_8
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1181
+        width: 345
+        height: 351
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_9
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 831
+        width: 360
+        height: 347
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_10
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 822
+        width: 380
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_11
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 816
+        width: 365
+        height: 356
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_12
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 816
+        width: 384
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_13
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 474
+        width: 387
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_14
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 456
+        width: 380
+        height: 363
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 3, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_15
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 453
+        width: 398
+        height: 375
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_16
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 450
+        width: 375
+        height: 381
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_17
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 94
+        width: 384
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_18
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 79
+        width: 398
+        height: 380
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_19
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 79
+        width: 389
+        height: 374
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CodeBits_20
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 85
+        width: 369
+        height: 389
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

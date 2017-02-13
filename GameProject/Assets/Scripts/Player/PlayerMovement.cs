@@ -45,7 +45,7 @@ private Animator anim;
 		//checking RIGHT input
 		if (Input.GetAxisRaw ("Horizontal") > 0f) {         //don't change y value
 			myRigidBody.velocity = new Vector3 (moveSpeed, myRigidBody.velocity.y, 0f);
-			transform.localScale = new Vector3 (2f, 2f, 1f); // 3 b/c that's the sprites scale
+			transform.localScale = new Vector3 (2f, 2f, 1f); // 2 b/c that's the sprites scale
 			changeState(STATE_RIGHT);
 		} 
 

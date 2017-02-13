@@ -6,6 +6,6 @@ public class BackNavLevel1 : MonoBehaviour {
 
 	// Use this for initialization
 	public void GoBack(){
-		SceneManager.LoadScene ("SceneBack");
+		SceneManager.LoadScene ("Temp1");
 	}
 }

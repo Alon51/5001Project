@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour {
 	const int STATE_IDLE = 0;
 	const int STATE_RIGHT = 1;
 	const int STATE_LEFT = 2;
+	const int STATE_JUMP = 3;
 	int currentAnimState = STATE_IDLE;
 
 
@@ -47,7 +48,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
 
 		isGrounded = Physics2D.OverlapCircle (groundCheck.position,groundCheckRadius,whatIsGround);
-
+		myRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
 		//HorizontaL input is either 0(no input), 1(going right), or -1(going left)
 
 		//checking RIGHT input
@@ -63,6 +64,7 @@ public class PlayerMovement : MonoBehaviour {
 			transform.localScale = new Vector3 (2f, 2f, 1f);
 			changeState (STATE_LEFT);
 		} 
+			
 		//NO INPUT
 		else {
 			myRigidBody.velocity = new Vector3 (0f, myRigidBody.velocity.y, 0f);
@@ -76,7 +78,7 @@ public class PlayerMovement : MonoBehaviour {
 
 			myRigidBody.velocity = new Vector3 (myRigidBody.velocity.x, jumpSpeed, 0f);
 			isJumping = true;
-
+			changeState (STATE_JUMP);
 		}
 		// if on the ground, set falling and jumping to false
 		else if(isGrounded){ 
@@ -104,6 +106,10 @@ public class PlayerMovement : MonoBehaviour {
 
 				case STATE_IDLE:
 					anim.SetInteger ("state", STATE_IDLE);
+					break;
+				
+				case STATE_JUMP:
+					anim.SetInteger ("state", STATE_JUMP);
 					break;
 			}
 

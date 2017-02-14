@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DesktopController : MonoBehaviour {
 
 	public Text prompt; //text to display
+	private bool inArea = false;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +16,12 @@ public class DesktopController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (inArea) {
+			if (Input.GetKeyDown ("x")) {
+				SceneManager.LoadScene ("SwitchStatement");
+			}
+		}
+				
 
 	}
 
@@ -21,10 +29,12 @@ public class DesktopController : MonoBehaviour {
 		if (other.tag == "Player") {
 			//show interact text
 			prompt.enabled = true;
+			inArea = true;
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other){
 		prompt.enabled = false;
+		inArea = false;
 	}
 }

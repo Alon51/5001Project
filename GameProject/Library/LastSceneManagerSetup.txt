@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< Updated upstream
 - path: Assets/Scenes/Main/ArrayLevel.unity
+=======
+- path: Assets/Scenes/Temp1.unity
+>>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DesktopControllerBoxArray : MonoBehaviour {
 
@@ -12,14 +13,13 @@ public class DesktopControllerBoxArray : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		prompt.enabled = false;
-		cam = GetComponent<Camera> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if (inArea) {
 			if (Input.GetKeyDown ("x")) {
-				//SceneManager.LoadScene ("SwitchStatement");
+				SceneManager.LoadScene ("ArrayChallenge");
 			}
 		}
 	}

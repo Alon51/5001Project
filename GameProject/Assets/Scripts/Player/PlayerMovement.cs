@@ -17,8 +17,10 @@ public class PlayerMovement : MonoBehaviour {
 	public LayerMask whatIsGround;
 
 	private Rigidbody2D myRigidBody; // rigid body used for moving and jumping
+	public bool zoom = false; //flag for using Camera ZoomIn/Out functions.
 
 	private Animator anim;
+	public Camera cam;
 
 //Animation States 
 	const int STATE_IDLE = 0;
@@ -26,16 +28,6 @@ public class PlayerMovement : MonoBehaviour {
 	const int STATE_LEFT = 2;
 	const int STATE_JUMP = 3;
 	int currentAnimState = STATE_IDLE;
-
-
-////variables for checking if player is on ground or not
-//public Transform groundCheck;
-//public float groundCheckRadius; // radius of ground check space
-//public LayerMask whatIsGround;
-
-//public bool isGrounded; // know if player is on ground
-//public bool isJumping; // know if player is jumping
-
 
 
 	// Use this for initialization
@@ -49,7 +41,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		isGrounded = Physics2D.OverlapCircle (groundCheck.position,groundCheckRadius,whatIsGround);
 		myRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
-		//HorizontaL input is either 0(no input), 1(going right), or -1(going left)
+		//Horizontal input is either 0(no input), 1(going right), or -1(going left)
 
 		//checking RIGHT input
 		if (Input.GetAxisRaw ("Horizontal") > 0f) {         //don't change y value
@@ -86,10 +78,21 @@ public class PlayerMovement : MonoBehaviour {
 			isJumping = false;
 
 		}
+		//allows player to zoom out the camera to see larger section of the map.
+		if (Input.GetKeyDown("q")) {
+			if (!zoom) {
+				zoomOut ();
+				zoom = true;
+			} else {
+				zoomIn ();
+				zoom = false;
+			}
+		}
+			
 
 
 	}
-
+	//Function to change animation state controllers. 
 		void changeState(int state){
 			if (currentAnimState == state) {
 				return;
@@ -115,5 +118,14 @@ public class PlayerMovement : MonoBehaviour {
 
 		currentAnimState = state;
 	}
+
+	//Changes Camera.cam ortho size on toggle mapped to "Q" key.
+	void zoomOut(){
+		cam.orthographicSize = 10;
+	}
+	void zoomIn(){
+		cam.orthographicSize = 7;
+	}
+			
 
 }

@@ -9,6 +9,7 @@ public class CompletionScriptThree : MonoBehaviour {
 	public reactToBreakTwo breakTwoSuccess;
 	public reactToBreakThree breakThreeSuccess;
 	public reactToSwitchCondition switchSuccess;
+	public bool arrayPortalActive = false;
 
 
 
@@ -21,9 +22,9 @@ public class CompletionScriptThree : MonoBehaviour {
 	void Update () {
 
 		if (intSuccess.successOne && switchSuccess.success && breakOneSuccess.success) {
-			SceneManager.LoadScene ("ArrayLevel");
+			arrayPortalActive = true;
+			GlobalController.Instance.arrayPortalActive = arrayPortalActive;
+			SceneManager.LoadScene ("Temp1");
 		}
-
-	
 	}
 }

@@ -130,7 +130,7 @@ public class PlayerMovement : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other){
 		if (other.gameObject.tag == "ArrayLevel") {
 			// if(Switch is set to correct door, then telepirt player to that level
-			GlobalController.Instance.savePlayerPos(transform);
+			GlobalController.Instance.savePlayerPos();
 			//GlobalController.Instance.changeScene ("ArrayLevel");
 		}
 	}

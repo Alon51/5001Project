@@ -27,7 +27,7 @@ public class GlobalController : MonoBehaviour {
 
 	//save the players position for use between scenes
 	public void savePlayerPos(){
-		glPlayerPos = thePlayer.transform.position;
+		glPlayerPos.position = thePlayer.transform.position;
 	}
 	//changes the scene based on the name
 	public void changeScene(string sceneName){

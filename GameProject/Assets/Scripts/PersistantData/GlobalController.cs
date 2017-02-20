@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class GlobalController : MonoBehaviour {
 
 	public static GlobalController Instance;
+	//Teleporter Room Bools
 	public bool arrayPortalActive = false;
+	public bool loopPortalActive = false;
 
 
 	//Loop Level Completion Bools

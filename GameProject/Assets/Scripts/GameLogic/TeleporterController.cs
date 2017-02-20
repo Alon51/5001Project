@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class TeleporterController : MonoBehaviour {
 
-	private bool inArea = false;
 
 	// Use this for initialization
 	void Start () {
@@ -14,11 +13,7 @@ public class TeleporterController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-//		if (inArea) {
-//			if (Input.GetKeyDown ("x")) {
-//				SceneManager.LoadScene ("ArrayLevel");
-//			}
-//		}
+
 	}
 
 	void OnCollisionStay2D(Collision2D other){
@@ -31,8 +26,5 @@ public class TeleporterController : MonoBehaviour {
 			//inArea = true;
 		}
 	}
-
-	void OnTriggerExit2D(Collider2D other){
-		//inArea = false;
-	}
+		
 }

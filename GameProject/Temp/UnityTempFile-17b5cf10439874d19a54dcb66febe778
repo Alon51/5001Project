@@ -78,11 +78,14 @@
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_OSX
 -define:UNITY_TEAM_LICENSE
+'Assets/Scripts/ArrayPuzzleOne/ArrayBoxController.cs'
 'Assets/Scripts/ArrayPuzzleOne/DesktopControllerBoxArray.cs'
 'Assets/Scripts/ArrayPuzzleOne/reactToArrayTile.cs'
 'Assets/Scripts/GameLogic/ArrayTeleporter.cs'
 'Assets/Scripts/GameLogic/ForLoopDeskTopInteraction.cs'
 'Assets/Scripts/GameLogic/IntroLevelManager.cs'
+'Assets/Scripts/GameLogic/NestedForDeskTopInteraction.cs'
+'Assets/Scripts/GameLogic/PauseMenu.cs'
 'Assets/Scripts/GameLogic/TeleporterController.cs'
 'Assets/Scripts/GameLogic/WaterController.cs'
 'Assets/Scripts/GameLogic/WhileLoopDesktopInteraction.cs'
@@ -91,8 +94,6 @@
 'Assets/Scripts/MenuNavScripts/BackNavLevel1.cs'
 'Assets/Scripts/MenuNavScripts/BackNavR1.cs'
 'Assets/Scripts/MenuNavScripts/Menu.cs'
-'Assets/Scripts/NestedForDeskTopInteraction.cs'
-'Assets/Scripts/PauseMenu.cs'
 'Assets/Scripts/PersistantData/GlobalController.cs'
 'Assets/Scripts/Player/CameraFollow.cs'
 'Assets/Scripts/Player/PlayerMovement.cs'

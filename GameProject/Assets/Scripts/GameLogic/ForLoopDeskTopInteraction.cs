@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class ForLoopDeskTopInteraction : MonoBehaviour {
 
-	//public Text prompt; //text to display
+	public Text prompt; //text to display
 	private bool inArea = false;
 
 	// Use this for initialization
 	void Start () {
-		//prompt.enabled = false;
+		prompt.enabled = false;
 	}
 
 	// Update is called once per frame
@@ -26,14 +26,14 @@ public class ForLoopDeskTopInteraction : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "Player") {
 			//show interact text
-			//prompt.enabled = true;
+			prompt.enabled = true;
 			inArea = true;
 
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other){
-		//prompt.enabled = false;
+		prompt.enabled = false;
 		inArea = false;
 	}
 }

@@ -20,7 +20,8 @@ public class CompletionCheck2 : MonoBehaviour {
 	void Update () {
 
 		if (threeSuccess.success && plusSuccess.success && plusPlusSuccess.success && fiveSuccess.success && xSuccess.success && ySuccess.success) {
-			//SceneManager.LoadScene ("scene3.2.1");
+			GlobalController.Instance.nestedForLoopComplete = true;
+			SceneManager.LoadScene ("LoopLevel");
 		}
 			
 	

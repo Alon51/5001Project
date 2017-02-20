@@ -17,7 +17,8 @@ public class CompletionScriptFour : MonoBehaviour{
 	void Update () {
 
 		if (xSuccess.success && plusSuccess.success && plusPlusSuccess.success) {
-			//SceneManager.LoadScene ("scene3.2.4");
+			GlobalController.Instance.whileLoopComplete = true;
+			SceneManager.LoadScene ("LoopLevel");
 		}
 
 

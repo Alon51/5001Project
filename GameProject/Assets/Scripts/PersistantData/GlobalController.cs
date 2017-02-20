@@ -8,6 +8,12 @@ public class GlobalController : MonoBehaviour {
 	public static GlobalController Instance;
 	public bool arrayPortalActive = false;
 
+
+	//Loop Level Completion Bools
+	public bool singleForLoopComplete = false;
+	public bool nestedForLoopComplete = false;
+	public bool whileLoopComplete = false;
+
 	public PlayerMovement thePlayer;
 
 	public Transform glPlayerPos; //global player pos for scene transitions

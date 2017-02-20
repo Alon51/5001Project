@@ -17,7 +17,8 @@ public class CompletionCheck : MonoBehaviour {
 	void Update () {
 
 		if (twoSuccess.success && plusSuccess.success && plusPlusSuccess.success) {
-			//SceneManager.LoadScene ("Scene3.1");
+			GlobalController.Instance.singleForLoopComplete = true;
+			SceneManager.LoadScene ("LoopLevel");
 
 		}
 	}

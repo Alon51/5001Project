@@ -49,23 +49,6 @@ public class GlobalController : MonoBehaviour {
 	public void changeScene(string sceneName){
 
 		SceneManager.LoadScene (sceneName);
-//		switch (sceneName) {
-//		case "ArrayLevel":
-//			SceneManager.LoadScene ();
-//			break;
-//		case "FunctionsLevel":
-//			SceneManager.LoadScene ("");
-//			break;
-//		case "ArithmeticLevel":
-//			SceneManager.LoadScene ("");
-//			break;
-//		case "LoopsLevel":
-//			SceneManager.LoadScene ("");
-//			break;
-//		case "FinalLevel":
-//			SceneManager.LoadScene ("");
-//			break;
-//		}
 
 	}
 		

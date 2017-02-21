@@ -10,6 +10,14 @@ public class GlobalController : MonoBehaviour {
 	public bool arrayPortalActive = false;
 	public bool loopPortalActive = false;
 
+	//ArraySumationPuzzle Blocks
+	public bool box0 = false;
+	public bool box1 = false;
+	public bool box2 = false;
+	public bool box3 = false;
+	public bool box4 = false;
+	public bool box5 = false;
+
 
 	//Loop Level Completion Bools
 	public bool singleForLoopComplete = false;
@@ -30,12 +38,12 @@ public class GlobalController : MonoBehaviour {
 	}
 
 	void Start(){
-		thePlayer = FindObjectOfType<PlayerMovement> ();
+		//thePlayer = FindObjectOfType<PlayerMovement> ();
 	}
 
 	//save the players position for use between scenes
 	public void savePlayerPos(){
-		glPlayerPos.position = thePlayer.transform.position;
+		//glPlayerPos.position = thePlayer.transform.position;
 	}
 	//changes the scene based on the name
 	public void changeScene(string sceneName){

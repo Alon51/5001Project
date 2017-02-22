@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour {
 	private Animator anim;
 	public Camera cam;
 
+	public GlobalController gameManager;
+
 //Animation States 
 	const int STATE_IDLE = 0;
 	const int STATE_RIGHT = 1;
@@ -87,6 +89,9 @@ public class PlayerMovement : MonoBehaviour {
 				zoomIn ();
 				zoom = false;
 			}
+		}
+		if (Input.GetKeyDown (KeyCode.T)) {
+			gameManager.toggleCamera ();
 		}
 			
 

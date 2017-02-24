@@ -27,6 +27,7 @@ public class ArraySumCompletion : MonoBehaviour {
 		//if all 3 spots are filled
 		if (checkOne.success && checkTwo.success && checkThree.success) {
 			//drop the platforms
+			GlobalController.Instance.toggleCamera();
 			dropTilePlatforms ();
 			//resetCheckValues ();
 		}	

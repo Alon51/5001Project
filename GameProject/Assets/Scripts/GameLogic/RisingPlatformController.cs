@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaterController : MonoBehaviour {
+public class RisingPlatformController : MonoBehaviour {
 
-	public GameObject Water;
-	public float unit = 0.35f; //test number so that 14 increments makes the water the correct level
+	public GameObject risingPlatform;
+	public float unit; //test number so that 14 increments makes the water the correct level
 
 	// Use this for initialization
 	void Start () {
-		
+		unit = 0.35f;
 	}
 	
 	// Update is called once per frame
@@ -22,22 +22,23 @@ public class WaterController : MonoBehaviour {
 //		}
 	}
 
-	//increase water level
-	void waterUp(int boxWeight){
+	//increase platform height
+	void platformUp(int boxWeight){
 		float adjust = unit * boxWeight;
 		transform.position = new Vector3 (transform.position.x, transform.position.y+adjust, 0); // move water upward
 	}
-	//decrease water level
-	void waterDown(int boxWeight){
+	//decrease platform height
+	void platformDown(int boxWeight){
 		float adjust = unit * boxWeight;
 		transform.position = new Vector3 (transform.position.x, transform.position.y-adjust, 0); // move water downward
 
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
-		if (other.CompareTag ("ArrayBox")) {
-			int wght = other.GetComponent<ArrayBoxController> ().getWeight ();
-			waterUp (wght);
+	void OnCollisionEnter2D(Collision2D other){
+		if (other.gameObject.CompareTag("ArrayBox")) {
+			//print ("Collision detected");
+			int wght = other.gameObject.GetComponent<ArrayBoxController> ().getWeight ();
+			platformUp (wght);
 		}
 	}
 

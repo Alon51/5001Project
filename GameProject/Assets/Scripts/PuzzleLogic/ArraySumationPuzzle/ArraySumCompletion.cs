@@ -24,7 +24,9 @@ public class ArraySumCompletion : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//if all 3 spots are filled
 		if (checkOne.success && checkTwo.success && checkThree.success) {
+			//drop the platforms
 			dropTilePlatforms ();
 			//resetCheckValues ();
 		}	
@@ -38,12 +40,10 @@ public class ArraySumCompletion : MonoBehaviour {
 	}
 
 	public void dropTilePlatforms(){
-		print ("In DropTilePlatforms");
 		foreach (GameObject temp in arrayTiles) {
 			// if this tile was used as part of the sum
 			if (temp.GetComponent<ArrayTileController> ().isUsed) { 
 				//drop it's corresponding box
-				print ("In Drop IF");
 				temp.GetComponent<ArrayTileController> ().connectedBox.dropPlatform ();
 
 			}

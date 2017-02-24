@@ -28,7 +28,7 @@ public class ArrayReaction : MonoBehaviour {
 			GlobalController.Instance.box0 = true;//set flag
 			//create mini in slott
 			SpriteRenderer.Instantiate (completedTile0, this.transform.position, Quaternion.identity);
-//			other.gameObject.SetActive (false);// set the tile to inactive
+			other.gameObject.SetActive (false);// set the tile to inactive
 			other.GetComponent<ArrayTileController> ().isUsed = true;// set flag to tell if this was used
 			success = true;
 		}
@@ -36,7 +36,7 @@ public class ArrayReaction : MonoBehaviour {
 			GlobalController.Instance.box1 = true;//set flag
 			//create mini in slot
 			SpriteRenderer.Instantiate (completedTile1, this.transform.position, Quaternion.identity);
-//			other.gameObject.SetActive (false);// set the tile to inactive
+			other.gameObject.SetActive (false);// set the tile to inactive
 			other.GetComponent<ArrayTileController> ().isUsed = true;// set flag to tell if this was used
 			success = true;
 		}
@@ -45,7 +45,7 @@ public class ArrayReaction : MonoBehaviour {
 			GlobalController.Instance.box2 = true;//set flag
 			//create mini in slot
 			SpriteRenderer.Instantiate (completedTile2, this.transform.position, Quaternion.identity);
-//			other.gameObject.SetActive (false);// set the tile to inactive
+			other.gameObject.SetActive (false);// set the tile to inactive
 			other.GetComponent<ArrayTileController> ().isUsed = true;// set flag to tell if this was used
 			success = true;
 		}
@@ -54,7 +54,7 @@ public class ArrayReaction : MonoBehaviour {
 			GlobalController.Instance.box3 = true;//set flag
 			//create mini in slot
 			SpriteRenderer.Instantiate (completedTile3, this.transform.position, Quaternion.identity);
-//			other.gameObject.SetActive (false);// set the tile to inactive
+			other.gameObject.SetActive (false);// set the tile to inactive
 			other.GetComponent<ArrayTileController> ().isUsed = true;// set flag to tell if this was used
 			success = true;
 		}
@@ -63,7 +63,7 @@ public class ArrayReaction : MonoBehaviour {
 			GlobalController.Instance.box4 = true;//set flag
 			//create mini in slot
 			SpriteRenderer.Instantiate (completedTile4, this.transform.position, Quaternion.identity);
-//			other.gameObject.SetActive (false);// set the tile to inactive
+			other.gameObject.SetActive (false);// set the tile to inactive
 			other.GetComponent<ArrayTileController> ().isUsed = true;// set flag to tell if this was used
 			success = true;
 		}
@@ -72,7 +72,7 @@ public class ArrayReaction : MonoBehaviour {
 			GlobalController.Instance.box5 = true; //set flag
 			//create mini in slot
 			SpriteRenderer.Instantiate (completedTile5, this.transform.position, Quaternion.identity);
-//			other.gameObject.SetActive (false); // set the tile to inactive
+			other.gameObject.SetActive (false); // set the tile to inactive
 			other.GetComponent<ArrayTileController> ().isUsed = true; // set flag to tell if this was used
 			success = true;
 		}

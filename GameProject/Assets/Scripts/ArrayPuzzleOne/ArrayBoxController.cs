@@ -11,7 +11,7 @@ public class ArrayBoxController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		createPlatform ();
+		//createPlatform ();
 		
 	}
 	
@@ -22,7 +22,7 @@ public class ArrayBoxController : MonoBehaviour {
 //			dropPlatform ();
 //			slotOneSuccess = false;
 //		}
-			
+		//underPlatform.SetActive(false);
 	}
 
 	public int getWeight(){
@@ -30,8 +30,8 @@ public class ArrayBoxController : MonoBehaviour {
 	}
 	 
 	public void dropPlatform(){
-		//underPlatform.SetActive (false);
-		underPlatform.transform.Rotate(new Vector3(0, 0, 90));
+		underPlatform.SetActive (false);
+		//underPlatform.transform.Rotate(new Vector3(0, 0, 90));
 	}
 
 	public void createPlatform(){

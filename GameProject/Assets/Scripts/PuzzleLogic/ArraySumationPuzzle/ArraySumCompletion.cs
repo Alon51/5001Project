@@ -44,7 +44,7 @@ public class ArraySumCompletion : MonoBehaviour {
 			if (temp.GetComponent<ArrayTileController> ().isUsed) { 
 				//drop it's corresponding box
 				print ("In Drop IF");
-				temp.GetComponent<ArrayTileController> ().connectedBox.GetComponent<ArrayBoxController> ().dropPlatform ();
+				temp.GetComponent<ArrayTileController> ().connectedBox.dropPlatform ();
 
 			}
 				

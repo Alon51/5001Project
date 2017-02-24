@@ -17,11 +17,11 @@ public class ArrayBoxController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (slotOneSuccess) {
-			removePlatform = GlobalController.Instance.box0;
-			dropPlatform ();
-			slotOneSuccess = false;
-		}
+//		if (slotOneSuccess) {
+//			removePlatform = GlobalController.Instance.box0;
+//			dropPlatform ();
+//			slotOneSuccess = false;
+//		}
 			
 	}
 

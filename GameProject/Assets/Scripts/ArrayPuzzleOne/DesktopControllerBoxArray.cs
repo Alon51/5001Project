@@ -19,7 +19,9 @@ public class DesktopControllerBoxArray : MonoBehaviour {
 	void Update () {
 		if (inArea) {
 			if (Input.GetKeyDown ("x")) {
-				SceneManager.LoadScene ("ArrayChallenge");
+				//SceneManager.LoadScene ("ArrayChallenge");
+				GlobalController.Instance.toggleCamera ();
+
 			}
 		}
 	}
@@ -30,7 +32,7 @@ public class DesktopControllerBoxArray : MonoBehaviour {
 			prompt.enabled = true;
 			inArea = true;
 			//zoom out camera for player to see puzzle
-			cam.orthographicSize = 10.0f;
+			cam.orthographicSize = 11.0f;
 
 		}
 	}

@@ -22,49 +22,48 @@ public class ArrayReaction : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D (Collider2D other)
-	{
+	void OnTriggerEnter2D (Collider2D other){
+		
 		if (other.tag == "Array0" && !success) {
 			GlobalController.Instance.box0 = true;
-			SpriteRenderer.Instantiate (completedTile0, new Vector3 (331f, 375f, 0f), Quaternion.identity);
+			SpriteRenderer.Instantiate (completedTile0, this.transform.position, Quaternion.identity);
 			other.gameObject.SetActive (false);
 			success = true;
 		}
 		else if(other.tag == "Array1" && !success){
 			GlobalController.Instance.box1 = true;
-			SpriteRenderer.Instantiate (completedTile1, new Vector3 (331f, 375f, 0f), Quaternion.identity);
+			SpriteRenderer.Instantiate (completedTile1, this.transform.position, Quaternion.identity);
 			other.gameObject.SetActive (false);
 			success = true;
 		}
 
 		else if(other.tag == "Array2" && !success){
 			GlobalController.Instance.box2 = true;
-			SpriteRenderer.Instantiate (completedTile2, new Vector3 (331f, 375f, 0f), Quaternion.identity);
+			SpriteRenderer.Instantiate (completedTile2, this.transform.position, Quaternion.identity);
 			other.gameObject.SetActive (false);
 			success = true;
 		}
 
 		else if(other.tag == "Array3" && !success){
 			GlobalController.Instance.box3 = true;
-			SpriteRenderer.Instantiate (completedTile3, new Vector3 (331f, 375f, 0f), Quaternion.identity);
+			SpriteRenderer.Instantiate (completedTile3, this.transform.position, Quaternion.identity);
 			other.gameObject.SetActive (false);
 			success = true;
 		}
 
 		else if(other.tag == "Array4" && !success){
 			GlobalController.Instance.box4 = true;
-			SpriteRenderer.Instantiate (completedTile4, new Vector3 (331f, 375f, 0f), Quaternion.identity);
+			SpriteRenderer.Instantiate (completedTile4, this.transform.position, Quaternion.identity);
 			other.gameObject.SetActive (false);
 			success = true;
 		}
 
 		else if(other.tag == "Array5" && !success){
 			GlobalController.Instance.box5 = true;
-			SpriteRenderer.Instantiate (completedTile5, new Vector3 (331f, 375f, 0f), Quaternion.identity);
+			SpriteRenderer.Instantiate (completedTile5, this.transform.position, Quaternion.identity);
 			other.gameObject.SetActive (false);
 			success = true;
 		}
-
 
 			
 	}

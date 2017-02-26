@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour {
 			}
 		}
 		if (Input.GetKeyDown (KeyCode.T)) {
-			gameManager.toggleCamera ();
+			//gameManager.toggleCamera ();
 		}
 			
 

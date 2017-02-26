@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class NestedForDeskTopInteraction : MonoBehaviour {	public Text prompt; //text to display
+public class NestedForDeskTopInteraction : MonoBehaviour {	
+
+	public Text prompt; //text to display
 	private bool inArea = false;
 	public Camera mainCam;
 	public Camera puzzleCam;

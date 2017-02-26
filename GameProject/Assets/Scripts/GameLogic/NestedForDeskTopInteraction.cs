@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class NestedForDeskTopInteraction : MonoBehaviour {
-
-	public Text prompt; //text to display
+public class NestedForDeskTopInteraction : MonoBehaviour {	public Text prompt; //text to display
 	private bool inArea = false;
+	public Camera mainCam;
+	public Camera puzzleCam;
+	public bool onMainCam = true;
+
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +20,7 @@ public class NestedForDeskTopInteraction : MonoBehaviour {
 	void Update () {
 		if (inArea) {
 			if (Input.GetKeyDown ("x")) {
-				SceneManager.LoadScene ("NestedLoopPuzzle");
+				toggleCamera();
 			}
 		}
 	}
@@ -35,5 +37,18 @@ public class NestedForDeskTopInteraction : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other){
 		prompt.enabled = false;
 		inArea = false;
+	}
+
+	public void toggleCamera(){
+		if (onMainCam) {
+			mainCam.enabled = false;
+			puzzleCam.enabled = true;
+			onMainCam = !onMainCam;
+		}
+		else if (!onMainCam) {
+			mainCam.enabled = true;
+			puzzleCam.enabled = false;
+			onMainCam = !onMainCam;
+		}
 	}
 }

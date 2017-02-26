@@ -5,6 +5,8 @@ public class TileDrag : MonoBehaviour {
 
 	float x;
 	float y;
+	float z;
+	public Camera testCam;
 
 	// Use this for initialization
 	void Start () {
@@ -15,9 +17,10 @@ public class TileDrag : MonoBehaviour {
 	void Update () {
 		x = Input.mousePosition.x;
 		y = Input.mousePosition.y;
+		z = 200.0f;
 	}
 	void OnMouseDrag(){
-		transform.position = Camera.main.ScreenToWorldPoint (new Vector3 (x, y, 10.0f));
+		transform.position = testCam.ScreenToWorldPoint(new Vector3 (x, y, z));
 	}
 
 }

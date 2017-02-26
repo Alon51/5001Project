@@ -17,7 +17,7 @@ public class ReactToTileY : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "y" && !success) {
 			correct.Play ();
-			SpriteRenderer.Instantiate (completedTile, new Vector3 (670f, 367f, 0), Quaternion.identity);
+			SpriteRenderer.Instantiate (completedTile, this.transform.position, Quaternion.identity);
 			other.gameObject.SetActive (false);
 			success = true;
 		}

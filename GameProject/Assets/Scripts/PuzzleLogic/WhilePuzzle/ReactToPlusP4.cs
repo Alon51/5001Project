@@ -3,21 +3,18 @@ using System.Collections;
 
 public class ReactToPlusP4 : MonoBehaviour {
 
-	private AudioSource correct;
 	public GameObject completedTile;
 	public bool success;
 
 
 	// Use this for initialization
 	void Start () {
-		correct = GetComponent<AudioSource> ();
 
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "+" && !success) {
-			correct.Play ();
-			SpriteRenderer.Instantiate (completedTile, new Vector3 (249f, 258f, 0), Quaternion.identity);
+			SpriteRenderer.Instantiate (completedTile, this.transform.position, Quaternion.identity);
 			other.gameObject.SetActive (false);
 			success = true;
 		}

@@ -18,7 +18,7 @@ public class ReactToTilePlus : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "+" && !success) {
 			correct.Play ();
-			SpriteRenderer.Instantiate (completedTile, new Vector3 (607f, 471f, 0f), Quaternion.identity);
+			SpriteRenderer.Instantiate (completedTile, this.transform.position, Quaternion.identity);
 			other.gameObject.SetActive (false);
 			success = true;
 		}

@@ -17,7 +17,7 @@ public class ReactToTileThree : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "3" && !success) {
 			correct.Play ();
-			SpriteRenderer.Instantiate (completedTile, new Vector3 (429f, 403f, 0), Quaternion.identity);
+			SpriteRenderer.Instantiate (completedTile, this.transform.position, Quaternion.identity);
 			other.gameObject.SetActive (false);
 			success = true;
 		}

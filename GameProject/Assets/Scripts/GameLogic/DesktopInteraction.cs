@@ -4,13 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class WhileLoopDesktopInteraction : MonoBehaviour {	
+public class DesktopInteraction : MonoBehaviour {
+
 	public Text prompt; //text to display
 	private bool inArea = false;
-	public Camera mainCam;
-	public Camera puzzleCam;
-	public bool onMainCam = true;
-
+	public Camera puzzleCamera;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +19,8 @@ public class WhileLoopDesktopInteraction : MonoBehaviour {
 	void Update () {
 		if (inArea) {
 			if (Input.GetKeyDown ("x")) {
-				toggleCamera();
+				GlobalController.Instance.changeSecondCamera (puzzleCamera);
+				GlobalController.Instance.toggleCamera ();
 			}
 		}
 	}
@@ -31,25 +30,24 @@ public class WhileLoopDesktopInteraction : MonoBehaviour {
 			//show interact text
 			prompt.enabled = true;
 			inArea = true;
+			//zoom out camera for player to see puzzle
+			//puzzleCamera.orthographicSize = 11.0f;
 
 		}
+	}
+	//while player is in trigger, react to keypress by changing the camera and toggling it
+	void OntriggerStay2D(Collider2D other){
+//		if (inArea) {
+//			if (Input.GetKeyDown ("x")) {
+//				GlobalController.Instance.changeSecondCamera (puzzleCamera);
+//				GlobalController.Instance.toggleCamera ();
+//			}
+//		}
 	}
 
 	void OnTriggerExit2D(Collider2D other){
 		prompt.enabled = false;
 		inArea = false;
-	}
-
-	public void toggleCamera(){
-		if (onMainCam) {
-			mainCam.enabled = false;
-			puzzleCam.enabled = true;
-			onMainCam = !onMainCam;
-		}
-		else if (!onMainCam) {
-			mainCam.enabled = true;
-			puzzleCam.enabled = false;
-			onMainCam = !onMainCam;
-		}
+		//puzzleCamera.orthographicSize = 6.0f;
 	}
 }

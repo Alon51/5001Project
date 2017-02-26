@@ -57,7 +57,7 @@ public class GlobalController : MonoBehaviour {
 		SceneManager.LoadScene (sceneName);
 
 	}
-		
+	//toggles between the main camera and the specified second camera	
 	public void toggleCamera(){
 		if (onMainCam) {
 			mainCam.enabled = false;
@@ -69,6 +69,10 @@ public class GlobalController : MonoBehaviour {
 			secondCam.enabled = false;
 			onMainCam = !onMainCam;
 		}
+	}
+	//changes the second camera in order to allow togling between multiple camera
+	public void changeSecondCamera(Camera newCam){
+		secondCam = newCam;
 	}
 
 }

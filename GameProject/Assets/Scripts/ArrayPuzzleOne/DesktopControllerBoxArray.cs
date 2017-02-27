@@ -9,6 +9,7 @@ public class DesktopControllerBoxArray : MonoBehaviour {
 	public Text prompt; //text to display
 	private bool inArea = false;
 	public Camera puzzleCamera;
+	public Camera mainCam;
 
 	// Use this for initialization
 	void Start () {
@@ -17,27 +18,6 @@ public class DesktopControllerBoxArray : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-//		if (inArea) {
-//			if (Input.GetKeyDown ("x")) {
-//				//SceneManager.LoadScene ("ArrayChallenge");
-//				GlobalController.Instance.toggleCamera ();
-//
-//			}
-//		}
-	}
-
-	void OnTriggerEnter2D(Collider2D other){
-		if (other.tag == "Player") {
-			//show interact text
-			prompt.enabled = true;
-			inArea = true;
-			//zoom out camera for player to see puzzle
-			puzzleCamera.orthographicSize = 11.0f;
-
-		}
-	}
-
-	void OntriggerStay2D(Collider2D other){
 		if (inArea) {
 			if (Input.GetKeyDown ("x")) {
 				GlobalController.Instance.changeSecondCamera (puzzleCamera);
@@ -46,9 +26,22 @@ public class DesktopControllerBoxArray : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.tag == "Player") {
+			//show interact text
+			prompt.enabled = true;
+			inArea = true;
+			//zoom out camera for player to see puzzle
+			mainCam.orthographicSize = 11.0f;
+
+		}
+	}
+
+
+
 	void OnTriggerExit2D(Collider2D other){
 		prompt.enabled = false;
 		inArea = false;
-		puzzleCamera.orthographicSize = 6.0f;
+		mainCam.orthographicSize = 6.0f;
 	}
 }

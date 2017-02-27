@@ -1,25 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RisingPlatformController : MonoBehaviour {
 
 	public GameObject risingPlatform;
 	public float unit; //test number so that 14 increments makes the water the correct level
+	public Text weightText; // text showing weight on platform
+	public float sumWeight; // total weight so far
 
 	// Use this for initialization
 	void Start () {
 		unit = 0.35f;
+		weightText.enabled = false;
+		sumWeight = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-//		if (Input.GetKeyDown (KeyCode.R)) {
-//			transform.position = new Vector3 (transform.position.x, transform.position.y+1, 0); // move water upward
-//		}
-//		if (Input.GetKeyDown (KeyCode.L)) {
-//			transform.position = new Vector3 (transform.position.x, transform.position.y-1, 0); // move water downward
-//		}
+
 	}
 
 	//increase platform height
@@ -35,9 +35,12 @@ public class RisingPlatformController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
+		weightText.enabled = true;
 		if (other.gameObject.CompareTag("ArrayBox")) {
 			//print ("Collision detected");
 			int wght = other.gameObject.GetComponent<ArrayBoxController> ().getWeight ();
+			sumWeight += wght;
+			weightText.text = "Weight Needed: 14 \n Current Weight: " + sumWeight; // change weight
 			platformUp (wght);
 		}
 	}

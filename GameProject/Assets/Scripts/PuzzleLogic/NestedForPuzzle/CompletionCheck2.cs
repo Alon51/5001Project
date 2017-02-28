@@ -11,6 +11,10 @@ public class CompletionCheck2 : MonoBehaviour {
 	public ReactToTileX xSuccess;
 	public ReactToTileY ySuccess;
 
+	private bool completeFlag = false; //Flag that allows door to open once.
+
+	public GameObject doorTwo;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -21,9 +25,17 @@ public class CompletionCheck2 : MonoBehaviour {
 
 		if (threeSuccess.success && plusSuccess.success && plusPlusSuccess.success && fiveSuccess.success && xSuccess.success && ySuccess.success) {
 			GlobalController.Instance.nestedForLoopComplete = true;
-			SceneManager.LoadScene ("LoopLevel");
+			if(GlobalController.Instance.nestedForLoopComplete && !completeFlag){
+				openDoor();
+				completeFlag = true;
+			}
+
 		}
 			
-	
+	}
+
+	void openDoor(){
+		doorTwo.transform.position = new Vector3 (doorTwo.transform.position.x, 
+			doorTwo.transform.position.y + 5.0f, 0);
 	}
 }

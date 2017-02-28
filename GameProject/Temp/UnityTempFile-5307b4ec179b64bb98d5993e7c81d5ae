@@ -86,6 +86,7 @@
 'Assets/Scripts/GameLogic/ForLoopDeskTopInteraction.cs'
 'Assets/Scripts/GameLogic/IntroLevelManager.cs'
 'Assets/Scripts/GameLogic/LoopTeleporter.cs'
+'Assets/Scripts/GameLogic/MessagePanel.cs'
 'Assets/Scripts/GameLogic/NestedForDeskTopInteraction.cs'
 'Assets/Scripts/GameLogic/PauseMenu.cs'
 'Assets/Scripts/GameLogic/RisingPlatformController.cs'

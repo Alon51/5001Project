@@ -75,4 +75,13 @@ public class GlobalController : MonoBehaviour {
 		secondCam = newCam;
 	}
 
+	public void resetBoxBools(){
+		box0 = false;
+		box1 = false;
+		box2 = false;
+		box3 = false;
+		box4 = false;
+		box5 = false;
+	}
+
 }

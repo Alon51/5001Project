@@ -17,4 +17,9 @@ public class ArrayTileController : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public void resetUsed(){
+		isUsed = false;
+	}
+
 }

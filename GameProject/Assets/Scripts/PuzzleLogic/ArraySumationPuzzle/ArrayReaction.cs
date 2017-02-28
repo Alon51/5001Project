@@ -77,6 +77,11 @@ public class ArrayReaction : MonoBehaviour {
 			success = true;
 		}
 
-			
 	}
+
+	public void resetSuccessBool(){
+		success = false;
+	}
+		
+
 }

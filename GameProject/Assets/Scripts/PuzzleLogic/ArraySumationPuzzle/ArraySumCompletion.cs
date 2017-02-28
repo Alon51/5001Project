@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+
+
 public class ArraySumCompletion : MonoBehaviour {
 
 	// LEVEL MANAGER FOR THE ARRAY LEVEL
@@ -10,16 +13,21 @@ public class ArraySumCompletion : MonoBehaviour {
 //	public ArrayReactionTwo checkTwo;
 //	public ArrayReactionThree checkThree;
 
-	public GameObject[] arrayBoxes;
-	public GameObject[] arrayTiles;
+	public GameObject[] arrayTiles; // the tiles that will be dragged
+	public GameObject[] replacementTiles;
+	public List<Transform> arrayTilePositions; // their positions, used for resetting challenge
 
 	public bool puzzleFinished;
 	// Use this for initialization
 	void Start () {
 		//arrayBoxes = GameObject.FindGameObjectsWithTag ("ArrayBox");
 		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
-		puzzleFinished = false;
 
+		puzzleFinished = false;
+		arrayTilePositions = new List<Transform> ();
+		foreach(GameObject tile in arrayTiles) {
+			arrayTilePositions.Add (tile.transform);
+		}
 	}
 	
 	// Update is called once per frame
@@ -30,14 +38,18 @@ public class ArraySumCompletion : MonoBehaviour {
 			GlobalController.Instance.toggleCamera();
 			dropTilePlatforms ();
 			//resetCheckValues ();
+			//reset everything for the next use
+			GlobalController.Instance.resetBoxBools();
+			resetSlots ();
+			resetTiles ();
 		}	
 
 	}
 
 	public void resetCheckValues(){
-		checkOne.success = false;
-		checkTwo.success = false;
-		checkThree.success = false;
+		checkOne.resetSuccessBool ();
+		checkTwo.resetSuccessBool ();
+		checkThree.resetSuccessBool ();
 	}
 
 	public void dropTilePlatforms(){
@@ -52,4 +64,25 @@ public class ArraySumCompletion : MonoBehaviour {
 		}
 		resetCheckValues ();
 	}
+	//reset slots to empty
+	public void resetSlots(){
+		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
+
+		foreach (GameObject repTile in replacementTiles) {
+			Destroy (repTile.gameObject);
+		}
+	}
+
+	// reset tiles to active and in original position
+	public void resetTiles(){
+		for(int i = 0; i < arrayTiles.Length; i++) {
+			
+			arrayTiles [i].transform.position = arrayTilePositions [i].transform.position; // move to original position
+			// THIS LINE MESSES UP THE RESET
+			//arrayTiles [i].SetActive (true); // set active 
+			arrayTiles [i].GetComponent<ArrayTileController> ().resetUsed (); // change bool to false;
+
+		}
+	}
+
 }

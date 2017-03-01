@@ -97,6 +97,7 @@
 'Assets/Scripts/MenuNavScripts/BackNav.cs'
 'Assets/Scripts/MenuNavScripts/BackNavLevel1.cs'
 'Assets/Scripts/MenuNavScripts/BackNavR1.cs'
+'Assets/Scripts/MenuNavScripts/GameButtons.cs'
 'Assets/Scripts/MenuNavScripts/Menu.cs'
 'Assets/Scripts/PersistantData/GlobalController.cs'
 'Assets/Scripts/PlatformDrop.cs'

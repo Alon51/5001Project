@@ -11,7 +11,7 @@ public class PlatformAccessController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//temp color
-		Color tempColor = new Color(255,255,255,128);
+		Color tempColor = new Color(255,255,255,0.5f);
 
 		isVisible = false;
 		bCol = GetComponent<BoxCollider2D> ();
@@ -30,7 +30,7 @@ public class PlatformAccessController : MonoBehaviour {
 	//enabled box collider2d, and makes obj visible
 	public void SetVisibleAndActive(){
 		//temp color
-		Color tempColor = new Color(255,255,255,255);
+		Color tempColor = new Color(255,255,255,1f);
 
 		bCol.enabled = true; 
 		spr.color = tempColor;

@@ -5,7 +5,9 @@ using UnityEngine;
 public class ArrayTileController : MonoBehaviour {
 
 	public string tileName;
-	public ArrayBoxController connectedBox;
+	public ArrayBoxController connectedBox; //used for sum puzzle
+	public PlatformAccessController connectedPlatform; //used for access puzzle
+
 	public bool isUsed;
 
 	// Use this for initialization

@@ -33,7 +33,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 		if (checkOne.success && checkTwo.success && checkThree.success) {
 			//drop the platforms
 			GlobalController.Instance.toggleCamera();
-			dropTilePlatforms ();
+			makePlatformsVisible ();
 			//reset everything for the next use	
 			GlobalController.Instance.resetBoxBools();
 			resetTiles ();
@@ -49,13 +49,12 @@ public class ArrayAccessCompletion : MonoBehaviour {
 		checkThree.resetSuccessBool ();
 	}
 
-	public void dropTilePlatforms(){
+	public void makePlatformsVisible(){
 		foreach (GameObject temp in arrayTiles) {
 			// if this tile was used as part of the sum
 			if (temp.GetComponent<ArrayTileController> ().isUsed) { 
 				//drop it's corresponding box
-				temp.GetComponent<ArrayTileController> ().connectedBox.dropPlatform ();
-
+				temp.GetComponent<ArrayTileController>().connectedPlatform.SetVisibleAndActive();
 			}
 
 		}
@@ -78,7 +77,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			arrayTiles [i].transform.position = arrayTilePositions [i]; // move to original position
 			arrayTiles [i].GetComponent<ArrayTileController> ().resetUsed (); // change bool to false;
 			// THIS LINE MESSES UP THE RESET
-			arrayTiles [i].gameObject.SetActive (true);
+			//arrayTiles [i].gameObject.SetActive (true);
 
 		}
 

@@ -54,7 +54,7 @@ public class ArraySumCompletion : MonoBehaviour {
 			// if this tile was used as part of the sum
 			if (temp.GetComponent<ArrayTileController> ().isUsed) { 
 				//drop it's corresponding box
-				temp.GetComponent<ArrayTileController> ().connectedBox.dropPlatform ();
+				temp.GetComponent<ArrayTileController> ().connectedBox.dropPlatform();
 
 			}
 				

@@ -4,9 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class CompletionCheck : MonoBehaviour {
 
-	public ReactToTile twoSuccess;
-	public ReactToTilePlus plusSuccess;
-	public ReactToTilePlusPlus plusPlusSuccess;
+	public ArrayReaction twoSuccess, plusSuccess, plusPlusSuccess;
 
 	public bool completeFlag = false; //Flag that allows door to open once.
 

@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 public class CompletionCheck : MonoBehaviour {
 
 	public ArrayReaction twoSuccess, plusSuccess, plusPlusSuccess;
+	public ArrayReaction replacementTwo;
+	public ArrayReaction replacementPlus;
+	public ArrayReaction replacementPlusPlus;
 
 	public bool completeFlag = false; //Flag that allows door to open once.
 
@@ -17,12 +20,14 @@ public class CompletionCheck : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (twoSuccess.success && plusSuccess.success && plusPlusSuccess.success) {
-			GlobalController.Instance.singleForLoopComplete = true;
-			if (GlobalController.Instance.singleForLoopComplete && !completeFlag) {
-				openDoor();
-				completeFlag = true;
-			}
+		if (twoSuccess.success && replacementTwo.giveName == "Replacement2" &&
+			plusSuccess.success && replacementPlus.giveName == "Replacement+" &&
+			plusPlusSuccess.success && replacementPlusPlus.giveName == "Replacement+"){
+				if (!GlobalController.Instance.singleForLoopComplete && !completeFlag){
+					openDoor();
+					completeFlag = true;
+					GlobalController.Instance.singleForLoopComplete = true;
+				}
 		}
 	}
 

@@ -36,9 +36,9 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			makePlatformsVisible ();
 			//reset everything for the next use	
 			GlobalController.Instance.resetBoxBools();
-
-			resetSlots ();
 			resetTiles ();
+			resetSlots ();
+
 			//resetCheckValues ();
 		}	
 
@@ -56,7 +56,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			if (temp.GetComponent<ArrayTileController> ().isUsed) { 
 				//drop it's corresponding box
 				temp.GetComponent<ArrayTileController>().connectedPlatform.SetVisibleAndActive();
-				temp.GetComponent<ArrayTileController> ().isUsed = false;
+				temp.GetComponent<ArrayTileController> ().resetUsed ();
 			}
 
 		}
@@ -80,7 +80,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			arrayTiles[i].GetComponent<TileDrag>().onReset();
 			arrayTiles [i].GetComponent<ArrayTileController> ().resetUsed (); // change bool to false;
 			// THIS LINE MESSES UP THE RESET
-			arrayTiles [i].gameObject.SetActive (true);
+			//arrayTiles [i].GetComponent<BoxCollider2D>().enabled = true;
 
 		}
 

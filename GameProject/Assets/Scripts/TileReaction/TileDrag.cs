@@ -38,7 +38,7 @@ public class TileDrag : MonoBehaviour {
 	}
 
 	//Reset the initial location of tile when needed.
-	void onReset(){
+	public void onReset(){
 		this.gameObject.transform.position = initialPosition;
 	}
 }

@@ -36,8 +36,9 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			makePlatformsVisible ();
 			//reset everything for the next use	
 			GlobalController.Instance.resetBoxBools();
-			resetTiles ();
+
 			resetSlots ();
+			resetTiles ();
 			//resetCheckValues ();
 		}	
 
@@ -74,10 +75,11 @@ public class ArrayAccessCompletion : MonoBehaviour {
 	// reset tiles to active and in original position
 	public void resetTiles(){
 		for (int i = 0; i < arrayTiles.Length; i++) {
-			arrayTiles [i].transform.position = arrayTilePositions [i]; // move to original position
+//			arrayTiles [i].transform.position = arrayTilePositions [i]; // move to original position
+			arrayTiles[i].GetComponent<TileDrag>().onReset();
 			arrayTiles [i].GetComponent<ArrayTileController> ().resetUsed (); // change bool to false;
 			// THIS LINE MESSES UP THE RESET
-			//arrayTiles [i].gameObject.SetActive (true);
+			arrayTiles [i].gameObject.SetActive (true);
 
 		}
 

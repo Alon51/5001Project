@@ -22,7 +22,6 @@ public class ArrayReaction : MonoBehaviour {
 		//set compTile to that prefab	
 		//instantiate
 		if (other.CompareTag ("ArrayTile") && !success) {
-			//GlobalController.Instance.box0 = true;//set flag
 			SpriteRenderer.Instantiate ((GameObject)Resources.Load ("ReplacementTile/" + other.GetComponent<ArrayTileController> ().tileName), this.transform.position, Quaternion.identity);
 			other.gameObject.SetActive (false);// set the tile to inactive
 			other.GetComponent<ArrayTileController> ().isUsed = true;// set flag to tell if this was used

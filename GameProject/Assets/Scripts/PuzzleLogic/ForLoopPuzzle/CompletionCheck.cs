@@ -23,6 +23,7 @@ public class CompletionCheck : MonoBehaviour {
 		if (twoSuccess.success && replacementTwo.giveName == "Replacement2" &&
 			plusSuccess.success && replacementPlus.giveName == "Replacement+" &&
 			plusPlusSuccess.success && replacementPlusPlus.giveName == "Replacement+"){
+				
 				if (!GlobalController.Instance.singleForLoopComplete && !completeFlag){
 					openDoor();
 					completeFlag = true;

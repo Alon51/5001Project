@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class CompletionScriptFour : MonoBehaviour{
 
-	public ReacttoXP4 xSuccess;
-	public ReactToPlusP4 plusSuccess;
-	public ReactToPlusPlusP4 plusPlusSuccess;
+	public ArrayReaction xSuccess, plusSuccess, plusPlusSuccess;
+	public ArrayReaction replacementX, replacementPlus, replacementPlusPlus;
+
 	private bool completeFlag = false; //Flag that allows laser to switch off once.
 	public GameObject laser; //The laser gameobject
 	// Use this for initialization
@@ -17,7 +17,9 @@ public class CompletionScriptFour : MonoBehaviour{
 	// Update is called once per frame
 	void Update () {
 
-		if (xSuccess.success && plusSuccess.success && plusPlusSuccess.success) {
+		if (xSuccess.success && replacementX.giveName == "ReplacementX" &&
+			plusSuccess.success && replacementPlus.giveName == "Replacement+" &&
+			plusSuccess.success && replacementPlusPlus.giveName == "Replacement+") {
 			GlobalController.Instance.whileLoopComplete = true;
 			if (GlobalController.Instance.singleForLoopComplete && !completeFlag) {
 				removeBeam ();

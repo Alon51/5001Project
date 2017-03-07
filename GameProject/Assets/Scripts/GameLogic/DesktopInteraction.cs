@@ -30,8 +30,6 @@ public class DesktopInteraction : MonoBehaviour {
 			//show interact text
 			prompt.enabled = true;
 			inArea = true;
-			//zoom out camera for player to see puzzle
-			//puzzleCamera.orthographicSize = 11.0f;
 
 		}
 	}

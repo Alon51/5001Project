@@ -34,7 +34,6 @@ public class CompletionCheck2 : MonoBehaviour {
 			fiveSuccess.success && replacementFive.giveName == "Replacement5" && 
 			xSuccess.success && replacementX.giveName == "ReplacementX" &&
 			ySuccess.success && replacementY.giveName == "ReplacementY"){
-
 				GlobalController.Instance.nestedForLoopComplete = true;
 				if(GlobalController.Instance.nestedForLoopComplete && !completeFlag){
 					openDoor();

@@ -2,8 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class P3 : MonoBehaviour {
-	public Text help;
+public class NestedForJIT : MonoBehaviour {
+	public Text help;		
 	public bool down = false;
 
 	void Awake(){

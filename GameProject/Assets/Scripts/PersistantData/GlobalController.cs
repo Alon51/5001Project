@@ -29,6 +29,9 @@ public class GlobalController : MonoBehaviour {
 	public bool nestedForLoopComplete = false;
 	public bool whileLoopComplete = false;
 
+	//Conditional Level Completion Bools
+	public bool boolOpsComplete = false;
+
 	public PlayerMovement thePlayer;
 
 	public Transform glPlayerPos; //global player pos for scene transitions

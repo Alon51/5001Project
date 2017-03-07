@@ -56,6 +56,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			if (temp.GetComponent<ArrayTileController> ().isUsed) { 
 				//drop it's corresponding box
 				temp.GetComponent<ArrayTileController>().connectedPlatform.SetVisibleAndActive();
+				temp.GetComponent<ArrayTileController> ().isUsed = false;
 			}
 
 		}

@@ -1,10 +1,6 @@
 fileFormatVersion: 2
 guid: 6230ca76671c247c3b976c48df9479d3
-<<<<<<< Updated upstream
-timeCreated: 1488860899
-=======
-timeCreated: 1488858516
->>>>>>> Stashed changes
+timeCreated: 1488909957
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -36,7 +32,7 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -1
     wrapMode: 1
@@ -69,18 +65,11 @@ TextureImporter:
     overridden: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
-<<<<<<< Updated upstream
-    textureFormat: 12
-=======
     textureFormat: -1
->>>>>>> Stashed changes
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-<<<<<<< Updated upstream
-    overridden: 1
-=======
     overridden: 0
   - buildTarget: WebGL
     maxTextureSize: 2048
@@ -90,7 +79,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
->>>>>>> Stashed changes
   spriteSheet:
     serializedVersion: 2
     sprites:

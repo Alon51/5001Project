@@ -29,6 +29,15 @@ public class ArrayAccessCompletion : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		//print ("in update");
+		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
+
+		foreach (GameObject repTile in replacementTiles) {
+			//print ("in update " + repTile.ToString ());
+
+		}
+
+
 		//if all 3 spots are filled
 		if (checkOne.success && checkTwo.success && checkThree.success) {
 			//drop the platforms
@@ -38,6 +47,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			GlobalController.Instance.resetBoxBools();
 			resetTiles ();
 			resetSlots ();
+			resetActive ();
 
 			//resetCheckValues ();
 		}	
@@ -67,8 +77,12 @@ public class ArrayAccessCompletion : MonoBehaviour {
 		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
 
 		foreach (GameObject repTile in replacementTiles) {
+			//print (repTile.ToString ());
 			Destroy (repTile);
+			//Time.timeScale = 0.0f;
 		}
+
+
 		//THIS LINE ALSO CAUSES PROBLEMS
 		resetCheckValues ();
 	}
@@ -76,14 +90,27 @@ public class ArrayAccessCompletion : MonoBehaviour {
 	// reset tiles to active and in original position
 	public void resetTiles(){
 		for (int i = 0; i < arrayTiles.Length; i++) {
+			//arrayTiles [i].gameObject.SetActive (false);
+
+
+			print("Array BoxColliders : + " + arrayTiles[i].GetComponent<BoxCollider2D>().enabled);
 //			arrayTiles [i].transform.position = arrayTilePositions [i]; // move to original position
 			arrayTiles[i].GetComponent<TileDrag>().onReset();
 			arrayTiles [i].GetComponent<ArrayTileController> ().resetUsed (); // change bool to false;
+			print(arrayTiles[i].ToString());
 			// THIS LINE MESSES UP THE RESET
 			//arrayTiles [i].GetComponent<BoxCollider2D>().enabled = true;
 
 		}
 
+
 	}
 
+	public void resetActive()
+	{
+		for (int i = 0; i < arrayTiles.Length; i++) 
+		{
+			arrayTiles[i].gameObject.SetActive(true);
+		}
+	}
 }

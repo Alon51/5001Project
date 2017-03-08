@@ -19,10 +19,6 @@ public class TileDrag : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//Testing a reset key
-		if (Input.GetKeyDown("r")) {
-			onReset ();
-		}
 	}
 
 

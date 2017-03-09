@@ -37,4 +37,8 @@ public class TileDrag : MonoBehaviour {
 	public void onReset(){
 		this.gameObject.transform.position = initialPosition;
 	}
+
+	public void disableBoxCol(){
+		this.GetComponent<BoxCollider2D> ().enabled = false;
+	}
 }

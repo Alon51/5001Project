@@ -41,7 +41,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 		//if all 3 spots are filled
 		if (checkOne.success && checkTwo.success && checkThree.success) {
 			//drop the platforms
-			GlobalController.Instance.toggleCamera();
+			//GlobalController.Instance.toggleCamera();
 			makePlatformsVisible ();
 			//reset everything for the next use	
 			GlobalController.Instance.resetBoxBools();
@@ -50,7 +50,10 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			resetActive ();
 
 			//resetCheckValues ();
-		}	
+		}
+
+
+			
 
 	}
 
@@ -84,7 +87,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 
 
 		//THIS LINE ALSO CAUSES PROBLEMS
-		resetCheckValues ();
+		//resetCheckValues ();
 	}
 
 	// reset tiles to active and in original position
@@ -96,11 +99,10 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			print("Array BoxColliders : + " + arrayTiles[i].GetComponent<BoxCollider2D>().enabled);
 //			arrayTiles [i].transform.position = arrayTilePositions [i]; // move to original position
 			arrayTiles[i].GetComponent<TileDrag>().onReset();
-			arrayTiles [i].GetComponent<ArrayTileController> ().resetUsed (); // change bool to false;
+			//arrayTiles [i].GetComponent<ArrayTileController> ().resetUsed (); // change bool to false;
 			print(arrayTiles[i].ToString());
 			// THIS LINE MESSES UP THE RESET
 			//arrayTiles [i].GetComponent<BoxCollider2D>().enabled = true;
-
 		}
 
 

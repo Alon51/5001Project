@@ -35,12 +35,4 @@ public class PlatformAccessController : MonoBehaviour {
 		bCol.enabled = true; 
 		spr.color = tempColor;
 	}
-
-	public void SetInvisibleAndInactive(){
-		//temp color
-		Color tempColor = new Color(255,255,255,0.5f);
-
-		bCol.enabled = false; 
-		spr.color = tempColor;
-	}
 }

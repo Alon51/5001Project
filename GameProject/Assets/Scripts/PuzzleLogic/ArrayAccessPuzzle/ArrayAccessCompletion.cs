@@ -15,11 +15,12 @@ public class ArrayAccessCompletion : MonoBehaviour {
 	public GameObject[] replacementTiles;
 	public List<Vector3> arrayTilePositions; // their positions, used for resetting challenge
 
-	public bool puzzleFinished;
+	public bool puzzleFinished, camToggled;
 	// Use this for initialization
 	void Start () {
 		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
 		puzzleFinished = false;
+		camToggled = false;
 		arrayTilePositions = new List<Vector3> ();
 		//store initial tile position in order to place them back there
 		foreach(GameObject tile in arrayTiles) {
@@ -42,16 +43,31 @@ public class ArrayAccessCompletion : MonoBehaviour {
 		if (checkOne.success && checkTwo.success && checkThree.success) {
 			//drop the platforms
 			//GlobalController.Instance.toggleCamera();
+			if (!camToggled) {
+				GlobalController.Instance.toggleCamera ();
+				camToggled = true;
+			}
 			makePlatformsVisible ();
 			//reset everything for the next use	
-			GlobalController.Instance.resetBoxBools();
-			resetTiles ();
-			resetSlots ();
-			resetActive ();
+//			GlobalController.Instance.resetBoxBools();
+//			resetTiles ();
+//			resetSlots ();
+//			resetActive ();
+			puzzleFinished = true;
 
 			//resetCheckValues ();
 		}
-
+		//reset puzzle and platforms
+		if (puzzleFinished && Input.GetKeyDown(KeyCode.R)) {
+			//GlobalController.Instance.resetBoxBools();
+			resetTiles ();
+			resetSlots ();
+			resetActive ();
+			resetPlatforms ();
+			resetCheckValues ();
+			camToggled = false;
+			puzzleFinished = false;
+		}
 
 			
 
@@ -115,4 +131,15 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			arrayTiles[i].gameObject.SetActive(true);
 		}
 	}
+
+	public void resetPlatforms(){
+		//set all platforms back to original state of being inactive
+		foreach (GameObject temp in arrayTiles) {
+			if (temp.GetComponent<ArrayTileController> ().connectedPlatform != null) {
+				temp.GetComponent<ArrayTileController> ().connectedPlatform.SetInvisibleAndInactive ();
+			}
+		}
+	}
+
+
 }

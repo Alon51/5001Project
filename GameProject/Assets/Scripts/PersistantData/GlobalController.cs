@@ -22,6 +22,7 @@ public class GlobalController : MonoBehaviour {
 	public Camera mainCam;
 	public Camera secondCam;
 	public bool onMainCam;
+	public string camName;
 
 
 	//Loop Level Completion Bools
@@ -48,6 +49,7 @@ public class GlobalController : MonoBehaviour {
 	void Start(){
 		//thePlayer = FindObjectOfType<PlayerMovement> ();
 		onMainCam = true;
+		camName = mainCam.name;
 	}
 
 	//save the players position for use between scenes
@@ -65,12 +67,14 @@ public class GlobalController : MonoBehaviour {
 		if (onMainCam) {
 			mainCam.enabled = false;
 			secondCam.enabled = true;
+			camName = secondCam.name;
 			onMainCam = !onMainCam;
 		}
 		else if (!onMainCam) {
 			mainCam.enabled = true;
 			secondCam.enabled = false;
 			onMainCam = !onMainCam;
+			camName = mainCam.name;
 		}
 	}
 	//changes the second camera in order to allow togling between multiple camera

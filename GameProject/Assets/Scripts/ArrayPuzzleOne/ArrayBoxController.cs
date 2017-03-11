@@ -8,11 +8,12 @@ public class ArrayBoxController : MonoBehaviour {
 	public GameObject underPlatform;
 	public bool removePlatform;
 	public bool slotOneSuccess;
+	Vector3 initialPosition;
 
 	// Use this for initialization
 	void Start () {
 		//createPlatform ();
-		
+		initialPosition = this.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -32,6 +33,11 @@ public class ArrayBoxController : MonoBehaviour {
 	public void dropPlatform(){
 		underPlatform.SetActive (false);
 		//underPlatform.transform.Rotate(new Vector3(0, 0, 90));
+	}
+
+	public void resetBox(){
+		underPlatform.SetActive (true);
+		this.transform.position = initialPosition;
 	}
 
 	public void createPlatform(){

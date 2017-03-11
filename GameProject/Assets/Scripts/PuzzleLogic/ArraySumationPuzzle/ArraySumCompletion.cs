@@ -10,16 +10,18 @@ public class ArraySumCompletion : MonoBehaviour {
 	// LEVEL MANAGER FOR THE ARRAY LEVEL
 
 	public ArrayReaction checkOne, checkTwo, checkThree;
-
+	public GameObject risingPlatform;
 	public GameObject[] arrayTiles; // the tiles that will be dragged
 	public GameObject[] replacementTiles;
 	public List<Vector3> arrayTilePositions; // their positions, used for resetting challenge
 
-	public bool puzzleFinished;
+	public bool puzzleFinished, camToggled;
 	// Use this for initialization
 	void Start () {
+		risingPlatform = GameObject.FindGameObjectWithTag ("RisingPlatform");
 		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
 		puzzleFinished = false;
+		camToggled = false;
 		arrayTilePositions = new List<Vector3> ();
 		//store initial tile position in order to place them back there
 		foreach(GameObject tile in arrayTiles) {
@@ -31,16 +33,30 @@ public class ArraySumCompletion : MonoBehaviour {
 	void Update () {
 		//if all 3 spots are filled
 		if (checkOne.success && checkTwo.success && checkThree.success) {
+			
+			if (!camToggled) {
+				GlobalController.Instance.toggleCamera ();
+				camToggled = true;
+			}
 			//drop the platforms
-			GlobalController.Instance.toggleCamera();
 			dropTilePlatforms ();
 			//reset everything for the next use	
-			GlobalController.Instance.resetBoxBools();
+//			GlobalController.Instance.resetBoxBools();
+//			resetTiles ();
+//			resetSlots ();
+			//resetCheckValues ();
+			puzzleFinished = true;
+		}	
+		if (puzzleFinished && Input.GetKeyDown(KeyCode.R)) {
+			//GlobalController.Instance.resetBoxBools();
 			resetTiles ();
 			resetSlots ();
-			//resetCheckValues ();
-		}	
-
+			resetActive ();
+			resetBoxesAndPlatforms ();
+			resetCheckValues ();
+			camToggled = false;
+			puzzleFinished = false;
+		}
 	}
 
 	public void resetCheckValues(){
@@ -83,5 +99,26 @@ public class ArraySumCompletion : MonoBehaviour {
 		}
 
 	}
+
+	public void resetActive()
+	{
+		for (int i = 0; i < arrayTiles.Length; i++) 
+		{
+			arrayTiles[i].gameObject.SetActive(true);
+		}
+	}
+
+	public void resetBoxesAndPlatforms(){
+		//set all boxes to their spot back in the air
+		foreach (GameObject temp in arrayTiles) {
+			if (temp.GetComponent<ArrayTileController> ().connectedBox != null) {
+				temp.GetComponent<ArrayTileController> ().connectedBox.resetBox ();	
+			}
+		}
+		risingPlatform.GetComponent<RisingPlatformController> ().resetPlatformTotally ();
+		
+	}
+
+
 
 }

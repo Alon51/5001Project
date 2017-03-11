@@ -9,34 +9,54 @@ public class ArithCompletionCheck : MonoBehaviour {
 
 	// LEVEL MANAGER FOR THE ARRAY LEVEL
 
-	public ArrayReaction check1, check2, check3, check4,check5;
+	public ArrayReaction check1, check2, check3, check4, check5;
 
 	public GameObject[] arrayTiles; // the tiles that will be dragged
 	public GameObject[] replacementTiles;
-	public List<Vector3> arrayTilePositions; // their positions, used for resetting challenge
 
-	public bool puzzleFinished;
+	public bool puzzleFinished, camToggled;
 	// Use this for initialization
 	void Start () {
 		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
 		puzzleFinished = false;
-
+		camToggled = false;
 	}
 
 	// Update is called once per frame
 	void Update () {
+		//print ("in update");
+		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
+
+		foreach (GameObject repTile in replacementTiles) {
+			//print ("in update " + repTile.ToString ());
+
+		}
+
+
 		//if all 3 spots are filled
 		if (check1.success && check2.success && check3.success && check4.success && check5.success) {
 			//drop the platforms
-			GlobalController.Instance.toggleCamera();
+			//GlobalController.Instance.toggleCamera();
+			if (!camToggled) {
+				GlobalController.Instance.toggleCamera ();
+				camToggled = true;
+			}
 			makePlatformsVisible ();
-			//reset everything for the next use	
-			GlobalController.Instance.resetBoxBools();
+			puzzleFinished = true;
+		}
+		//reset puzzle and platforms
+		if (puzzleFinished && Input.GetKeyDown(KeyCode.R)) {
+			//GlobalController.Instance.resetBoxBools();
 			resetTiles ();
 			resetSlots ();
+			resetActive ();
+			resetPlatforms ();
+			resetCheckValues ();
+			camToggled = false;
+			puzzleFinished = false;
+		}
 
-			//resetCheckValues ();
-		}	
+
 
 	}
 
@@ -65,23 +85,40 @@ public class ArithCompletionCheck : MonoBehaviour {
 		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
 
 		foreach (GameObject repTile in replacementTiles) {
+			//print (repTile.ToString ());
 			Destroy (repTile);
+			//Time.timeScale = 0.0f;
 		}
-		//THIS LINE ALSO CAUSES PROBLEMS
-		resetCheckValues ();
 	}
 
 	// reset tiles to active and in original position
 	public void resetTiles(){
 		for (int i = 0; i < arrayTiles.Length; i++) {
-			//set to initial position
+			//arrayTiles [i].gameObject.SetActive (false);
+			print("Array BoxColliders : + " + arrayTiles[i].GetComponent<BoxCollider2D>().enabled);
 			arrayTiles[i].GetComponent<TileDrag>().onReset();
-			arrayTiles [i].GetComponent<ArrayTileController> ().resetUsed (); // change bool to false;
-			// THIS LINE MESSES UP THE RESET
-			//arrayTiles [i].GetComponent<BoxCollider2D>().enabled = true;
-
+			print(arrayTiles[i].ToString());
 		}
 
+
 	}
+
+	public void resetActive()
+	{
+		for (int i = 0; i < arrayTiles.Length; i++) 
+		{
+			arrayTiles[i].gameObject.SetActive(true);
+		}
+	}
+
+	public void resetPlatforms(){
+		//set all platforms back to original state of being inactive
+		foreach (GameObject temp in arrayTiles) {
+			if (temp.GetComponent<ArrayTileController> ().connectedPlatform != null) {
+				temp.GetComponent<ArrayTileController> ().connectedPlatform.SetInvisibleAndInactive ();
+			}
+		}
+	}
+
 
 }

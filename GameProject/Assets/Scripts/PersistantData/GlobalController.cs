@@ -32,6 +32,7 @@ public class GlobalController : MonoBehaviour {
 
 	//Conditional Level Completion Bools
 	public bool boolOpsComplete = false;
+	public bool logicalOrComplete = false;
 
 	public PlayerMovement thePlayer;
 

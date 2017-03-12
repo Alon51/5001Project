@@ -9,7 +9,7 @@ public class CompletionCheck : MonoBehaviour {
 	public ArrayReaction replacementPlus;
 	public ArrayReaction replacementPlusPlus;
 
-	public bool puzzleFinished, camToggled, doorOpened, doorClosed;
+	public bool puzzleFinished, camToggled, doorOpened;
 
 	public GameObject doorOne;
 	private Vector3 doorOneStartingPosition, doorOneOpenPosition;
@@ -23,7 +23,6 @@ public class CompletionCheck : MonoBehaviour {
 		puzzleFinished = false;
 		camToggled = false;
 		doorOpened = false;
-		doorClosed = true;
 		doorOneStartingPosition = doorOne.transform.position; //The starting position of the door in the scene
 		doorOneOpenPosition = new Vector3 (doorOne.transform.position.x, doorOne.transform.position.y + 5.0f, 
 			doorOne.transform.position.z);

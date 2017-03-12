@@ -5,31 +5,95 @@ using UnityEngine.SceneManagement;
 public class CompletionScriptFour : MonoBehaviour{
 
 	public ArrayReaction xSuccess, plusSuccess, plusPlusSuccess;
-	public ArrayReaction replacementX, replacementPlus, replacementPlusPlus;
+	public ArrayReaction replacementX;
+	public ArrayReaction replacementPlus;
+	public ArrayReaction replacementPlusPlus;
 
-	private bool completeFlag = false; //Flag that allows laser to switch off once.
-	public GameObject laser; //The laser gameobject
+	public bool puzzleFinished, camToggled, laserOff;
+
+	public GameObject laser;
+	private Vector3 laserStartingPosition, laserRemovedPosition;
+
+	public GameObject[] arrayTiles; // the tiles that will be dragged
+	public GameObject[] replacementTiles; //The replacements when tiles dragged into the slots
+
 	// Use this for initialization
 	void Start () {
+		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
+		puzzleFinished = false;
+		camToggled = false;
+		laserOff = false;
+		laserStartingPosition = laser.transform.position; //The starting position of the door in the scene
+		laserRemovedPosition = new Vector3 (laser.transform.position.x, laser.transform.position.y + 50.0f, 
+			laser.transform.position.z);
 
 	}
 
 	// Update is called once per frame
 	void Update () {
 
+		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
+
 		if (xSuccess.success && replacementX.giveName == "ReplacementX" &&
 			plusSuccess.success && replacementPlus.giveName == "Replacement+" &&
-			plusSuccess.success && replacementPlusPlus.giveName == "Replacement+") {
-			GlobalController.Instance.whileLoopComplete = true;
-			if (GlobalController.Instance.singleForLoopComplete && !completeFlag) {
-				removeBeam ();
-				completeFlag = true;
+			plusPlusSuccess.success && replacementPlusPlus.giveName == "Replacement+"){
+			if (!camToggled) {
+				GlobalController.Instance.toggleCamera ();
+				camToggled = true;
 			}
+			if (!laserOff) {
+				removeLaser ();
+			}
+			puzzleFinished = true;
+			GlobalController.Instance.whileLoopComplete = true;
+		}
+
+		if (Input.GetKeyDown(KeyCode.R) && GlobalController.Instance.camName == "WhileLoopPuzzle\tCamera"){
+			replaceLaser ();
+			laserOff = false;
+			GlobalController.Instance.whileLoopComplete = false;
+			resetTiles ();
+			resetSlots ();
+			resetActive ();
+			resetCheckValues ();
+			camToggled = false;
+			puzzleFinished = false;
 		}
 	}
 
-	void removeBeam(){
-		laser.transform.position = new Vector3 (laser.transform.position.x, 
-			laser.transform.position.y + 50.0f, 0);
+	public void resetCheckValues(){
+		xSuccess.resetSuccessBool ();
+		plusSuccess.resetSuccessBool ();
+		plusPlusSuccess.resetSuccessBool ();
+	}
+
+	void removeLaser(){
+		laser.transform.position = laserRemovedPosition;
+		laserOff = true;
+	}
+
+	void replaceLaser(){
+		laser.transform.position = laserStartingPosition;
+	}
+
+
+	public void resetSlots(){
+		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
+
+		foreach (GameObject repTile in replacementTiles) {
+			Destroy (repTile);
+		}
+	}
+
+	public void resetTiles(){
+		for (int i = 0; i < arrayTiles.Length; i++) {
+			arrayTiles[i].GetComponent<TileDrag>().onReset();
+		}
+	}
+
+	public void resetActive(){
+		for (int i = 0; i < arrayTiles.Length; i++) {
+			arrayTiles[i].gameObject.SetActive(true);
+		}
 	}
 }

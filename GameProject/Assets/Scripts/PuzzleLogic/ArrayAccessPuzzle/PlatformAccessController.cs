@@ -7,6 +7,7 @@ public class PlatformAccessController : MonoBehaviour {
 	public bool isVisible; //whether or not it should be visible
 	public BoxCollider2D bCol; // box collider for this object
 	public SpriteRenderer spr; // sprite used to control color of obj
+	public SpriteRenderer indexNumSpr; // used for the number on the platform
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,7 @@ public class PlatformAccessController : MonoBehaviour {
 		//set collider to inactive and sprite to low alpha(transparent)
 		bCol.enabled = false;
 		spr.color = tempColor;
+		indexNumSpr.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -34,6 +36,7 @@ public class PlatformAccessController : MonoBehaviour {
 
 		bCol.enabled = true; 
 		spr.color = tempColor;
+		indexNumSpr.enabled = true;
 	}
 
 	public void SetInvisibleAndInactive(){
@@ -42,6 +45,7 @@ public class PlatformAccessController : MonoBehaviour {
 
 		bCol.enabled = false; 
 		spr.color = tempColor;
+		indexNumSpr.enabled = false;
 	}
 
 }

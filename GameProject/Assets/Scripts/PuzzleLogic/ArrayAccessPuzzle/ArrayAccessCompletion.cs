@@ -13,7 +13,6 @@ public class ArrayAccessCompletion : MonoBehaviour {
 
 	public GameObject[] arrayTiles; // the tiles that will be dragged
 	public GameObject[] replacementTiles;
-	public List<Vector3> arrayTilePositions; // their positions, used for resetting challenge
 
 	public bool puzzleFinished, camToggled;
 	// Use this for initialization
@@ -21,11 +20,6 @@ public class ArrayAccessCompletion : MonoBehaviour {
 		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
 		puzzleFinished = false;
 		camToggled = false;
-		arrayTilePositions = new List<Vector3> ();
-		//store initial tile position in order to place them back there
-		foreach(GameObject tile in arrayTiles) {
-			arrayTilePositions.Add (tile.transform.position);
-		}
 	}
 
 	// Update is called once per frame

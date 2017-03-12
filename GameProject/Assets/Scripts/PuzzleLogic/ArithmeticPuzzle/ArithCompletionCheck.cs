@@ -9,17 +9,22 @@ public class ArithCompletionCheck : MonoBehaviour {
 
 	// LEVEL MANAGER FOR THE ARRAY LEVEL
 
-	public ArrayReaction check1, check2, check3, check4, check5;
+	public GameObject[] checkSlots;
 
 	public GameObject[] arrayTiles; // the tiles that will be dragged
 	public GameObject[] replacementTiles;
 
+	public GameObject door;
+	Vector3 initialDoorPosition;
+
 	public bool puzzleFinished, camToggled;
 	// Use this for initialization
 	void Start () {
+		//checkSlots = GameObject.FindGameObjectsWithTag ("InsertSlot");
 		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
 		puzzleFinished = false;
 		camToggled = false;
+		initialDoorPosition = door.transform.position;
 	}
 
 	// Update is called once per frame
@@ -34,23 +39,23 @@ public class ArithCompletionCheck : MonoBehaviour {
 
 
 		//if all 3 spots are filled
-		if (check1.success && check2.success && check3.success && check4.success && check5.success) {
-			//drop the platforms
-			//GlobalController.Instance.toggleCamera();
+		if (checkInputSuccess() && checkInputName()) {
 			if (!camToggled) {
 				GlobalController.Instance.toggleCamera ();
 				camToggled = true;
 			}
-			makePlatformsVisible ();
+
+			//open the door
+			openDoor();
 			puzzleFinished = true;
 		}
 		//reset puzzle and platforms
-		if (puzzleFinished && Input.GetKeyDown(KeyCode.R)) {
+		if (Input.GetKeyDown(KeyCode.R)) {
 			//GlobalController.Instance.resetBoxBools();
 			resetTiles ();
 			resetSlots ();
 			resetActive ();
-			resetPlatforms ();
+			closeDoor ();
 			resetCheckValues ();
 			camToggled = false;
 			puzzleFinished = false;
@@ -61,24 +66,16 @@ public class ArithCompletionCheck : MonoBehaviour {
 	}
 
 	public void resetCheckValues(){
-		check1.resetSuccessBool ();
-		check2.resetSuccessBool ();
-		check3.resetSuccessBool ();
-		check4.resetSuccessBool ();
-		check5.resetSuccessBool ();
+		foreach (GameObject slot in checkSlots) {
+			slot.GetComponent<ArrayReaction>().resetSuccessBool ();
+		}
 	}
 
-	public void makePlatformsVisible(){
-		foreach (GameObject temp in arrayTiles) {
-			// if this tile was used as part of the sum
-			if (temp.GetComponent<ArrayTileController> ().isUsed) { 
-				//drop it's corresponding box
-				temp.GetComponent<ArrayTileController>().connectedPlatform.SetVisibleAndActive();
-				temp.GetComponent<ArrayTileController> ().resetUsed ();
-			}
-
-		}
-		//resetCheckValues ();
+	public void openDoor(){
+		door.SetActive (false);
+	}
+	public void closeDoor(){
+		door.SetActive (true);
 	}
 	//reset slots to empty
 	public void resetSlots(){
@@ -111,13 +108,25 @@ public class ArithCompletionCheck : MonoBehaviour {
 		}
 	}
 
-	public void resetPlatforms(){
-		//set all platforms back to original state of being inactive
-		foreach (GameObject temp in arrayTiles) {
-			if (temp.GetComponent<ArrayTileController> ().connectedPlatform != null) {
-				temp.GetComponent<ArrayTileController> ().connectedPlatform.SetInvisibleAndInactive ();
+	public bool checkInputSuccess(){
+		foreach (GameObject slot in checkSlots) {
+			if (!slot.GetComponent<ArrayReaction>().success) {
+				return false;
 			}
 		}
+		return true;
+	}
+
+	public bool checkInputName(){
+		if (checkSlots [0].GetComponent<ArrayReaction>().giveName == "ReplacementMOD" &&
+			checkSlots [1].GetComponent<ArrayReaction>().giveName == "ReplacementMOD" &&
+			checkSlots [2].GetComponent<ArrayReaction>().giveName == "ReplacementMOD" &&
+			checkSlots [3].GetComponent<ArrayReaction>().giveName == "ReplacementAND" &&
+			checkSlots [4].GetComponent<ArrayReaction>().giveName == "ReplacementMOD") 
+		{
+			return true;
+		}
+		return false;
 	}
 
 

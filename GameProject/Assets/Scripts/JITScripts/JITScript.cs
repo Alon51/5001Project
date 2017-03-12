@@ -46,6 +46,13 @@ public class JITScript : MonoBehaviour {
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;
+			case "Num15":
+				wordDisplay.text = "You've found a crumpled up piece of paper." +
+					"\n\n" +
+					"It has the number 15 written on it, that might come in handy.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
 			case "Scientist1":
 				wordDisplay.text = "Thanks for saving me! I'll help you regain control of the ship!";
 				Time.timeScale = 0.0f;

@@ -13,43 +13,38 @@ public class ArrayAccessCompletion : MonoBehaviour {
 
 	public GameObject[] arrayTiles; // the tiles that will be dragged
 	public GameObject[] replacementTiles;
-
-	public bool puzzleFinished, camToggled;
+	public Camera errorCam, puzzleCam;
+	public bool puzzleFinished, camToggled, errorValUsed;
 	// Use this for initialization
 	void Start () {
 		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
 		puzzleFinished = false;
 		camToggled = false;
+		errorValUsed = false;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		//print ("in update");
-		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
-
-		foreach (GameObject repTile in replacementTiles) {
-			//print ("in update " + repTile.ToString ());
-
-		}
-
 
 		//if all 3 spots are filled
 		if (checkOne.success && checkTwo.success && checkThree.success) {
-			//drop the platforms
-			//GlobalController.Instance.toggleCamera();
+			//activate the platforms
 			if (!camToggled) {
-				GlobalController.Instance.toggleCamera ();
-				camToggled = true;
-			}
-			makePlatformsVisible ();
-			//reset everything for the next use	
-//			GlobalController.Instance.resetBoxBools();
-//			resetTiles ();
-//			resetSlots ();
-//			resetActive ();
-			puzzleFinished = true;
-
-			//resetCheckValues ();
+				if (errorValueUsed ()) {
+					print ("IN check");
+					puzzleCam.enabled = false; // disable puzzle cam
+					errorCam.enabled = true; //show blue screen of death
+					camToggled = true;
+					puzzleFinished = true;
+					errorValUsed = true;
+				}
+				else {
+					GlobalController.Instance.toggleCamera ();
+					camToggled = true;
+					makePlatformsVisible ();
+					puzzleFinished = true;
+				}
+			} 
 		}
 		//reset puzzle and platforms
 		if (puzzleFinished && Input.GetKeyDown(KeyCode.R)) {
@@ -59,12 +54,32 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			resetActive ();
 			resetPlatforms ();
 			resetCheckValues ();
+			puzzleCam.enabled = true;
 			camToggled = false;
 			puzzleFinished = false;
+			errorValUsed = false;
 		}
 
 			
 
+	}
+
+	public void switchToErrorScreen(){
+
+	}
+
+	public bool errorValueUsed(){
+		//checks to see if the N array tile was placed, which will cause an out of bounds error
+		if (checkOne.giveName == "ReplacementN"
+		   || checkTwo.giveName == "ReplacementN"
+		   || checkThree.giveName == "ReplacementN") {
+			print ("TRUE");
+			GlobalController.Instance.changeSecondCamera (errorCam);
+
+			return true;
+		}
+		print ("FALSE");
+		return false;
 	}
 
 	public void resetCheckValues(){

@@ -29,25 +29,22 @@ public class ArithCompletionCheck : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		//print ("in update");
-		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
-
-		foreach (GameObject repTile in replacementTiles) {
-			//print ("in update " + repTile.ToString ());
-
-		}
-
-
 		//if all 3 spots are filled
-		if (checkInputSuccess() && checkInputName()) {
+		if (checkInputSuccess () && checkInputName ()) {
 			if (!camToggled) {
 				GlobalController.Instance.toggleCamera ();
 				camToggled = true;
+				//open the door
+				openDoor ();
+				puzzleFinished = true;
 			}
 
-			//open the door
-			openDoor();
-			puzzleFinished = true;
+		} else if (checkInputSuccess ()) {
+			if (!camToggled) {
+				GlobalController.Instance.toggleCamera ();
+				camToggled = true;
+				puzzleFinished = true;
+			}
 		}
 		//reset puzzle and platforms
 		if (Input.GetKeyDown(KeyCode.R)) {

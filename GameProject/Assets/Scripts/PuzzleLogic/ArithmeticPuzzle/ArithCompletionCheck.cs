@@ -17,13 +17,14 @@ public class ArithCompletionCheck : MonoBehaviour {
 	public GameObject door;
 	Vector3 initialDoorPosition;
 
-	public bool puzzleFinished, camToggled;
+	public bool puzzleFinished, camToggled, scoreChanged;
 	// Use this for initialization
 	void Start () {
 		//checkSlots = GameObject.FindGameObjectsWithTag ("InsertSlot");
 		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
 		puzzleFinished = false;
 		camToggled = false;
+		scoreChanged = false;
 		initialDoorPosition = door.transform.position;
 	}
 
@@ -39,7 +40,10 @@ public class ArithCompletionCheck : MonoBehaviour {
 				puzzleFinished = true;
 
 				//add to score
-				GlobalController.Instance.incScore();
+				if (!scoreChanged) {
+					GlobalController.Instance.incScore ();
+					scoreChanged = true;
+				}
 			}
 
 		} else if (checkInputSuccess ()) {

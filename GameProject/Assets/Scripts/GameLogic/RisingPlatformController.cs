@@ -12,6 +12,7 @@ public class RisingPlatformController : MonoBehaviour {
 	public SpriteRenderer[] sprites; //used to change color based on weight
 	public GameObject desktop; // used for placing the player when test is failed
 	Vector3 initialPosition;
+	public bool scoreChanged;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,7 @@ public class RisingPlatformController : MonoBehaviour {
 		sumWeight = 0;
 		sprites = GetComponentsInChildren<SpriteRenderer> ();
 		initialPosition = this.transform.position;
-
+		scoreChanged = false;
 		//set color to red for heat
 		foreach (SpriteRenderer spr in sprites) {
 			spr.color = Color.red;
@@ -75,7 +76,10 @@ public class RisingPlatformController : MonoBehaviour {
 				spr.color = Color.white;
 			}
 			//add to score
-			GlobalController.Instance.incScore();
+			if (!scoreChanged) {
+				GlobalController.Instance.incScore ();
+				scoreChanged = true;
+			}
 		}
 	}
 

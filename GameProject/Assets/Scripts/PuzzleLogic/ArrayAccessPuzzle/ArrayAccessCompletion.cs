@@ -14,13 +14,14 @@ public class ArrayAccessCompletion : MonoBehaviour {
 	public GameObject[] arrayTiles; // the tiles that will be dragged
 	public GameObject[] replacementTiles;
 	public Camera errorCam, puzzleCam;
-	public bool puzzleFinished, camToggled, errorValUsed;
+	public bool puzzleFinished, camToggled, errorValUsed, scoreChanged;
 	// Use this for initialization
 	void Start () {
 		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
 		puzzleFinished = false;
 		camToggled = false;
 		errorValUsed = false;
+		scoreChanged = false;
 	}
 
 	// Update is called once per frame
@@ -43,7 +44,10 @@ public class ArrayAccessCompletion : MonoBehaviour {
 					makePlatformsVisible ();
 					puzzleFinished = true;
 					//add to score
-					GlobalController.Instance.incScore();
+					if (!scoreChanged) {
+						GlobalController.Instance.incScore ();
+						scoreChanged = true;
+					}
 
 				}
 			} 

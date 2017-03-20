@@ -7,7 +7,7 @@ public class CompletionCheck2 : MonoBehaviour {
 	public ArrayReaction threeSuccess, fiveSuccess, xSuccess, ySuccess, plusSuccess, plusPlusSuccess;
 	public ArrayReaction replacementThree, replacementFive, replacementX, replacementY, replacementPlus, replacementPlusPlus;
 
-	public bool puzzleFinished, camToggled, doorOpened;
+	public bool puzzleFinished, camToggled, doorOpened, scoreChanged;
 
 	public GameObject doorTwo;
 	private Vector3 doorTwoStartingPosition, doorTwoOpenPosition;
@@ -22,6 +22,7 @@ public class CompletionCheck2 : MonoBehaviour {
 		puzzleFinished = false;
 		camToggled = false;
 		doorOpened = false;
+		scoreChanged = false;
 		doorTwoStartingPosition = doorTwo.transform.position; //The starting position of the door in the scene
 		doorTwoOpenPosition = new Vector3 (doorTwo.transform.position.x, doorTwo.transform.position.y + 5.0f, 
 			doorTwo.transform.position.z);
@@ -48,6 +49,10 @@ public class CompletionCheck2 : MonoBehaviour {
 			}
 			puzzleFinished = true;
 			GlobalController.Instance.nestedForLoopComplete = true;
+			if (!scoreChanged) {
+				GlobalController.Instance.incScore ();
+				scoreChanged = true;
+			}
 		}
 
 		if (Input.GetKeyDown(KeyCode.R) && GlobalController.Instance.camName == "NestedForLoopCamera"){
@@ -60,6 +65,8 @@ public class CompletionCheck2 : MonoBehaviour {
 			resetCheckValues ();
 			camToggled = false;
 			puzzleFinished = false;
+			//Lower Score
+			GlobalController.Instance.decScore ();
 		}
 	}
 

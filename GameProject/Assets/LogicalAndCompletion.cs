@@ -7,7 +7,7 @@ public class LogicalAndCompletion : MonoBehaviour {
 	//Draggable Tiles and their Replacements, and flag bools
 	public ArrayReaction slotOneSuccess, slotTwoSuccess, andSuccess;
 	public ArrayReaction replacementTrue, replacementTrueToo, replacementAnd;
-	public bool puzzleFinished, camToggled, leftPylonFlag, rightPylonFlag, doorOpened;
+	public bool puzzleFinished, camToggled, leftPylonFlag, rightPylonFlag, doorOpened, scoreChanged;
 	public GameObject[] arrayTiles; // the tiles that will be dragged
 	public GameObject[] replacementTiles; //The replacements when tiles dragged into the slots
 
@@ -62,6 +62,11 @@ public class LogicalAndCompletion : MonoBehaviour {
 				if (!camToggled) {
 					GlobalController.Instance.toggleCamera ();
 					camToggled = true;
+					//add to score
+					if (!scoreChanged) {
+						GlobalController.Instance.incScore ();
+						scoreChanged = true;
+					}
 				}
 			}
 		}
@@ -80,6 +85,8 @@ public class LogicalAndCompletion : MonoBehaviour {
 			puzzleFinished = false;
 			leftPylonFlag = false;
 			rightPylonFlag = false;
+			//Lower Score
+			GlobalController.Instance.decScore ();
 		}
 	}
 

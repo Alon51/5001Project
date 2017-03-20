@@ -9,7 +9,7 @@ public class BoolOpsCompletion : MonoBehaviour {
 	public ElevatorController floorLocation;
 
 
-	public bool puzzleFinished, camToggled, useElevator, goingUp;
+	public bool puzzleFinished, camToggled, useElevator, goingUp, scoreChanged;
 
 	public GameObject[] arrayTiles; // the tiles that will be dragged
 	public GameObject[] replacementTiles; //The replacements when tiles dragged into the slots
@@ -20,6 +20,7 @@ public class BoolOpsCompletion : MonoBehaviour {
 		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
 		puzzleFinished = false;
 		camToggled = false;
+		scoreChanged = false;
 	}
 	
 	// Update is called once per frame
@@ -29,6 +30,12 @@ public class BoolOpsCompletion : MonoBehaviour {
 				GlobalController.Instance.boolOpsComplete = true;
 				useElevator = true;
 				goingUp = true;
+				puzzleFinished = true;
+				//add to score
+				if (!scoreChanged) {
+					GlobalController.Instance.incScore ();
+					scoreChanged = true;
+				}
 			}
 		}
 		if (notUpSuccess.success && replacementNotUp.giveName == "ReplacementNotUp") {
@@ -36,6 +43,12 @@ public class BoolOpsCompletion : MonoBehaviour {
 				GlobalController.Instance.boolOpsComplete = true;
 				useElevator = true;
 				goingUp = false;
+				puzzleFinished = true;
+				//add to score
+				if (!scoreChanged) {
+					GlobalController.Instance.incScore ();
+					scoreChanged = true;
+				}
 			}	
 		}
 
@@ -51,6 +64,8 @@ public class BoolOpsCompletion : MonoBehaviour {
 			floorLocation.down = false;
 			useElevator = false;
 			goingUp = false;
+			//Lower Score
+			GlobalController.Instance.decScore ();
 		}
 	}
 

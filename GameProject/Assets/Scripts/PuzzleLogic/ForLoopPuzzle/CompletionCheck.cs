@@ -9,7 +9,7 @@ public class CompletionCheck : MonoBehaviour {
 	public ArrayReaction replacementPlus;
 	public ArrayReaction replacementPlusPlus;
 
-	public bool puzzleFinished, camToggled, doorOpened;
+	public bool puzzleFinished, camToggled, doorOpened, scoreChanged;
 
 	public GameObject doorOne;
 	private Vector3 doorOneStartingPosition, doorOneOpenPosition;
@@ -23,6 +23,7 @@ public class CompletionCheck : MonoBehaviour {
 		puzzleFinished = false;
 		camToggled = false;
 		doorOpened = false;
+		scoreChanged = false;
 		doorOneStartingPosition = doorOne.transform.position; //The starting position of the door in the scene
 		doorOneOpenPosition = new Vector3 (doorOne.transform.position.x, doorOne.transform.position.y + 5.0f, 
 			doorOne.transform.position.z);
@@ -46,6 +47,10 @@ public class CompletionCheck : MonoBehaviour {
 			}
 			puzzleFinished = true;
 			GlobalController.Instance.singleForLoopComplete = true;
+			if (!scoreChanged) {
+				GlobalController.Instance.incScore ();
+				scoreChanged = true;
+			}
 		}
 
 		if (Input.GetKeyDown(KeyCode.R) && GlobalController.Instance.camName == "SingleLoopCamera"){
@@ -58,6 +63,8 @@ public class CompletionCheck : MonoBehaviour {
 			resetCheckValues ();
 			camToggled = false;
 			puzzleFinished = false;
+			//Lower Score
+			GlobalController.Instance.decScore ();
 		}
 	}
 

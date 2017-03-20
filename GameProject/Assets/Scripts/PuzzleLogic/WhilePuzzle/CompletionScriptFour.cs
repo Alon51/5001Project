@@ -9,7 +9,7 @@ public class CompletionScriptFour : MonoBehaviour{
 	public ArrayReaction replacementPlus;
 	public ArrayReaction replacementPlusPlus;
 
-	public bool puzzleFinished, camToggled, laserOff;
+	public bool puzzleFinished, camToggled, laserOff, scoreChanged;
 
 	public GameObject laser;
 	private Vector3 laserStartingPosition, laserRemovedPosition;
@@ -23,6 +23,7 @@ public class CompletionScriptFour : MonoBehaviour{
 		puzzleFinished = false;
 		camToggled = false;
 		laserOff = false;
+		scoreChanged = false;
 		laserStartingPosition = laser.transform.position; //The starting position of the door in the scene
 		laserRemovedPosition = new Vector3 (laser.transform.position.x, laser.transform.position.y + 50.0f, 
 			laser.transform.position.z);
@@ -46,6 +47,10 @@ public class CompletionScriptFour : MonoBehaviour{
 			}
 			puzzleFinished = true;
 			GlobalController.Instance.whileLoopComplete = true;
+			if (!scoreChanged) {
+				GlobalController.Instance.incScore ();
+				scoreChanged = true;
+			}
 		}
 
 		if (Input.GetKeyDown(KeyCode.R) && GlobalController.Instance.camName == "WhileLoopPuzzle\tCamera"){
@@ -58,6 +63,8 @@ public class CompletionScriptFour : MonoBehaviour{
 			resetCheckValues ();
 			camToggled = false;
 			puzzleFinished = false;
+			//Lower Score
+			GlobalController.Instance.decScore ();
 		}
 	}
 

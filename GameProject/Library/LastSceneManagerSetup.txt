@@ -1,8 +1,1 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Main/ArithmeticLevel.unity
-=======
-- path: Assets/Scenes/Main/LoopLevel.unity
->>>>>>> origin/master
-  isLoaded: 1
-  isActive: 1
+sceneSetups: []

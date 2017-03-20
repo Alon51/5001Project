@@ -31,7 +31,6 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			//activate the platforms
 			if (!camToggled) {
 				if (errorValueUsed ()) {
-					print ("IN check");
 					puzzleCam.enabled = false; // disable puzzle cam
 					errorCam.enabled = true; //show blue screen of death
 					camToggled = true;
@@ -43,6 +42,9 @@ public class ArrayAccessCompletion : MonoBehaviour {
 					camToggled = true;
 					makePlatformsVisible ();
 					puzzleFinished = true;
+					//add to score
+					GlobalController.Instance.incScore();
+
 				}
 			} 
 		}
@@ -54,10 +56,13 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			resetActive ();
 			resetPlatforms ();
 			resetCheckValues ();
-			puzzleCam.enabled = true;
+			//puzzleCam.enabled = true;
 			camToggled = false;
 			puzzleFinished = false;
 			errorValUsed = false;
+
+			//lower additive
+			GlobalController.Instance.decAdditive();
 		}
 
 			
@@ -73,12 +78,10 @@ public class ArrayAccessCompletion : MonoBehaviour {
 		if (checkOne.giveName == "ReplacementN"
 		   || checkTwo.giveName == "ReplacementN"
 		   || checkThree.giveName == "ReplacementN") {
-			print ("TRUE");
 			GlobalController.Instance.changeSecondCamera (errorCam);
 
 			return true;
 		}
-		print ("FALSE");
 		return false;
 	}
 
@@ -105,9 +108,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
 
 		foreach (GameObject repTile in replacementTiles) {
-			//print (repTile.ToString ());
 			Destroy (repTile);
-			//Time.timeScale = 0.0f;
 		}
 
 
@@ -120,12 +121,9 @@ public class ArrayAccessCompletion : MonoBehaviour {
 		for (int i = 0; i < arrayTiles.Length; i++) {
 			//arrayTiles [i].gameObject.SetActive (false);
 
-
-			print("Array BoxColliders : + " + arrayTiles[i].GetComponent<BoxCollider2D>().enabled);
 //			arrayTiles [i].transform.position = arrayTilePositions [i]; // move to original position
 			arrayTiles[i].GetComponent<TileDrag>().onReset();
 			//arrayTiles [i].GetComponent<ArrayTileController> ().resetUsed (); // change bool to false;
-			print(arrayTiles[i].ToString());
 			// THIS LINE MESSES UP THE RESET
 			//arrayTiles [i].GetComponent<BoxCollider2D>().enabled = true;
 		}

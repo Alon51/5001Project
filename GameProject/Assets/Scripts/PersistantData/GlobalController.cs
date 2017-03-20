@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GlobalController : MonoBehaviour {
 
@@ -9,14 +10,6 @@ public class GlobalController : MonoBehaviour {
 	//Teleporter Room Bools
 	public bool arrayPortalActive = false;
 	public bool loopPortalActive = false;
-
-	//ArraySumationPuzzle Blocks
-	public bool box0 = false;
-	public bool box1 = false;
-	public bool box2 = false;
-	public bool box3 = false;
-	public bool box4 = false;
-	public bool box5 = false;
 
 	//Camera variables
 	public Camera mainCam;
@@ -39,6 +32,10 @@ public class GlobalController : MonoBehaviour {
 
 	public Transform glPlayerPos; //global player pos for scene transitions
 
+	public Text scoreText;
+	public int score; // used to track the player's score
+	public int scrAdditive; // what is added or subtracted from the score
+
 	void Awake(){
 		if (Instance == null) {
 			DontDestroyOnLoad (gameObject);
@@ -52,6 +49,9 @@ public class GlobalController : MonoBehaviour {
 		//thePlayer = FindObjectOfType<PlayerMovement> ();
 		onMainCam = true;
 		camName = mainCam.name;
+		score = 0;
+		scrAdditive = 100;
+		scoreText.text = "Score: " + score;
 	}
 
 	//save the players position for use between scenes
@@ -84,13 +84,20 @@ public class GlobalController : MonoBehaviour {
 		secondCam = newCam;
 	}
 
-	public void resetBoxBools(){
-		box0 = false;
-		box1 = false;
-		box2 = false;
-		box3 = false;
-		box4 = false;
-		box5 = false;
+	public void incScore(){
+		score += scrAdditive;
+		scoreText.text = "Score: " + score;
 	}
-
+	public void decScore(){
+		score -= scrAdditive;
+	}
+	public void incAdditive(){
+		scrAdditive += 10;
+	}
+	public void decAdditive(){
+		scrAdditive -= 10;
+	}
+	public void resetAdditive(){
+		scrAdditive = 100;
+	}
 }

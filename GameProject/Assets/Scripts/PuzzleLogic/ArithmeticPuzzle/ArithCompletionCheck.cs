@@ -37,6 +37,9 @@ public class ArithCompletionCheck : MonoBehaviour {
 				//open the door
 				openDoor ();
 				puzzleFinished = true;
+
+				//add to score
+				GlobalController.Instance.incScore();
 			}
 
 		} else if (checkInputSuccess ()) {
@@ -47,7 +50,7 @@ public class ArithCompletionCheck : MonoBehaviour {
 			}
 		}
 		//reset puzzle and platforms
-		if (Input.GetKeyDown(KeyCode.R)) {
+		if (puzzleFinished && Input.GetKeyDown(KeyCode.R)) {
 			//GlobalController.Instance.resetBoxBools();
 			resetTiles ();
 			resetSlots ();
@@ -56,6 +59,9 @@ public class ArithCompletionCheck : MonoBehaviour {
 			resetCheckValues ();
 			camToggled = false;
 			puzzleFinished = false;
+
+			//lower additive
+			GlobalController.Instance.decAdditive();
 		}
 
 
@@ -79,9 +85,7 @@ public class ArithCompletionCheck : MonoBehaviour {
 		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
 
 		foreach (GameObject repTile in replacementTiles) {
-			//print (repTile.ToString ());
 			Destroy (repTile);
-			//Time.timeScale = 0.0f;
 		}
 	}
 
@@ -89,9 +93,7 @@ public class ArithCompletionCheck : MonoBehaviour {
 	public void resetTiles(){
 		for (int i = 0; i < arrayTiles.Length; i++) {
 			//arrayTiles [i].gameObject.SetActive (false);
-			print("Array BoxColliders : + " + arrayTiles[i].GetComponent<BoxCollider2D>().enabled);
 			arrayTiles[i].GetComponent<TileDrag>().onReset();
-			print(arrayTiles[i].ToString());
 		}
 
 

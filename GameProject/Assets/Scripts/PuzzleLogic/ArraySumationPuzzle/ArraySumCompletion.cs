@@ -38,15 +38,12 @@ public class ArraySumCompletion : MonoBehaviour {
 				GlobalController.Instance.toggleCamera ();
 				camToggled = true;
 			}
-			dropTilePlatforms ();
-			//reset everything for the next use	
-//			GlobalController.Instance.resetBoxBools();
-//			resetTiles ();
-//			resetSlots ();
-//			//resetCheckValues ();
+			//NOTE score is added in Rising Platform Script
 
+			dropTilePlatforms ();
 			puzzleFinished = true;
 		}	
+
 		//reset puzzle and boxes
 		if (puzzleFinished && Input.GetKeyDown(KeyCode.R)) {
 			//GlobalController.Instance.resetBoxBools();
@@ -57,6 +54,9 @@ public class ArraySumCompletion : MonoBehaviour {
 			resetCheckValues ();
 			camToggled = false;
 			puzzleFinished = false;
+
+			//lower additive
+			GlobalController.Instance.decAdditive();
 		}
 
 	}

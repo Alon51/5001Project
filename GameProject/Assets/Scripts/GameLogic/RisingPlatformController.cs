@@ -55,6 +55,9 @@ public class RisingPlatformController : MonoBehaviour {
 			weightText.text = "Weight Needed: 14 \n Current Weight: " + sumWeight; // change weight
 			//move platform up specified amount
 			platformUp (wght);
+
+			//check the weight and adjust color if needed
+			checkWeightColor ();
 		}
 
 		if (other.gameObject.CompareTag ("Player")) {
@@ -63,7 +66,7 @@ public class RisingPlatformController : MonoBehaviour {
 			}
 		}
 
-		checkWeightColor ();
+
 	}
 	//change color based on the weight
 	public void checkWeightColor(){
@@ -71,6 +74,8 @@ public class RisingPlatformController : MonoBehaviour {
 			foreach (SpriteRenderer spr in sprites) {
 				spr.color = Color.white;
 			}
+			//add to score
+			GlobalController.Instance.incScore();
 		}
 	}
 

@@ -6,6 +6,8 @@ public class BoolOpsCompletion : MonoBehaviour {
 	
 	public ArrayReaction upSuccess, notUpSuccess;
 	public ArrayReaction replacementUp, replacementNotUp;
+	public ElevatorController floorLocation;
+
 
 	public bool puzzleFinished, camToggled, useElevator, goingUp;
 
@@ -45,6 +47,10 @@ public class BoolOpsCompletion : MonoBehaviour {
 			resetCheckValues ();
 			camToggled = false;
 			puzzleFinished = false;
+			floorLocation.up = false;
+			floorLocation.down = false;
+			useElevator = false;
+			goingUp = false;
 		}
 	}
 

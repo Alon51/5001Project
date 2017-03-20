@@ -46,6 +46,18 @@ public class JITScript : MonoBehaviour {
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;
+			case "ArithBriefing":
+				wordDisplay.text = "There's only 1 scientist in here. The theme of this room is arithmetic math. \n" +
+				"There are 5 main operators that are used: +, -, *, /, and %. \n" +
+					"The % operator gives the remainder of a division. So 8 % 3 is 2.\n\n";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
+			case "ArithChallenge":
+				wordDisplay.text = "The code is incomplete! You need to fill it out so that you can tell if the numbers are even or not.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
 			case "Num15":
 				wordDisplay.text = "You've found a crumpled up piece of paper." +
 					"\n\n" +
@@ -57,6 +69,25 @@ public class JITScript : MonoBehaviour {
 				wordDisplay.text = "Thanks for saving me! I'll help you regain control of the ship!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
+				break;
+			case "Scientist2":
+				wordDisplay.text = "Thanks for saving me! Let me help you get the ship under control!";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
+			case "MidLevelScientistArray":
+				//solves camera problem in array level
+				wordDisplay.text = "Thanks for saving me! Let me help you get the ship under control!";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				GameObject sci = GameObject.Find ("MidScientist");
+				Destroy (sci,7.0f);
+				break;
+			case "ArrayCams":
+				GameObject cam = GameObject.Find ("ErrorCamera");
+				GameObject cam2 = GameObject.Find ("SecondCamera");
+				cam2.GetComponent<Camera> ().enabled = false;
+				cam.GetComponent<Camera> ().enabled = false;
 				break;
 			}
 		}

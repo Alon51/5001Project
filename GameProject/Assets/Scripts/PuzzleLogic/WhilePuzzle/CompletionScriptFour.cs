@@ -64,7 +64,7 @@ public class CompletionScriptFour : MonoBehaviour{
 			camToggled = false;
 			puzzleFinished = false;
 			//Lower Score
-			GlobalController.Instance.decScore ();
+			GlobalController.Instance.decAdditive ();
 		}
 	}
 

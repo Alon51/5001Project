@@ -66,7 +66,7 @@ public class CompletionCheck2 : MonoBehaviour {
 			camToggled = false;
 			puzzleFinished = false;
 			//Lower Score
-			GlobalController.Instance.decScore ();
+			GlobalController.Instance.decAdditive ();
 		}
 	}
 

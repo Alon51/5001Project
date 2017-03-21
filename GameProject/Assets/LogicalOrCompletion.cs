@@ -88,7 +88,7 @@ public class LogicalOrCompletion : MonoBehaviour {
 			leftPylonFlag = false;
 			rightPylonFlag = false;
 			//Lower Score
-			GlobalController.Instance.decScore ();
+			GlobalController.Instance.decAdditive ();
 		}
 	}
 

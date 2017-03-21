@@ -65,7 +65,7 @@ public class BoolOpsCompletion : MonoBehaviour {
 			useElevator = false;
 			goingUp = false;
 			//Lower Score
-			GlobalController.Instance.decScore ();
+			GlobalController.Instance.decAdditive ();
 		}
 	}
 

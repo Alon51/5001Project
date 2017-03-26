@@ -64,8 +64,7 @@ public class BoolOpsCompletion : MonoBehaviour {
 			floorLocation.down = false;
 			useElevator = false;
 			goingUp = false;
-			//Lower Score
-			GlobalController.Instance.decAdditive ();
+
 		}
 	}
 

@@ -4,36 +4,117 @@ using UnityEngine.SceneManagement;
 
 public class CompletionScriptThree : MonoBehaviour {
 
-	public reactToInt intSuccess;
-	public reactToBreakOne breakOneSuccess;
-	public reactToBreakTwo breakTwoSuccess;
-	public reactToBreakThree breakThreeSuccess;
-	public reactToSwitchCondition switchSuccess;
+	public ArrayReaction oneSuccess, twoSuccess, threeSuccess, fourSuccess, fiveSuccess, breakSuccess,
+						 doorNumberSuccess;
+	public ArrayReaction replacementOne, replacementTwo, replacementThree, replacementFour, replacementFive,
+						 replacementBreak, replacementDoorNumber;
 
+	public bool puzzleFinished, camToggled, scoreChanged, disablePortals;
 
-	public bool arrayPortalActive = false;
-	public bool loopPortalActive = false;
-
+	public GameObject[] arrayTiles; // the tiles that will be dragged
+	public GameObject[] replacementTiles; //The replacements when tiles dragged into the slots
+	public GameObject arithmeticPortal, conditionalPortal, arrayPortal, loopPortal, finalPortal;
 
 
 	// Use this for initialization
 	void Start () {
-	
+		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
+		puzzleFinished = false;
+		camToggled = false;
+		scoreChanged = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
 
-		if (intSuccess.successOne && switchSuccess.success && breakOneSuccess.success) {
-			arrayPortalActive = true;
-			GlobalController.Instance.arrayPortalActive = arrayPortalActive;
-			SceneManager.LoadScene ("Temp1");
+		//Open Portal to Arithmetic Ops
+		if(oneSuccess.success && oneSuccess.giveName == "Replacement1" &&
+			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
+			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
+				//instantiate the arimetic portal.
+				Instantiate(arithmeticPortal, new Vector3(42.38f, -2.7f, 0f), Quaternion.identity);
+				puzzleFinished = true;
 		}
 
-		if (intSuccess.successTwo && switchSuccess.success && breakTwoSuccess.success) {
-			loopPortalActive = true;
-			GlobalController.Instance.loopPortalActive = loopPortalActive;
-			SceneManager.LoadScene ("Temp1");
+		//Open Portal to Conditionals
+		if(twoSuccess.success && twoSuccess.giveName == "Replacement2" &&
+			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
+			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
+				//Instantiate the Conditional Ops portal
+				Instantiate (conditionalPortal, new Vector3 (36.45f, -2.7f, 0f), Quaternion.identity);
+				puzzleFinished = true;
+		}
+
+		//Open Portal to Array
+		if(threeSuccess.success && threeSuccess.giveName == "Replacement3" &&
+			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
+			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
+				//instantiate the array portal
+				Instantiate(arrayPortal, new Vector3(48.81f, -2.7f, 0f), Quaternion.identity);
+				puzzleFinished = true;
+		}
+
+		//Open Portal to Loop
+		if(fourSuccess.success && fourSuccess.giveName == "Replacement4" &&
+			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
+			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
+				//instantiate the loop portal
+				Instantiate(loopPortal, new Vector3(63.43f, -2.7f, 0f), Quaternion.identity);
+				puzzleFinished = true;
+		}
+
+		//Open Portal to Final
+		if(fiveSuccess.success && fiveSuccess.giveName == "Replacement5" &&
+			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
+			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
+				//instantiate the final portal
+				Instantiate(finalPortal, new Vector3(77.0f, -2.7f, 0f), Quaternion.identity);
+				puzzleFinished = true;
+		}
+
+		//The Reset Logic
+		if (Input.GetKeyDown (KeyCode.R) && GlobalController.Instance.camName == "SwitchCamera") {
+			resetTiles ();
+			resetSlots ();
+			resetActive ();
+			resetCheckValues ();
+			camToggled = false;
+			puzzleFinished = false;
+		}
+			
+	}
+		
+
+	public void resetCheckValues(){
+		oneSuccess.resetSuccessBool ();
+		twoSuccess.resetSuccessBool ();
+		threeSuccess.resetSuccessBool ();
+		fourSuccess.resetSuccessBool ();
+		fiveSuccess.resetSuccessBool ();
+		doorNumberSuccess.resetSuccessBool ();
+		breakSuccess.resetSuccessBool ();
+	}
+
+
+	public void resetSlots(){
+		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
+
+		foreach (GameObject repTile in replacementTiles) {
+			Destroy (repTile);
 		}
 	}
+
+	public void resetTiles(){
+		for (int i = 0; i < arrayTiles.Length; i++) {
+			arrayTiles[i].GetComponent<TileDrag>().onReset();
+		}
+	}
+
+	public void resetActive(){
+		for (int i = 0; i < arrayTiles.Length; i++) {
+			arrayTiles [i].gameObject.SetActive (true);
+		}
+	}
+
 }

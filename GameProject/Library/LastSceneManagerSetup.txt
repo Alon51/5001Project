@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< Updated upstream
 - path: Assets/Scenes/Main/ArithmeticLevel.unity
-=======
-- path: Assets/Scenes/Main/ConditionalLevel.unity
->>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1

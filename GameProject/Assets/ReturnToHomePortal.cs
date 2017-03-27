@@ -18,7 +18,7 @@ public class ReturnToHomePortal : MonoBehaviour {
 	void Update () {
 		if (inArea) {
 			if (Input.GetKeyDown ("x")) {
-				SceneManager.LoadScene ("Temp1");
+				GlobalController.Instance.changeScene ("HubLevel");
 			}
 		}
 	}

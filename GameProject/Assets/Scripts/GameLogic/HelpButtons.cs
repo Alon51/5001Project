@@ -6,9 +6,11 @@ using UnityEngine.EventSystems; //allows us to get name of buttons that are clic
 
 public class HelpButtons : MonoBehaviour {
 
+	public Text helpText;
+
+
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -17,16 +19,22 @@ public class HelpButtons : MonoBehaviour {
 	}
 
 	public void showHelpText(){
-		string temp = EventSystem.current.currentSelectedGameObject.name;
-		switch(temp){
+		switch(this.gameObject.name){
 		case "HelpButton1_Dt":
-			EventSystem.current.currentSelectedGameObject.GetComponent<Text>().text = 
-			"Remember that each variable needs a datatype. It could be a long, int, bool, float, string, char, double, and more";
+			helpText.text =
+			"Remember that each variable needs a datatype. \nIt could be a long, int, bool, float, string, char, double, and more";
 			break;
 		case "HelpButton2_Dt":
-			EventSystem.current.currentSelectedGameObject.GetComponent<Text>().text = 
-				"Here's a hint: Doubles carry values like 33.9.";
+			helpText.text = "Here's a hint: Doubles carry values like 33.9.";
 			break;
 		}
 	}
+
+	void OnMouseEnter(){
+		showHelpText ();
+	}
+	void OnMouseExit(){
+		helpText.text = "";
+	}
+
 }

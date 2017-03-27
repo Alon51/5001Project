@@ -46,15 +46,28 @@ public class JITScript : MonoBehaviour {
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;
+			case "DataTypeBriefing":
+				wordDisplay.text = "There's only 1 scientist in here, blocked by 2 doors." +
+				"The theme of this room is initialization and arithmetic math. \n \n" +
+				"There are many datatypes used in programming such as int, bool, double, string, char, and float. \n" +
+				"Ints hold whole numbers, doubles hold decimal values, chars hold single characters, and so on.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
+			case "DataTypeChallenge":
+				wordDisplay.text = "The code is incomplete! To get past this first door, place the correct datatypes with their variables. You can do it!";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
 			case "ArithBriefing":
-				wordDisplay.text = "There's only 1 scientist in here. The theme of this room is arithmetic math. \n" +
-				"There are 5 main operators that are used: +, -, *, /, and %. \n" +
-					"The % operator gives the remainder of a division. So 8 % 3 is 2.\n\n";
+				wordDisplay.text = "There are 5 main operators that are used: +, -, *, /, and %. \n" +
+					"The % operator gives the remainder of a division. So 8 % 3 is 2.\n\n" +
+					"Also, remember that parentheses are important and give different answers.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;
 			case "ArithChallenge":
-				wordDisplay.text = "The code is incomplete! You need to fill it out so that you can tell if the numbers are even or not.";
+				wordDisplay.text = "The code is incomplete! To open the door, set the equation to equal 30, don't give up!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;

@@ -6,24 +6,30 @@ using UnityEngine.UI;
 
 public class TeleporterController : MonoBehaviour {
 
+	public bool inArea;
 
 	// Use this for initialization
 	void Start () {
+		inArea = false;
 	}
 
 	// Update is called once per frame
 	void Update () {
-
+		if (Input.GetKeyDown ("x") && inArea) {
+			//send it the tag, which is also the level name
+			GlobalController.Instance.changeScene (this.tag); 
+		}
 	}
 
-	void OnCollisionStay2D(Collision2D other){
+	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "Player") {
-			//show interact text
-			if (Input.GetKeyDown ("x")) {
-				//send it the tag, which is also the level name
-				GlobalController.Instance.changeScene (this.tag); 
-			}
-			//inArea = true;
+			inArea = true;
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other){
+		if (other.gameObject.tag == "Player") {
+			inArea = false;
 		}
 	}
 		

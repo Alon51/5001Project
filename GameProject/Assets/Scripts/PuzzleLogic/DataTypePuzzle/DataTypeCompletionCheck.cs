@@ -54,7 +54,7 @@ public class DataTypeCompletionCheck : MonoBehaviour {
 			}
 		}
 		//reset puzzle and platforms
-		if (puzzleFinished && Input.GetKeyDown(KeyCode.R)) {
+		if (Input.GetKeyDown(KeyCode.R)) {
 			//GlobalController.Instance.resetBoxBools();
 			resetTiles ();
 			resetSlots ();

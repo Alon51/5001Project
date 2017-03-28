@@ -36,6 +36,8 @@ public class GlobalController : MonoBehaviour {
 	public int score; // used to track the player's score
 	public int scrAdditive; // what is added or subtracted from the score
 
+	public Text wordDisplay;
+
 	void Awake(){
 		if (Instance == null) {
 			DontDestroyOnLoad (gameObject);
@@ -52,6 +54,19 @@ public class GlobalController : MonoBehaviour {
 		score = 0;
 		scrAdditive = 100;
 		scoreText.text = "Score: " + score;
+		wordDisplay = GameObject.Find ("WordDisplayer").GetComponent<Text>();
+	}
+
+	void Update(){
+		//if word display is open because text isn't empty
+		if (!wordDisplay.text.Equals ("")) {
+			//pressing x will close and clear the box
+			if (Input.GetKeyDown (KeyCode.X)) {
+				wordDisplay.text = "";
+				//unpause
+				Time.timeScale = 1.0f;
+			}
+		}
 	}
 
 	//save the players position for use between scenes

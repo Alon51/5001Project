@@ -54,7 +54,7 @@ public class ArithCompletionCheck : MonoBehaviour {
 			}
 		}
 		//reset puzzle and platforms
-		if (puzzleFinished && Input.GetKeyDown(KeyCode.R)) {
+		if (Input.GetKeyDown(KeyCode.R)) {
 			//GlobalController.Instance.resetBoxBools();
 			resetTiles ();
 			resetSlots ();
@@ -121,10 +121,10 @@ public class ArithCompletionCheck : MonoBehaviour {
 	}
 
 	public bool checkInputName(){
-		if (checkSlots [0].GetComponent<ArrayReaction>().giveName == "ReplacementMUL" &&
-			checkSlots [1].GetComponent<ArrayReaction>().giveName == "ReplacementParenC" &&
+		if (checkSlots [0].GetComponent<ArrayReaction>().giveName == "ReplacementMOD" &&
+			checkSlots [1].GetComponent<ArrayReaction>().giveName == "Replacement-" &&
 			checkSlots [2].GetComponent<ArrayReaction>().giveName == "ReplacementParenO" &&
-			checkSlots [3].GetComponent<ArrayReaction>().giveName == "ReplacementDIV" &&
+			checkSlots [3].GetComponent<ArrayReaction>().giveName == "Replacement-" &&
 			checkSlots [4].GetComponent<ArrayReaction>().giveName == "ReplacementParenC") 
 		{
 			return true;

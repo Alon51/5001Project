@@ -32,7 +32,7 @@ public class JITScript : MonoBehaviour {
 				Destroy (this.gameObject);
 				break;
 			case "ArrayChallenge1":
-				wordDisplay.text = "It seems some of the holo-platforms are diabled, which means you can't get across!" +
+				wordDisplay.text = "It seems some of the holo-platforms are disabled, which means you can't get across!" +
 					"\nUse this terminal to try and fix them. Turn on the First, Third, and Last platforms." +
 					" Watch out for weird array indexes";
 				Time.timeScale = 0.0f;
@@ -100,10 +100,35 @@ public class JITScript : MonoBehaviour {
 				break;
 
 			case "ConditionalBriefing":
-				wordDisplay.text = "There's only 1 scientist in here, blocked by 2 doors." +
-					"The theme of this room is initialization and arithmetic math. \n \n" +
-					"There are many datatypes used in programming such as int, bool, double, string, char, and float. \n" +
-					"Ints hold whole numbers, doubles hold decimal values, chars hold single characters, and so on.";
+				wordDisplay.text = "Three scientists are stuck behind three doors,  \n" +
+					"The desktops in this wing operate using conditional logic, complete their code to release the scientists.\n " +
+					"Conditional logic is extremely useful in creating if statements and loops.  \n" +
+					"Remember these common operators:  \n" +
+					"'!' - negation operator. \n '&&' - logical and operator. All conditions in the statement" +
+					"must be true. \n '||' - logical or operator. Only one of the conditions need be true.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
+
+			case "BoolOpsBrief":
+				wordDisplay.text = "The desktop ahead controls the elevator \n" +
+				"and can take you up or down depending on your decision.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
+
+			case "LogicalAndBrief":
+				wordDisplay.text = "You have arrived at the Logical And terminal. " +
+				"These pylons in the ship's floor must be raised to open the door locking in " +
+					"the scientist. Remember the key distinction between AND and OR.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
+
+			case "LogicalOrBrief":
+				wordDisplay.text = "You have arrived at the Logical Or terminal. " +
+					"These pylons in the ship's floor must be raised to open the door locking in " +
+					"the scientist. Remember the key distinction between AND and OR.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;

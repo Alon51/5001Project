@@ -22,6 +22,11 @@ public class CompletionScriptThree : MonoBehaviour {
 		puzzleFinished = false;
 		camToggled = false;
 		scoreChanged = false;
+		arithmeticPortal.SetActive (false);
+		conditionalPortal.SetActive (false);
+		loopPortal.SetActive (false);
+		arrayPortal.SetActive (false);
+		finalPortal.SetActive (false);
 	}
 	
 	// Update is called once per frame
@@ -33,7 +38,7 @@ public class CompletionScriptThree : MonoBehaviour {
 			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
 			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
 				//instantiate the arimetic portal.
-				Instantiate(arithmeticPortal, new Vector3(42.38f, -2.7f, 0f), Quaternion.identity);
+				arithmeticPortal.SetActive(true);
 				puzzleFinished = true;
 		}
 
@@ -42,7 +47,7 @@ public class CompletionScriptThree : MonoBehaviour {
 			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
 			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
 				//Instantiate the Conditional Ops portal
-				Instantiate (conditionalPortal, new Vector3 (36.45f, -2.7f, 0f), Quaternion.identity);
+				conditionalPortal.SetActive (true);
 				puzzleFinished = true;
 		}
 
@@ -51,7 +56,7 @@ public class CompletionScriptThree : MonoBehaviour {
 			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
 			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
 				//instantiate the array portal
-				Instantiate(arrayPortal, new Vector3(48.81f, -2.7f, 0f), Quaternion.identity);
+				arrayPortal.SetActive (true);
 				puzzleFinished = true;
 		}
 
@@ -60,7 +65,7 @@ public class CompletionScriptThree : MonoBehaviour {
 			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
 			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
 				//instantiate the loop portal
-				Instantiate(loopPortal, new Vector3(63.43f, -2.7f, 0f), Quaternion.identity);
+				loopPortal.SetActive (true);
 				puzzleFinished = true;
 		}
 
@@ -69,7 +74,7 @@ public class CompletionScriptThree : MonoBehaviour {
 			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
 			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
 				//instantiate the final portal
-				Instantiate(finalPortal, new Vector3(77.0f, -2.7f, 0f), Quaternion.identity);
+				finalPortal.SetActive (true);
 				puzzleFinished = true;
 		}
 

@@ -96,12 +96,24 @@ public class JITScript : MonoBehaviour {
 				GameObject sci = GameObject.Find ("MidScientist");
 				Destroy (sci,7.0f);
 				break;
+
+			case "ConditionalBriefing":
+				wordDisplay.text = "There's only 1 scientist in here, blocked by 2 doors." +
+					"The theme of this room is initialization and arithmetic math. \n \n" +
+					"There are many datatypes used in programming such as int, bool, double, string, char, and float. \n" +
+					"Ints hold whole numbers, doubles hold decimal values, chars hold single characters, and so on.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
+
 			case "ArrayCams":
 				GameObject cam = GameObject.Find ("ErrorCamera");
 				GameObject cam2 = GameObject.Find ("SecondCamera");
 				cam2.GetComponent<Camera> ().enabled = false;
 				cam.GetComponent<Camera> ().enabled = false;
 				break;
+
+			
 			}
 		}
 	}

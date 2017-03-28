@@ -78,11 +78,13 @@ public class JITScript : MonoBehaviour {
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;
+			//First generic scientist response
 			case "Scientist1":
 				wordDisplay.text = "Thanks for saving me! I'll help you regain control of the ship!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;
+			//Second generic scientis response
 			case "Scientist2":
 				wordDisplay.text = "Thanks for saving me! Let me help you get the ship under control!";
 				Time.timeScale = 0.0f;
@@ -105,7 +107,7 @@ public class JITScript : MonoBehaviour {
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;
-
+			//Specifically for managing cams in Arrya level since there are many cameras
 			case "ArrayCams":
 				GameObject cam = GameObject.Find ("ErrorCamera");
 				GameObject cam2 = GameObject.Find ("SecondCamera");

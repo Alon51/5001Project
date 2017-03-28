@@ -86,6 +86,11 @@ public class CompletionScriptThree : MonoBehaviour {
 			resetCheckValues ();
 			camToggled = false;
 			puzzleFinished = false;
+			arithmeticPortal.SetActive (false);
+			conditionalPortal.SetActive (false);
+			loopPortal.SetActive (false);
+			arrayPortal.SetActive (false);
+			finalPortal.SetActive (false);
 		}
 			
 	}

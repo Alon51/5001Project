@@ -9,17 +9,17 @@ public class MessagePanel : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.GetComponent<Image>().enabled = false;
+		this.GetComponent<SpriteRenderer>().enabled = false;
 		button.SetActive(false);
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if (!string.IsNullOrEmpty (WordDisplay.text.ToString ().Trim ())) {
-			this.GetComponent<Image>().enabled = true;
+			this.GetComponent<SpriteRenderer>().enabled = true;
 			button.SetActive(true);
 		}  else {
-			this.GetComponent<Image>().enabled = false;
+			this.GetComponent<SpriteRenderer>().enabled = false;
 			button.SetActive(false);
 		}
 	}

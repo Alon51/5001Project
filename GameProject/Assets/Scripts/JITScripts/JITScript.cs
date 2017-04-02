@@ -98,7 +98,8 @@ public class JITScript : MonoBehaviour {
 				GameObject sci = GameObject.Find ("MidScientist");
 				Destroy (sci,7.0f);
 				break;
-
+			
+			//CONDITIONAL LEVEL BRIEFINGS
 			case "ConditionalBriefing":
 				wordDisplay.text = "Three scientists are stuck behind three doors,  \n" +
 					"The desktops in this wing operate using conditional logic, complete their code to release the scientists.\n " +
@@ -144,6 +145,41 @@ public class JITScript : MonoBehaviour {
 				break;
 			case "ExitDoorScientistJIT":
 				wordDisplay.text = "Good work! Hurry through the portal, there are more like me to be helped!";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
+
+		//LOOP LEVEL JITS
+			case "LoopBriefing":
+				wordDisplay.text = "Three scientists are stuck behind doors in this sector. \n" +
+					"The desktops in this wing require the use of loops to release the door locks. \n" +
+					"Loops are vital to programming, they allow you to perform various statements " +
+					"a specific number of times. Ahead are desktops for a simple for loop, \n" +
+					"a nested for loop and a simple while loop.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
+
+			case "SingleForBrief":
+				wordDisplay.text = "You have arrived at the for loop terminal. Take note of the " +
+					"number displayed on the door to solve this puzzle. The number given to the terminal" +
+					" must match the displayed number on the door. ";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
+
+			case "NestedForBrief":
+				wordDisplay.text = "You have arrived at the nested for loop terminal. \n" +
+					"Be sure to look at the grid next to the desktop to discover the correct x, y \n" +
+					"coordinate which is the passcode for exit.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
+
+			case "WhileBrief":
+				wordDisplay.text = "You have arrived at the while loop terminal. \n" +
+					"The scientist is trapped behind the laser, and the laser won't turn off \n" +
+					"until the proper condition occurs. Use the desktop to turn off the laser.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;

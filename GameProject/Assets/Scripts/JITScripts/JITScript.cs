@@ -132,6 +132,21 @@ public class JITScript : MonoBehaviour {
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;
+			case "LogicalAndScientistJIT":
+				wordDisplay.text = "Thanks for saving me! Let me help you get the ship under control!";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
+			case "LogicalOrScientistJIT":
+				wordDisplay.text = "Thanks for saving me! Let me help you get the ship under control!";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
+			case "ExitDoorScientistJIT":
+				wordDisplay.text = "Good work! Hurry through the portal, there are more like me to be helped!";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
 			//Specifically for managing cams in Arrya level since there are many cameras
 			case "ArrayCams":
 				GameObject cam = GameObject.Find ("ErrorCamera");

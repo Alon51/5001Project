@@ -28,6 +28,9 @@ public class GlobalController : MonoBehaviour {
 	public bool logicalOrComplete = false;
 	public bool logicalAndComplete = false;
 
+	//IndentPuzzle Completion
+	public bool indentComplete = false;
+
 	public PlayerMovement thePlayer;
 
 	public Transform glPlayerPos; //global player pos for scene transitions

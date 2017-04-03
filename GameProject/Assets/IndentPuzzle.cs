@@ -132,4 +132,21 @@ public class IndentPuzzle : MonoBehaviour {
 			indentCounterFive--;
 		}
 	}
+
+	public void resetLines(){
+		//Return all lines to original positions
+		textLineOne.transform.position = textLineOneStart;
+		textLineTwo.transform.position = textLineTwoStart;
+		textLineThree.transform.position = textLineThreeStart;
+		textLineFour.transform.position = textLineFourStart;
+		textLineFive.transform.position = textLineFiveStart;
+
+		//Return all iterators to 0
+		indentCounterOne = 0;
+		indentCounterTwo = 0;
+		indentCounterThree = 0;
+		indentCounterFour = 0;
+		indentCounterFive = 0;
+
+	}
 }

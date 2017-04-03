@@ -53,7 +53,7 @@ public class CompletionScriptFour : MonoBehaviour{
 			}
 		}
 
-		if (Input.GetKeyDown(KeyCode.R) && GlobalController.Instance.camName == "WhileLoopPuzzle\tCamera"){
+		if (Input.GetKeyDown(KeyCode.R) && GlobalController.Instance.camName == "WhileLoopPuzzleCamera"){
 			replaceLaser ();
 			laserOff = false;
 			GlobalController.Instance.whileLoopComplete = false;

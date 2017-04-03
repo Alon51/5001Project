@@ -82,6 +82,7 @@
 'Assets/BoolOpsJIT.cs'
 'Assets/ElevatorController.cs'
 'Assets/ExitDoorLogicConditionals.cs'
+'Assets/FinalPuzzleCompletionCheck.cs'
 'Assets/IndentPuzzle.cs'
 'Assets/InsertPuzzleCompletion.cs'
 'Assets/LogicalAndCompletion.cs'

@@ -133,10 +133,21 @@ public class PlayerMovement : MonoBehaviour {
 	}
 			
 	void OnCollisionEnter2D(Collision2D other){
-		if (other.gameObject.tag == "ArrayLevel") {
+		if (other.gameObject.CompareTag("ArrayLevel")) {
 			// if(Switch is set to correct door, then telepirt player to that level
 			GlobalController.Instance.savePlayerPos();
 			//GlobalController.Instance.changeScene ("ArrayLevel");
+		}
+
+		if (other.gameObject.CompareTag("RisingPlatform")) {
+			transform.parent = other.transform; // stop making the platform a parent
+		}
+
+	}
+
+	void OnCollisionExit2D(Collision2D other){
+		if (other.gameObject.CompareTag("RisingPlatform")) {
+			transform.parent = null; // stop making the platform a parent
 		}
 	}
 }

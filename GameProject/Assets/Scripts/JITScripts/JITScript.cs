@@ -191,6 +191,12 @@ public class JITScript : MonoBehaviour {
 				cam.GetComponent<Camera> ().enabled = false;
 				break;
 
+
+			//MISC JITS
+			case "RaiseBarriers":
+				this.gameObject.SetActive(false);
+				//Destroy(this.gameObject);
+				break;
 			
 			}
 		}

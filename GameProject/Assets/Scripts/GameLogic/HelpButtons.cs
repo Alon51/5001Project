@@ -181,6 +181,24 @@ public class HelpButtons : MonoBehaviour {
 			helpText.text = "Here we can use the iterator '++' to increase the value of 'x' every \n" +
 				"time we go through the while loop. After a few runs, these lasers will disappear. ";
 			break;
+		
+		//Indentation Puzzle
+
+		case "HelpButton1_INDENT":
+			helpText.text = "Use the left and right facing arrows to increase or decrease the indentation.";
+			break;
+
+		case "HelpButton2_INDENT":
+			helpText.text = "The closing bracket for the if statement, must be aligned with the first letter of \n" +
+				"the 'i' in the if statement";
+			break;
+	
+
+		case "HelpButton3_INDENT":
+			helpText.text = "The inner closing bracket belongs to the for loop and must be aligned to the 'f' \n" +
+				"in the 'for' statement.";
+			break;
+
 		}
 	}
 

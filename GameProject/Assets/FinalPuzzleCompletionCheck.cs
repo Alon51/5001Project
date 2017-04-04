@@ -14,22 +14,20 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 	public bool puzzleFinished, camToggled, scoreChanged;
 	// Use this for initialization
 	void Start () {
-		//checkSlots = GameObject.FindGameObjectsWithTag ("InsertSlot");
 		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
 		puzzleFinished = false;
 		camToggled = false;
 		scoreChanged = false;
-
 	}
 
 	// Update is called once per frame
 	void Update () {
-		//if all 3 spots are filled
+		//if all 5 spots are filled
 		if (checkInputSuccess () && checkInputName ()) {
 			if (!camToggled) {
 				GlobalController.Instance.toggleCamera ();
 				camToggled = true;
-				//open the door
+				//raise the barriers
 				openBarriers ();
 				puzzleFinished = true;
 

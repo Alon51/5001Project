@@ -30,7 +30,7 @@ public class ArithCompletionCheck : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		//if all 3 spots are filled
+		//if all 5 spots are filled
 		if (checkInputSuccess () && checkInputName ()) {
 			if (!camToggled) {
 				GlobalController.Instance.toggleCamera ();

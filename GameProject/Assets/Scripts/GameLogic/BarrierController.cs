@@ -31,6 +31,7 @@ public class BarrierController : MonoBehaviour {
 	}
 
 	public void moveBarrier(){
+		print ("MOVING BARRIER");
 		if (barrierToMove != null) {
 			barrierToMove.transform.position = Vector3.MoveTowards (barrierToMove.transform.position, currentTarget, moveSpeed * Time.deltaTime);
 		}

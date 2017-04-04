@@ -28,7 +28,7 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 				GlobalController.Instance.toggleCamera ();
 				camToggled = true;
 				//raise the barriers
-				openBarriers ();
+				openBarriers();
 				puzzleFinished = true;
 
 				//add to score
@@ -72,7 +72,10 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 
 	public void openBarriers(){
 		//open the first barrier
-		barriers [0].GetComponent<BarrierController> ().moveBarrier ();
+		//barriers [0].GetComponent<BarrierController> ().moveBarrier ();
+		foreach (GameObject barr in barriers) {
+			barr.GetComponent<BarrierController> ().moveBarrier ();
+		}
 	}
 	public void resetBarriers(){
 		//place back in original pos

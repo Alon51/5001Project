@@ -73,9 +73,11 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 	public void openBarriers(){
 		//open the first barrier
 		//barriers [0].GetComponent<BarrierController> ().moveBarrier ();
-		foreach (GameObject barr in barriers) {
-			barr.GetComponent<BarrierController> ().moveBarrier ();
-		}
+//		foreach (GameObject barr in barriers) {
+//			barr.GetComponent<BarrierController> ().moveBarrier ();
+//		}
+		GameObject temp = GameObject.FindGameObjectWithTag ("RisingPlatform");
+		temp.GetComponent<MovingObject> ().enabled = true;
 	}
 	public void resetBarriers(){
 		//place back in original pos

@@ -197,6 +197,15 @@ public class JITScript : MonoBehaviour {
 				cam.GetComponent<Camera> ().enabled = false;
 				break;
 
+			//FINAL LEVEL JITS
+			case "FinalBriefing":
+				wordDisplay.text = "You're almost there! The rest of the scientists are at the top of this room" +
+				"You need to use what you've learned in order to make the sum 10, which will turn on the rising platform! " +
+				"This is the final push! Time to finsh what you started!";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
+
 
 			//MISC JITS
 			case "RaiseBarriers":

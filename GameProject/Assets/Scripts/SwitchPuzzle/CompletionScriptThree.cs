@@ -4,12 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class CompletionScriptThree : MonoBehaviour {
 
-	public ArrayReaction oneSuccess, twoSuccess, threeSuccess, fourSuccess, fiveSuccess, breakSuccess,
+	public ArrayReaction oneSuccess, twoSuccess, threeSuccess, fourSuccess, fiveSuccess,
 						 doorNumberSuccess;
 	public ArrayReaction replacementOne, replacementTwo, replacementThree, replacementFour, replacementFive,
-						 replacementBreak, replacementDoorNumber;
+						 replacementDoorNumber;
 
-	public bool puzzleFinished, camToggled, scoreChanged, disablePortals;
+	public bool puzzleFinished, camToggled, scoreChanged;
 
 	public GameObject[] arrayTiles; // the tiles that will be dragged
 	public GameObject[] replacementTiles; //The replacements when tiles dragged into the slots
@@ -36,7 +36,7 @@ public class CompletionScriptThree : MonoBehaviour {
 		//Open Portal to Arithmetic Ops
 		if(oneSuccess.success && oneSuccess.giveName == "Replacement1" &&
 			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
-			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
+			!puzzleFinished){
 				//instantiate the arimetic portal.
 				arithmeticPortal.SetActive(true);
 				puzzleFinished = true;
@@ -45,7 +45,7 @@ public class CompletionScriptThree : MonoBehaviour {
 		//Open Portal to Conditionals
 		if(twoSuccess.success && twoSuccess.giveName == "Replacement2" &&
 			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
-			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
+			!puzzleFinished){
 				//Instantiate the Conditional Ops portal
 				conditionalPortal.SetActive (true);
 				puzzleFinished = true;
@@ -54,7 +54,7 @@ public class CompletionScriptThree : MonoBehaviour {
 		//Open Portal to Array
 		if(threeSuccess.success && threeSuccess.giveName == "Replacement3" &&
 			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
-			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
+			!puzzleFinished){
 				//instantiate the array portal
 				arrayPortal.SetActive (true);
 				puzzleFinished = true;
@@ -63,7 +63,7 @@ public class CompletionScriptThree : MonoBehaviour {
 		//Open Portal to Loop
 		if(fourSuccess.success && fourSuccess.giveName == "Replacement4" &&
 			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
-			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
+			!puzzleFinished){
 				//instantiate the loop portal
 				loopPortal.SetActive (true);
 				puzzleFinished = true;
@@ -72,7 +72,7 @@ public class CompletionScriptThree : MonoBehaviour {
 		//Open Portal to Final
 		if(fiveSuccess.success && fiveSuccess.giveName == "Replacement5" &&
 			doorNumberSuccess.success && doorNumberSuccess.giveName == "ReplacementdoorNumber" &&
-			breakSuccess.success && breakSuccess.giveName == "ReplacementBreak" && !puzzleFinished){
+			!puzzleFinished){
 				//instantiate the final portal
 				finalPortal.SetActive (true);
 				puzzleFinished = true;
@@ -103,7 +103,6 @@ public class CompletionScriptThree : MonoBehaviour {
 		fourSuccess.resetSuccessBool ();
 		fiveSuccess.resetSuccessBool ();
 		doorNumberSuccess.resetSuccessBool ();
-		breakSuccess.resetSuccessBool ();
 	}
 
 

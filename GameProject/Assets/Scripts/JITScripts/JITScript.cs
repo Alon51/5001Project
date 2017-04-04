@@ -80,21 +80,21 @@ public class JITScript : MonoBehaviour {
 				break;
 			//First generic scientist response
 			case "Scientist1":
-				wordDisplay.text = "Thanks for saving me! I'll help you regain control of the ship!";
+				wordDisplay.text = "Thanks for saving me! I'll help find a way to escape from the ship!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GlobalController.Instance.incScientist ();
 				break;
 			//Second generic scientis response
 			case "Scientist2":
-				wordDisplay.text = "Thanks for saving me! Let me help you get the ship under control!";
+				wordDisplay.text = "Thanks for saving me! Let me help you find an escape route with the others!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GlobalController.Instance.incScientist ();
 				break;
 			case "MidLevelScientistArray":
 				//solves camera problem in array level
-				wordDisplay.text = "Thanks for saving me! Let me help you get the ship under control!";
+				wordDisplay.text = "Thanks for saving me! We need to find a way to escape the ship ASAP!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GameObject sci = GameObject.Find ("MidScientist");

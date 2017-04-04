@@ -35,8 +35,9 @@ public class GlobalController : MonoBehaviour {
 
 	public Transform glPlayerPos; //global player pos for scene transitions
 
-	public Text scoreText;
+	public Text scoreText, scientistText;
 	public int score; // used to track the player's score
+	public int scientistCount;
 	public int scrAdditive; // what is added or subtracted from the score
 
 	public Text wordDisplay;
@@ -55,6 +56,7 @@ public class GlobalController : MonoBehaviour {
 		onMainCam = true;
 		camName = mainCam.name;
 		score = 0;
+		scientistCount = 0;
 		scrAdditive = 100;
 		scoreText.text = "Score: " + score;
 		wordDisplay = GameObject.Find ("WordDisplayer").GetComponent<Text>();
@@ -106,6 +108,12 @@ public class GlobalController : MonoBehaviour {
 		score += scrAdditive;
 		scoreText.text = "Score: " + score;
 	}
+
+	public void incScientist(){
+		scientistCount += 1;
+		scientistText.text = "x " + scientistCount;
+	}
+
 	public void decScore(){
 		score -= scrAdditive;
 	}

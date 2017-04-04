@@ -13,7 +13,8 @@ public class CompletionScriptThree : MonoBehaviour {
 
 	public GameObject[] arrayTiles; // the tiles that will be dragged
 	public GameObject[] replacementTiles; //The replacements when tiles dragged into the slots
-	public GameObject arithmeticPortal, conditionalPortal, arrayPortal, loopPortal, finalPortal;
+	public GameObject arithmeticPortal, conditionalPortal, arrayPortal, loopPortal, finalPortal;//The Portals
+	public GameObject arithLevTag, condLevTag, arrayLevTag, loopLevTag;
 
 
 	// Use this for initialization
@@ -27,6 +28,10 @@ public class CompletionScriptThree : MonoBehaviour {
 		loopPortal.SetActive (false);
 		arrayPortal.SetActive (false);
 		finalPortal.SetActive (false);
+		arithLevTag.SetActive (false);
+		condLevTag.SetActive (false);
+		arrayLevTag.SetActive (false);
+		loopLevTag.SetActive (false);
 	}
 	
 	// Update is called once per frame
@@ -39,6 +44,7 @@ public class CompletionScriptThree : MonoBehaviour {
 			!puzzleFinished){
 				//instantiate the arimetic portal.
 				arithmeticPortal.SetActive(true);
+				arithLevTag.SetActive (true);
 				puzzleFinished = true;
 		}
 
@@ -48,6 +54,7 @@ public class CompletionScriptThree : MonoBehaviour {
 			!puzzleFinished){
 				//Instantiate the Conditional Ops portal
 				conditionalPortal.SetActive (true);
+				condLevTag.SetActive (true);
 				puzzleFinished = true;
 		}
 
@@ -57,6 +64,7 @@ public class CompletionScriptThree : MonoBehaviour {
 			!puzzleFinished){
 				//instantiate the array portal
 				arrayPortal.SetActive (true);
+				arrayLevTag.SetActive (true);
 				puzzleFinished = true;
 		}
 
@@ -66,6 +74,7 @@ public class CompletionScriptThree : MonoBehaviour {
 			!puzzleFinished){
 				//instantiate the loop portal
 				loopPortal.SetActive (true);
+				loopLevTag.SetActive (true);
 				puzzleFinished = true;
 		}
 
@@ -91,6 +100,10 @@ public class CompletionScriptThree : MonoBehaviour {
 			loopPortal.SetActive (false);
 			arrayPortal.SetActive (false);
 			finalPortal.SetActive (false);
+			arithLevTag.SetActive (false);
+			condLevTag.SetActive (false);
+			arrayLevTag.SetActive (false);
+			loopLevTag.SetActive (false);
 		}
 			
 	}

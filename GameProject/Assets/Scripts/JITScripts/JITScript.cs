@@ -83,12 +83,14 @@ public class JITScript : MonoBehaviour {
 				wordDisplay.text = "Thanks for saving me! I'll help you regain control of the ship!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
+				GlobalController.Instance.incScientist ();
 				break;
 			//Second generic scientis response
 			case "Scientist2":
 				wordDisplay.text = "Thanks for saving me! Let me help you get the ship under control!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
+				GlobalController.Instance.incScientist ();
 				break;
 			case "MidLevelScientistArray":
 				//solves camera problem in array level
@@ -96,6 +98,7 @@ public class JITScript : MonoBehaviour {
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GameObject sci = GameObject.Find ("MidScientist");
+				GlobalController.Instance.incScientist ();
 				Destroy (sci,7.0f);
 				break;
 			
@@ -137,16 +140,19 @@ public class JITScript : MonoBehaviour {
 				wordDisplay.text = "Thanks for saving me! Let me help you get the ship under control!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
+				GlobalController.Instance.incScientist ();
 				break;
 			case "LogicalOrScientistJIT":
 				wordDisplay.text = "Thanks for saving me! Let me help you get the ship under control!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
+				GlobalController.Instance.incScientist ();
 				break;
 			case "ExitDoorScientistJIT":
 				wordDisplay.text = "Good work! Hurry through the portal, there are more like me to be helped!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
+				GlobalController.Instance.incScientist ();
 				break;
 
 		//LOOP LEVEL JITS

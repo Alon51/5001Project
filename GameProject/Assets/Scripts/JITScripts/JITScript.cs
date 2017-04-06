@@ -62,7 +62,7 @@ public class JITScript : MonoBehaviour {
 			case "ArithBriefing":
 				wordDisplay.text = "There are 5 main operators that are used: +, -, *, /, and %. \n" +
 					"The % operator gives the remainder of a division. So 8 % 3 is 2.\n\n" +
-					"Also, remember that parentheses are important and give different answers.";
+					"Also, remember that the precedence of the operators is (*,/,%), followed by (+,-).";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;

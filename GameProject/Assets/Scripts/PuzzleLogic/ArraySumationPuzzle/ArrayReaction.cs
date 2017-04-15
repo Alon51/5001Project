@@ -6,6 +6,7 @@ public class ArrayReaction : MonoBehaviour {
 
 	public bool success;
 	public string giveName;
+	public AudioSource correct;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,7 @@ public class ArrayReaction : MonoBehaviour {
 			other.GetComponent<ArrayTileController> ().isUsed = true;// set flag to tell if this was used
 			giveName = other.GetComponent<ArrayTileController> ().tileName;
 			success = true;
+			correct.Play ();
 		}
 
 	}

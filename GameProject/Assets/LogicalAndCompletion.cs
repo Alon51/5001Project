@@ -18,6 +18,8 @@ public class LogicalAndCompletion : MonoBehaviour {
 	public GameObject rightPylonRaised;
 	public GameObject doorOne;
 
+	public AudioSource solved;
+
 	//GameObject spawn in locations
 	private float rightX = 126f;
 	private float leftX = 112f;
@@ -59,15 +61,18 @@ public class LogicalAndCompletion : MonoBehaviour {
 			if (leftPylonFlag && rightPylonFlag && !doorOpened && slotOneSuccess.success && slotTwoSuccess.success) {
 				openDoor ();
 				GlobalController.Instance.logicalAndComplete = true;
+				puzzleFinished = true;
+				solved.Play ();
 				if (!camToggled) {
 					GlobalController.Instance.toggleCamera ();
 					camToggled = true;
-					//add to score
-					if (!scoreChanged) {
-						GlobalController.Instance.incScore ();
-						scoreChanged = true;
-					}
 				}
+				//add to score
+				if (!scoreChanged) {
+					GlobalController.Instance.incScore ();
+					scoreChanged = true;
+				}
+
 			}
 		}
 

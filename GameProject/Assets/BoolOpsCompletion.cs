@@ -8,6 +8,8 @@ public class BoolOpsCompletion : MonoBehaviour {
 	public ArrayReaction replacementUp, replacementNotUp;
 	public ElevatorController floorLocation;
 
+	public AudioSource solved;
+
 
 	public bool puzzleFinished, camToggled, useElevator, goingUp, scoreChanged;
 
@@ -31,6 +33,11 @@ public class BoolOpsCompletion : MonoBehaviour {
 				useElevator = true;
 				goingUp = true;
 				puzzleFinished = true;
+				solved.Play ();
+				if (!camToggled) {
+					GlobalController.Instance.toggleCamera ();
+					camToggled = true;
+				}
 				//add to score
 				if (!scoreChanged) {
 					GlobalController.Instance.incScore ();
@@ -44,6 +51,11 @@ public class BoolOpsCompletion : MonoBehaviour {
 				useElevator = true;
 				goingUp = false;
 				puzzleFinished = true;
+				solved.Play ();
+				if (!camToggled) {
+					GlobalController.Instance.toggleCamera ();
+					camToggled = true;
+				}
 				//add to score
 				if (!scoreChanged) {
 					GlobalController.Instance.incScore ();

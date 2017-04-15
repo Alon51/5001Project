@@ -212,6 +212,10 @@ public class JITScript : MonoBehaviour {
 				this.gameObject.SetActive(false);
 				//Destroy(this.gameObject);
 				break;
+			case "EscapePod": // launches the escape pod
+				this.gameObject.SetActive(false);
+//				Destroy(this.gameObject);
+				break;
 			
 			}
 		}

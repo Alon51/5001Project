@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BarrierController : MonoBehaviour {
+public class OneWayMovingObjectTrigger : MonoBehaviour {
 
 	public PlayerMovement player;
 	public JITScript triggerCollider;
-	public GameObject barrierToMove; // object to be moved
+	public GameObject objToMove; // object to be moved
 
 	//points that object will move between back and forth
 	public Transform endPoint; // ending point
@@ -25,15 +25,15 @@ public class BarrierController : MonoBehaviour {
 		//if it has been deactivated because the player touched it
 		if (!triggerCollider.gameObject.activeSelf) { 
 			//move the barrier
-			moveBarrier ();
+			moveObjectOneWay ();
 		}
 		//moveBarrier();
 	}
 
-	public void moveBarrier(){
+	public void moveObjectOneWay(){
 		print ("MOVING BARRIER");
-		if (barrierToMove != null) {
-			barrierToMove.transform.position = Vector3.MoveTowards (barrierToMove.transform.position, currentTarget, moveSpeed * Time.deltaTime);
+		if (objToMove != null) {
+			objToMove.transform.position = Vector3.MoveTowards (objToMove.transform.position, currentTarget, moveSpeed * Time.deltaTime);
 		}
 	}
 

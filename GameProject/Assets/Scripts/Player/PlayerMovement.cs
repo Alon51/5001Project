@@ -139,14 +139,22 @@ public class PlayerMovement : MonoBehaviour {
 			//GlobalController.Instance.changeScene ("ArrayLevel");
 		}
 
-		if (other.gameObject.CompareTag("RisingPlatform") || other.gameObject.CompareTag("EscapePod") ) {
+		if (other.gameObject.CompareTag("RisingPlatform")) {
 			transform.parent = other.transform; // stop making the platform a parent
+		}
+		if (other.gameObject.CompareTag("EscapePod")) {
+			transform.parent = other.transform; // stop making the platform a parent
+			transform.localScale = new Vector3 (2, 2, 1);
+
 		}
 
 	}
 
 	void OnCollisionExit2D(Collision2D other){
-		if (other.gameObject.CompareTag("RisingPlatform") || other.gameObject.CompareTag("EscapePod") ) {
+		if (other.gameObject.CompareTag("RisingPlatform")) {
+			transform.parent = null; // stop making the platform a parent
+		}
+		if (other.gameObject.CompareTag("EscapePod")) {
 			transform.parent = null; // stop making the platform a parent
 		}
 	}

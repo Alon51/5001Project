@@ -37,10 +37,9 @@ public class PlayerMovement : MonoBehaviour {
 		myRigidBody = GetComponent<Rigidbody2D> (); // rigid body for physics
 		anim = GetComponent<Animator> ();
 	}
-
+		
 	// Update is called once per frame
 	void Update () {
-
 		isGrounded = Physics2D.OverlapCircle (groundCheck.position,groundCheckRadius,whatIsGround);
 		myRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
 		//Horizontal input is either 0(no input), 1(going right), or -1(going left)
@@ -76,9 +75,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		// if on the ground, set falling and jumping to false
 		else if(isGrounded){ 
-			
 			isJumping = false;
-
 		}
 		//allows player to zoom out the camera to see larger section of the map.
 		if (Input.GetKeyDown("q")) {

@@ -27,7 +27,6 @@ public class OneWayMovingObjectTrigger : MonoBehaviour {
 			//move the barrier
 			moveObjectOneWay ();
 		}
-		//moveBarrier();
 	}
 
 	public void moveObjectOneWay(){

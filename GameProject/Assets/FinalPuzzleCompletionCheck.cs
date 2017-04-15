@@ -6,6 +6,7 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 
 	// LEVEL MANAGER FOR THE ARRAY LEVEL
 
+
 	public GameObject[] checkSlots; //manually set in inspector
 	public GameObject[] barriers;//manually set in inspector
 	public GameObject[] arrayTiles; // the tiles that will be dragged
@@ -133,7 +134,7 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 		}
 		return false;
 	}
-
+		
 
 }
 

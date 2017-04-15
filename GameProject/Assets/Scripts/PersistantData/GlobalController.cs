@@ -17,6 +17,8 @@ public class GlobalController : MonoBehaviour {
 	public bool onMainCam;
 	public string camName;
 
+	//Final Level Objects
+	public GameObject [] scientistSprites;
 
 	//Loop Level Completion Bools
 	public bool singleForLoopComplete = false;
@@ -38,6 +40,7 @@ public class GlobalController : MonoBehaviour {
 	public Text scoreText, scientistText;
 	public int score; // used to track the player's score
 	public int scientistCount;
+	public int totalScientists;
 	public int scrAdditive; // what is added or subtracted from the score
 
 	public Text wordDisplay;
@@ -57,6 +60,7 @@ public class GlobalController : MonoBehaviour {
 		camName = mainCam.name;
 		score = 0;
 		scientistCount = 0;
+		totalScientists = 9;
 		scrAdditive = 100;
 		scoreText.text = "Score: " + score;
 		wordDisplay = GameObject.Find ("WordDisplayer").GetComponent<Text>();
@@ -71,6 +75,11 @@ public class GlobalController : MonoBehaviour {
 				//unpause
 				Time.timeScale = 1.0f;
 			}
+		}
+		//IF THE PLAYER IS IN THE FINAL LEVEL
+		if(SceneManager.GetActiveScene().name == "FinalLevel" ){
+			scientistSprites = GameObject.FindGameObjectsWithTag("Scientist1");
+			spawnScientists ();
 		}
 	}
 
@@ -113,6 +122,9 @@ public class GlobalController : MonoBehaviour {
 		scientistCount += 1;
 		scientistText.text = "x " + scientistCount;
 	}
+	public int getScientistCount(){
+		return scientistCount;
+	}
 
 	public void decScore(){
 		score -= scrAdditive;
@@ -126,4 +138,12 @@ public class GlobalController : MonoBehaviour {
 	public void resetAdditive(){
 		scrAdditive = 100;
 	}
+
+	public void spawnScientists(){
+		for(int i = 0; i < (totalScientists-scientistCount); i++) {
+			scientistSprites [i].GetComponent<SpriteRenderer> ().enabled = false;
+		}
+	}
+
+
 }

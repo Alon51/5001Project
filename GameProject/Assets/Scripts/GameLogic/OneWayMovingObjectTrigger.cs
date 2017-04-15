@@ -31,7 +31,6 @@ public class OneWayMovingObjectTrigger : MonoBehaviour {
 	}
 
 	public void moveObjectOneWay(){
-		print ("MOVING BARRIER");
 		if (objToMove != null) {
 			objToMove.transform.position = Vector3.MoveTowards (objToMove.transform.position, currentTarget, moveSpeed * Time.deltaTime);
 		}

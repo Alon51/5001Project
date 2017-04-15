@@ -205,6 +205,14 @@ public class JITScript : MonoBehaviour {
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;
+			case "FinalCompletion":
+				wordDisplay.text = "You've made it! Thank you so much for rescuing us all!\n" +
+					"The malware has spread throughout the ship and we can't get it back!\n" +
+					"We're going to eject our escape pod and head back to base. We wouldn't be here without you.\n\n" +
+					"Thank you a million times!";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				break;
 
 
 			//MISC JITS

@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	//Changes Camera.cam ortho size on toggle mapped to "Q" key.
 	void zoomOut(){
-		cam.orthographicSize = 10;
+		cam.orthographicSize = 14.0f;
 	}
 	void zoomIn(){
 		cam.orthographicSize = 7;
@@ -144,8 +144,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		if (other.gameObject.CompareTag("EscapePod")) {
 			transform.parent = other.transform; // stop making the platform a parent
-			transform.localScale = new Vector3 (2, 2, 1);
-
+			zoomOut();
 		}
 
 	}
@@ -156,6 +155,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		if (other.gameObject.CompareTag("EscapePod")) {
 			transform.parent = null; // stop making the platform a parent
+			//cam.orthographicSize = 8.53f; //specific to final level
 		}
 	}
 }

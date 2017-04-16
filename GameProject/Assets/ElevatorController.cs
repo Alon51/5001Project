@@ -13,7 +13,7 @@ public class ElevatorController : MonoBehaviour {
 	private float startTime;
 	private float elapsedTime;
 
-	private float journeyLengthUp, journeyLengthDown,journeyToOriginFromUp;
+	private float journeyLengthUp, journeyLengthDown;
 
 	public AudioSource elevator;
 
@@ -32,7 +32,6 @@ public class ElevatorController : MonoBehaviour {
 		resetTime (); //call the resetTime function to have startTime begin at 0
 		journeyLengthUp = Vector3.Distance(startMarker.position, endMarkerUp.position);
 		journeyLengthDown = Vector3.Distance(startMarker.position, endMarkerDown.position);
-		journeyToOriginFromUp = Vector3.Distance (midMarker.position, endMarkerUp.position);
 		soundFlag = true;
 	}
 

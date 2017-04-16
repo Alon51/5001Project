@@ -61,7 +61,7 @@ public class LogicalOrCompletion : MonoBehaviour {
 		if (orSuccess.success && replacementOr.giveName == "ReplacementOR") {
 			if (leftPylonFlag || rightPylonFlag && !doorOpened && trueSuccess.success && falseSuccess.success) {
 				openDoor ();
-				GlobalController.Instance.logicalOrComplete = true;
+
 				puzzleFinished = true;
 				if (!camToggled) {
 					GlobalController.Instance.toggleCamera ();

@@ -156,6 +156,7 @@ public class JITScript : MonoBehaviour {
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GlobalController.Instance.incScientist ();
+				GlobalController.Instance.logicalAndComplete = true;
 				playScientistChime ();
 				break;
 			case "LogicalOrScientistJIT":
@@ -163,6 +164,7 @@ public class JITScript : MonoBehaviour {
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GlobalController.Instance.incScientist ();
+				GlobalController.Instance.logicalOrComplete = true;
 				playScientistChime ();
 				break;
 			case "ExitDoorScientistJIT":

@@ -249,6 +249,8 @@ public class JITScript : MonoBehaviour {
 			case "EscapePod": // launches the escape pod
 				this.gameObject.SetActive (false);
 //				Destroy(this.gameObject);
+				playScientistChime(); // actually plays escape pod launch sound
+				playDialogue(); // actually plays escape pod music
 				break;
 			
 			}

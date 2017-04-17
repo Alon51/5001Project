@@ -252,7 +252,6 @@ public class JITScript : MonoBehaviour {
 				playScientistChime(); // actually plays escape pod launch sound
 				playDialogue(); // actually plays escape pod music
 				break;
-			
 			}
 		}
 	}

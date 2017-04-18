@@ -54,6 +54,7 @@ public class GlobalController : MonoBehaviour {
 		}
 	}
 
+
 	void Start(){
 		//thePlayer = FindObjectOfType<PlayerMovement> ();
 		onMainCam = true;
@@ -76,23 +77,48 @@ public class GlobalController : MonoBehaviour {
 				Time.timeScale = 1.0f;
 			}
 		}
-		//IF THE PLAYER IS IN THE FINAL LEVEL
+	}
+
+	/*
+	 * To call a function when a new scene is loaded, you need to add OnSceneLoaded
+	 * as a delegate for SceneManager.sceneLoaded in OnEnable and OnDisable
+	 * Then in OnSceneLoaded, add the code you want to run when a new scene loads
+	*/
+
+	void OnEnable() {//delegate for onScene loaded which monitors when a scene is changed and done loading
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+
+	void OnDisable() {
+		SceneManager.sceneLoaded -= OnSceneLoaded;
+	}
+
+	private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+		//Reset all cameras and text
+		resetWhenSceneChanged ();
+
+
+		//CHECK IF THE PLAYER IS IN THE FINAL LEVEL
 		if(SceneManager.GetActiveScene().name == "FinalLevel" ){
 			scientistSprites = GameObject.FindGameObjectsWithTag("Scientist1");
 			spawnScientists ();
 		}
+
 	}
+
+
+
 
 	//save the players position for use between scenes
 	public void savePlayerPos(){
 		//glPlayerPos.position = thePlayer.transform.position;
 	}
+
 	//changes the scene based on the name
 	public void changeScene(string sceneName){
-
 		SceneManager.LoadScene (sceneName);
-
 	}
+
 	//toggles between the main camera and the specified second camera	
 	public void toggleCamera(){
 		if (onMainCam) {
@@ -113,11 +139,6 @@ public class GlobalController : MonoBehaviour {
 		secondCam = newCam;
 	}
 
-	public void incScore(){
-		score += scrAdditive;
-		scoreText.text = "Score: " + score;
-	}
-
 	public void incScientist(){
 		scientistCount += 1;
 		scientistText.text = "x " + scientistCount;
@@ -125,25 +146,46 @@ public class GlobalController : MonoBehaviour {
 	public int getScientistCount(){
 		return scientistCount;
 	}
-
+	//increases score
+	public void incScore(){
+		score += scrAdditive;
+		scoreText.text = "Score: " + score;
+	}
+	//decreases the score
 	public void decScore(){
 		score -= scrAdditive;
 	}
+	//increases additive
 	public void incAdditive(){
 		scrAdditive += 10;
 	}
+	// decreases additive
 	public void decAdditive(){
 		scrAdditive -= 10;
 	}
+	//resets the additive for the score
 	public void resetAdditive(){
 		scrAdditive = 100;
 	}
-
-	public void spawnScientists(){
+	// loads the apt amount of scientists in the final level based on how many were saved
+	public void spawnScientists(){ 
 		for(int i = 0; i < (totalScientists-scientistCount); i++) {
 			scientistSprites [i].GetComponent<SpriteRenderer> ().enabled = false;
 		}
 	}
 
+	/*
+	 * Resets the following when the scene is changed
+	 * Main Camera
+	 * Score Text
+	 * Scientist Text
+	 * Word Displayer
+	*/
+	public void resetWhenSceneChanged(){
+		mainCam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
+		scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<Text>();
+		scientistText = GameObject.FindGameObjectWithTag ("ScientistText").GetComponent<Text>();
+		wordDisplay = GameObject.FindGameObjectWithTag ("JITDisplay").GetComponent<Text>();
+	}
 
 }

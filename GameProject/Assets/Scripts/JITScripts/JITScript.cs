@@ -73,19 +73,12 @@ public class JITScript : MonoBehaviour {
 				playDialogue ();
 				break;
 			case "ArithChallenge":
-				wordDisplay.text = "The code is incomplete! To open the door, set the equation to equal 30, don't give up!";
+				wordDisplay.text = "The code is incomplete! To open the door, set the equation to equal 2, don't give up!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				playDialogue ();
 				break;
-			case "Num15":
-				wordDisplay.text = "You've found a crumpled up piece of paper." +
-					"\n\n" +
-					"It has the number 15 written on it, that might come in handy.";
-				Time.timeScale = 0.0f;
-				Destroy (this.gameObject);
-				playDialogue ();
-				break;
+			
 			//First generic scientist response
 			case "Scientist1":
 				wordDisplay.text = "Thanks for saving me! I'll help find a way to escape from the ship!";

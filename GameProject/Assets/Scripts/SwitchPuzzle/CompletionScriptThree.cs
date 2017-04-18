@@ -10,6 +10,7 @@ public class CompletionScriptThree : MonoBehaviour {
 						 replacementDoorNumber;
 
 	public bool puzzleFinished, camToggled, scoreChanged;
+	public AudioSource solved, raiseDoor;
 
 	public GameObject[] arrayTiles; // the tiles that will be dragged
 	public GameObject[] replacementTiles; //The replacements when tiles dragged into the slots
@@ -46,6 +47,11 @@ public class CompletionScriptThree : MonoBehaviour {
 				arithmeticPortal.SetActive(true);
 				arithLevTag.SetActive (true);
 				puzzleFinished = true;
+				if (!camToggled) {
+					GlobalController.Instance.toggleCamera ();
+					camToggled = true;
+					solved.Play ();
+				}
 		}
 
 		//Open Portal to Conditionals
@@ -56,6 +62,11 @@ public class CompletionScriptThree : MonoBehaviour {
 				conditionalPortal.SetActive (true);
 				condLevTag.SetActive (true);
 				puzzleFinished = true;
+				if (!camToggled) {
+					GlobalController.Instance.toggleCamera ();
+					camToggled = true;
+					solved.Play ();
+				}
 		}
 
 		//Open Portal to Array
@@ -66,6 +77,11 @@ public class CompletionScriptThree : MonoBehaviour {
 				arrayPortal.SetActive (true);
 				arrayLevTag.SetActive (true);
 				puzzleFinished = true;
+				if (!camToggled) {
+					GlobalController.Instance.toggleCamera ();
+					camToggled = true;
+					solved.Play ();
+				}	
 		}
 
 		//Open Portal to Loop
@@ -76,6 +92,11 @@ public class CompletionScriptThree : MonoBehaviour {
 				loopPortal.SetActive (true);
 				loopLevTag.SetActive (true);
 				puzzleFinished = true;
+				if (!camToggled) {
+					GlobalController.Instance.toggleCamera ();
+					camToggled = true;
+					solved.Play ();
+				}
 		}
 
 		//Open Portal to Final
@@ -85,6 +106,11 @@ public class CompletionScriptThree : MonoBehaviour {
 				//instantiate the final portal
 				finalPortal.SetActive (true);
 				puzzleFinished = true;
+				if (!camToggled) {
+					GlobalController.Instance.toggleCamera ();
+					camToggled = true;
+					solved.Play ();
+				}
 		}
 
 		//The Reset Logic

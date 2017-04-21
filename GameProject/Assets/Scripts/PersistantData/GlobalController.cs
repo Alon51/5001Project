@@ -33,16 +33,18 @@ public class GlobalController : MonoBehaviour {
 	//IndentPuzzle Completion
 	public bool indentComplete = false;
 
+	//Reference to the Player
 	public PlayerMovement thePlayer;
 
-	public Transform glPlayerPos; //global player pos for scene transitions
+	public Vector3 glPlayerPos; //global player pos for scene transitions
 
-	public Text scoreText, scientistText;
+	public Text scoreText, scientistText; //text to display score and num of scientists
 	public int score; // used to track the player's score
-	public int scientistCount;
-	public int totalScientists;
+	public int scientistCount; // num of scientists
+	public int totalScientists; // max amount of scientists in the game
 	public int scrAdditive; // what is added or subtracted from the score
 
+	//text for displaying briefings and such
 	public Text wordDisplay;
 
 	void Awake(){
@@ -56,7 +58,8 @@ public class GlobalController : MonoBehaviour {
 
 
 	void Start(){
-		//thePlayer = FindObjectOfType<PlayerMovement> ();
+		thePlayer = FindObjectOfType<PlayerMovement> ();
+		glPlayerPos = thePlayer.transform.position;
 		onMainCam = true;
 		camName = mainCam.name;
 		score = 0;
@@ -111,7 +114,7 @@ public class GlobalController : MonoBehaviour {
 
 	//save the players position for use between scenes
 	public void savePlayerPos(){
-		//glPlayerPos.position = thePlayer.transform.position;
+		glPlayerPos = thePlayer.transform.position;
 	}
 
 	//changes the scene based on the name
@@ -187,5 +190,7 @@ public class GlobalController : MonoBehaviour {
 		scientistText = GameObject.FindGameObjectWithTag ("ScientistText").GetComponent<Text>();
 		wordDisplay = GameObject.FindGameObjectWithTag ("JITDisplay").GetComponent<Text>();
 	}
+		
+
 
 }

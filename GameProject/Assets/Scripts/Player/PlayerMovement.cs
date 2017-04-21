@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour {
 	public Camera cam;
 
 	public GlobalController gameManager;
+	public RespawnController respawnManager;
 
 //Animation States 
 	const int STATE_IDLE = 0;
@@ -155,4 +156,5 @@ public class PlayerMovement : MonoBehaviour {
 			//cam.orthographicSize = 8.53f; //specific to final level
 		}
 	}
+		
 }

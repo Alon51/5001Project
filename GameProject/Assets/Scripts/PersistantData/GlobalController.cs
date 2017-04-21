@@ -47,6 +47,9 @@ public class GlobalController : MonoBehaviour {
 	//text for displaying briefings and such
 	public Text wordDisplay;
 
+	//name of last scene that was loaded
+	public string previousSceneName;
+
 	void Awake(){
 		if (Instance == null) {
 			DontDestroyOnLoad (gameObject);
@@ -68,6 +71,7 @@ public class GlobalController : MonoBehaviour {
 		scrAdditive = 100;
 		scoreText.text = "Score: " + score;
 		wordDisplay = GameObject.Find ("WordDisplayer").GetComponent<Text>();
+		previousSceneName = "";
 	}
 
 	void Update(){
@@ -79,6 +83,11 @@ public class GlobalController : MonoBehaviour {
 				//unpause
 				Time.timeScale = 1.0f;
 			}
+		}
+
+		//constantly update glPlayerPos
+		if (SceneManager.GetActiveScene ().name != "Settings") {
+			savePlayerPos ();
 		}
 	}
 
@@ -116,9 +125,17 @@ public class GlobalController : MonoBehaviour {
 	public void savePlayerPos(){
 		glPlayerPos = thePlayer.transform.position;
 	}
+	//sets the players position when returning to scene
+	public void setPlayerPos(){
+		thePlayer.transform.position = glPlayerPos;
+	}
 
 	//changes the scene based on the name
 	public void changeScene(string sceneName){
+
+		//set the previous scene name to be reloaded
+		previousSceneName = SceneManager.GetActiveScene ().name;
+
 		SceneManager.LoadScene (sceneName);
 	}
 
@@ -185,6 +202,7 @@ public class GlobalController : MonoBehaviour {
 	 * Word Displayer
 	*/
 	public void resetWhenSceneChanged(){
+		thePlayer = FindObjectOfType<PlayerMovement> ();
 		mainCam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
 		scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<Text>();
 		scientistText = GameObject.FindGameObjectWithTag ("ScientistText").GetComponent<Text>();
@@ -193,6 +211,9 @@ public class GlobalController : MonoBehaviour {
 		//display that text
 		scoreText.text = "Score: " + score;
 		scientistText.text = "x " + scientistCount;
+
+		//put player back in correct spot
+		setPlayerPos();
 
 	}
 		

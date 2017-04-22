@@ -66,6 +66,10 @@ public class GameButtons : MonoBehaviour {
 		SceneManager.LoadScene ("Menu");
 	}
 
+	public void GoToIntroduction()
+	{
+		SceneManager.LoadScene ("Introduction");
+	}
 	public void StartGame()
 	{
 		SceneManager.LoadScene ("HubLevel");

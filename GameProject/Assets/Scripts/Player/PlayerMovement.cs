@@ -48,14 +48,14 @@ public class PlayerMovement : MonoBehaviour {
 		//checking RIGHT input
 		if (Input.GetAxisRaw ("Horizontal") > 0f) {         //don't change y value
 			myRigidBody.velocity = new Vector3 (moveSpeed, myRigidBody.velocity.y, 0f);
-			transform.localScale = new Vector3 (2f, 2f, 1f); // 2 b/c that's the sprites scale
+			transform.localScale = new Vector3 (4f, 4f, 1f); // 2 b/c that's the sprites scale
 			changeState(STATE_RIGHT);
 		} 
 
 		//Checking LEFT input
 		else if (Input.GetAxisRaw ("Horizontal") < 0f) {
 			myRigidBody.velocity = new Vector3 (-moveSpeed, myRigidBody.velocity.y, 0f);
-			transform.localScale = new Vector3 (2f, 2f, 1f);
+			transform.localScale = new Vector3 (-4f, 4f, 1f);
 			changeState (STATE_LEFT);
 		} 
 			
@@ -69,13 +69,15 @@ public class PlayerMovement : MonoBehaviour {
 		// checking jump input(space or up)
 		if (Input.GetButtonDown ("Jump") && isGrounded) {
 			// put jumpSpeed in y to move up by moveSpeed
-
+			anim.SetBool ("Jumping", true);
 			myRigidBody.velocity = new Vector3 (myRigidBody.velocity.x, jumpSpeed, 0f);
 			isJumping = true;
+			anim.SetBool ("Jumping", true);
 			changeState (STATE_JUMP);
 		}
 		// if on the ground, set falling and jumping to false
 		else if(isGrounded){ 
+			anim.SetBool ("Jumping", false);
 			isJumping = false;
 		}
 		//allows player to zoom out the camera to see larger section of the map.
@@ -92,7 +94,15 @@ public class PlayerMovement : MonoBehaviour {
 			//gameManager.toggleCamera ();
 		}
 			
+		// if NOT on ground, and NOT jumping, then set falling to true
+		if (!isGrounded && anim.GetBool ("Jumping") == false) {
+			anim.SetBool ("Falling", true);
+		}
 
+
+		//Sets variables in order to change animations
+		anim.SetFloat("Speed", Mathf.Abs(myRigidBody.velocity.x));
+		anim.SetBool ("Grounded", isGrounded);
 
 	}
 	//Function to change animation state controllers. 

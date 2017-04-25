@@ -85,8 +85,8 @@ public class GlobalController : MonoBehaviour {
 			}
 		}
 
-		//constantly update glPlayerPos
-		if (SceneManager.GetActiveScene ().name != "Settings") {
+		//constantly update glPlayerPos if not in settings scene
+		if (!SceneManager.GetActiveScene ().name.Equals("Settings")) {
 			savePlayerPos ();
 		}
 	}
@@ -196,12 +196,14 @@ public class GlobalController : MonoBehaviour {
 
 	/*
 	 * Resets the following when the scene is changed
+	 * Player
 	 * Main Camera
 	 * Score Text
 	 * Scientist Text
 	 * Word Displayer
 	*/
 	public void resetWhenSceneChanged(){
+		
 		thePlayer = FindObjectOfType<PlayerMovement> ();
 		mainCam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
 		scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<Text>();
@@ -213,7 +215,7 @@ public class GlobalController : MonoBehaviour {
 		scientistText.text = "x " + scientistCount;
 
 		//put player back in correct spot
-		setPlayerPos();
+		//setPlayerPos();
 
 	}
 		

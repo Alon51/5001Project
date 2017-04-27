@@ -30,20 +30,9 @@ public class InsertPuzzleCompletion : MonoBehaviour {
 		if (lineOne.indentCounterOne == 0 && lineTwo.indentCounterTwo == 1 &&
 		   lineThree.indentCounterThree == 2 && lineFour.indentCounterFour == 1 &&
 		   lineFive.indentCounterFive == 0) {
-
-			if (!camToggled) {
-				GlobalController.Instance.toggleCamera ();
-				camToggled = true;
-			}
-			if (!doorOpened) {
-				openDoor ();
-			}
+		
 			puzzleFinished = true;
-			GlobalController.Instance.indentComplete = true;
-			if (!scoreChanged) {
-				GlobalController.Instance.incScore ();
-				scoreChanged = true;
-			}
+
 		}
 
 		if (Input.GetKeyDown (KeyCode.R) && GlobalController.Instance.camName == "IndentCamera") {

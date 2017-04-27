@@ -39,5 +39,18 @@ public class OneWayMovingObjectTrigger : MonoBehaviour {
 		transform.position = initialPosition;
 	}
 
+	void OnTriggerStay2D(Collider2D other){
+		if (other.tag == "Player") {
+			//set the flag
+			other.gameObject.transform.parent = this.transform;
+			other.GetComponent<PlayerMovement> ().zoomOut ();
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other){
+		if (other.tag == "Player") {
+			other.gameObject.transform.parent = null;
+		}
+	}
 	
 }

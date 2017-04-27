@@ -39,4 +39,17 @@ public class MovingObject : MonoBehaviour {
 		}
 	}
 
+
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.tag == "Player") {
+			//set the flag
+			other.gameObject.transform.parent = this.transform;
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other){
+		if (other.tag == "Player") {
+			other.gameObject.transform.parent = null;
+		}
+	}
 }

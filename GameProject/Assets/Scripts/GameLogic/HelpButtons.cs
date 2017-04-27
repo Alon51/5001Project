@@ -34,11 +34,11 @@ public class HelpButtons : MonoBehaviour {
 			helpText.text = "Remember PEMDAS! That will help you order your parentheses and operations.";
 			break;
 		case "HelpButton2_Arth":
-			helpText.text = "Try out some combinations and see if they equal 30, there's only 1 correct answer.";
+			helpText.text = "Try out some combinations and see if they equal 2, there's only 1 correct answer.";
 			break;
 		case "HelpButton3_Arth":
 			helpText.text =
-				"Here's a hint: You'll probably need to divide.";
+				"Here's a hint: You'll probably need to find a remainder.";
 			break;
 		//ARRAY ACCESS BUTTONS
 		case "HelpButton1_Acc":
@@ -197,6 +197,18 @@ public class HelpButtons : MonoBehaviour {
 		case "HelpButton3_INDENT":
 			helpText.text = "The inner closing bracket belongs to the for loop and must be aligned to the 'f' \n" +
 				"in the 'for' statement.";
+			break;
+
+		//Final Puzzle
+
+		case "HelpButton1_FINAL":
+			helpText.text = "You need a sum of 10, right? You might be able to add some of the elements, or \n" +
+				"possibly add their indexes.";
+			break;
+
+		case "HelpButton2_FINAL":
+			helpText.text = "Something __ == 0 is usually checking for a remainder. There's an operator for \n" +
+				"that right?";
 			break;
 
 		//SWITCH PUZZLE

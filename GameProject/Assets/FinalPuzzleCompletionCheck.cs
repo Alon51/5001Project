@@ -52,7 +52,7 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 			resetTiles ();
 			resetSlots ();
 			resetActive ();
-			resetBarriers();
+			//resetBarriers();
 			resetCheckValues ();
 			camToggled = false;
 			puzzleFinished = false;

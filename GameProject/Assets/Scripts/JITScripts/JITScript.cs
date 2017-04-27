@@ -28,7 +28,7 @@ public class JITScript : MonoBehaviour {
 				wordDisplay.text = "There are more scientists to be saved using Arrays! \n" +
 				"An array is a list of elements of the same type. \n " +
 				"Arrays count their elements starting at 0! Remember that! " +
-				"Arrays can be accessed like this: array[num] Where num is a number.";
+				"Arrays can be accessed like this: array_Name[num] Where num is a number.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				playDialogue ();
@@ -215,9 +215,18 @@ public class JITScript : MonoBehaviour {
 				break;
 
 			//FINAL LEVEL JITS
+			case "IndentBriefing":
+				wordDisplay.text = "This is the escape room! All you need to do is get to the escape pod!\n\n" +
+					"There are a few obstacles in your way though. The first is about code indentation.\n" +
+					"Use the onscreen buttons to indent the code so that it's tabbed properly.\n" +
+					"The convention is that all code in an if/while/loop statement is tabbed once.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				playDialogue ();
+				break;
 			case "FinalBriefing":
-				wordDisplay.text = "You're almost there! The rest of the scientists are at the top of this room" +
-				"You need to use what you've learned in order to make the sum 10, which will turn on the rising platform! " +
+				wordDisplay.text = "You're almost there! The rest of the scientists are at the top of this room\n\n" +
+				"You need to use what you've learned in order to make the sum 10, which will turn on the rising platform!\n\n" +
 				"This is the final push! Time to finsh what you started!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);

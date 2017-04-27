@@ -133,11 +133,15 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	//Changes Camera.cam ortho size on toggle mapped to "Q" key.
-	void zoomOut(){
+	public void zoomOut(){
 		cam.orthographicSize = 14.0f;
 	}
-	void zoomIn(){
+	public void zoomIn(){
 		cam.orthographicSize = 7;
+	}
+
+	public void setCamSize(float newCamSize){
+		cam.orthographicSize = newCamSize; //specific to final level
 	}
 			
 	void OnCollisionEnter2D(Collision2D other){
@@ -148,22 +152,20 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		if (other.gameObject.CompareTag("RisingPlatform")) {
-			transform.parent = other.transform; // stop making the platform a parent
+			//transform.parent = other.transform; // stop making the platform a parent
 		}
 		if (other.gameObject.CompareTag("EscapePod")) {
-			transform.parent = other.transform; // stop making the platform a parent
-			zoomOut();
+			//transform.parent = other.transform; // stop making the platform a parent
 		}
 
 	}
 
 	void OnCollisionExit2D(Collision2D other){
 		if (other.gameObject.CompareTag("RisingPlatform")) {
-			transform.parent = null; // stop making the platform a parent
+			//transform.parent = null; // stop making the platform a parent
 		}
 		if (other.gameObject.CompareTag("EscapePod")) {
 			transform.parent = null; // stop making the platform a parent
-			//cam.orthographicSize = 8.53f; //specific to final level
 		}
 	}
 		

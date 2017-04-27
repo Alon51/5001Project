@@ -67,7 +67,7 @@ public class GlobalController : MonoBehaviour {
 		camName = mainCam.name;
 		score = 0;
 		scientistCount = 0;
-		totalScientists = 9;
+		//totalScientists = 9;
 		scrAdditive = 100;
 		scoreText.text = "Score: " + score;
 		wordDisplay = GameObject.Find ("WordDisplayer").GetComponent<Text>();
@@ -189,8 +189,9 @@ public class GlobalController : MonoBehaviour {
 	}
 	// loads the apt amount of scientists in the final level based on how many were saved
 	public void spawnScientists(){ 
-		scientistCount = 3;
-		for(int i = 0; i < (totalScientists-scientistCount); i++) {
+		//scientistCount = 3;
+		int tempMax = totalScientists - scientistCount;
+		for (int i = 0; i < tempMax; i++) {
 			scientistSprites [i].GetComponent<SpriteRenderer> ().enabled = false;
 		}
 	}

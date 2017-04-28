@@ -9,9 +9,13 @@ public class JITScript : MonoBehaviour {
 	public Text wordDisplay;
 	public string jitName;
 	public AudioSource getScientistChime, enterBriefDialogue;
+	bool toggleZoom;
+	GameObject player;
 
 	// Use this for initialization
 	void Start () {
+		toggleZoom = false;
+		player = GameObject.FindGameObjectWithTag ("Player");
 
 	}
 
@@ -24,6 +28,43 @@ public class JITScript : MonoBehaviour {
 		if (other.tag == "Player") {
 			switch (this.jitName) {
 
+			//Hub Level
+			case "HubIntro":
+				wordDisplay.text = "Welcome to the Hub Room X839. This room has many teleporters that will" +
+					"send you to different parts of the ship in order to rescue the ship's scientists!\n\n" +
+					"Head over to the terminal in the middle of the room to pick which room to go to first.\n" +
+					"You can visit the rooms in any order you want, just be sure to save the scientists!";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				playDialogue ();
+				break;
+			case "HubTerminal":
+				wordDisplay.text = "This terminal contains a switch statment, which is a code statement" +
+					"that executes a certain command based on the 'case' it matches.\n\n" +
+					"You need to set a variable called doorNumber to the number of the case you want to execute.\n" +
+					"Head to the terminal and try it out. Use the Green Help Buttons if you feel lost.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				playDialogue ();
+				break;
+			case "HubFinal":
+				wordDisplay.text = "This final room has been locked and you can only get past after saving" +
+					"at least 7 scientists! It will unlock itself once at least 7 scientistd are safe.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				playDialogue ();
+				break;
+			case "HubCamera":
+				if (toggleZoom) {
+					player.GetComponent<PlayerMovement> ().setCamSize (6.4f);
+					toggleZoom = !toggleZoom;
+				} else {
+					player.GetComponent<PlayerMovement> ().setCamSize(9.5f);
+					toggleZoom = !toggleZoom;
+				}
+				break;
+
+			//Array Level
 			case "ArrayBriefing":
 				wordDisplay.text = "There are more scientists to be saved using Arrays! \n" +
 				"An array is a list of elements of the same type. \n " +
@@ -81,7 +122,31 @@ public class JITScript : MonoBehaviour {
 			
 			//First generic scientist response
 			case "Scientist1":
-				wordDisplay.text = "Thanks for saving me! I'll help find a way to escape from the ship!";
+				string tempTxt = "";
+				int temp = Random.Range (1, 5);
+
+				switch (temp) {
+
+				case 1:
+					tempTxt = "Thanks for saving me! I'll help find a way to escape from the ship!";
+					break;
+				case 2:
+					tempTxt = "I never thought I'd get out of here! We either have to regain control of the ship" +
+						"or bail out of here, and I'd rather bail!";
+					break;
+				case 3:
+					tempTxt = "Took you long enough. Now let's get off this forsaken ship. ASAP.";
+					break;
+				case 4:
+					tempTxt = "Is that you X-839? It is! I knew I was right in telling them to keep you operational!\n" +
+						"I'll head to the others and see if we can devise a way out of this mess.";
+					break;
+				case 5:
+					tempTxt = "Thank the heavens you're here. I don't know what I'd do if you didn't come for me!\n" +
+						"We need to take an escape pod and head back to central base!";
+					break;
+				}
+				wordDisplay.text = tempTxt;
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GlobalController.Instance.incScientist ();

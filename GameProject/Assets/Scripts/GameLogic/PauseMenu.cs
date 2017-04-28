@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour {
 	private int buttonWidth = 200;
 	private int buttonHeight = 50;
 	private int groupWidth = 200;
-	private int groupHeight = 170;
+	private int groupHeight = 270;
 
 	bool paused = false;
 
@@ -31,9 +31,14 @@ public class PauseMenu : MonoBehaviour {
 				paused = togglePause ();
 			}
 
-			if (GUI.Button (new Rect (0, 120, buttonWidth, buttonHeight), "Quit Game")) {
+			if (GUI.Button (new Rect (0, 120, buttonWidth, buttonHeight), "Return To Title")) {
+				GlobalController.Instance.changeScene ("STARTUP");
+			}
+
+			if (GUI.Button (new Rect (0, 180, buttonWidth, buttonHeight), "Quit Game")) {
 				Application.Quit();
 			}
+
 			GUI.EndGroup ();
 		}
 	}

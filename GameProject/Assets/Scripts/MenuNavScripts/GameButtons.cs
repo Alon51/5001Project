@@ -74,6 +74,10 @@ public class GameButtons : MonoBehaviour {
 	{
 		SceneManager.LoadScene ("HubLevel");
 	}
+	public void ReturnToTitle()
+	{
+		SceneManager.LoadScene ("STARTUP");
+	}
 
 	public void ReturnToPrevScene(){
 		GlobalController.Instance.changeScene (GlobalController.Instance.previousSceneName);

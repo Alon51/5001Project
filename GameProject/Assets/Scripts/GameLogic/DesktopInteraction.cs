@@ -25,7 +25,7 @@ public class DesktopInteraction : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
+	void OnTriggerStay2D(Collider2D other){
 		if (other.tag == "Player") {
 			//show interact text
 			prompt.enabled = true;
@@ -34,14 +34,14 @@ public class DesktopInteraction : MonoBehaviour {
 		}
 	}
 	//while player is in trigger, react to keypress by changing the camera and toggling it
-	void OntriggerStay2D(Collider2D other){
+	//void OntriggerStay2D(Collider2D other){
 //		if (inArea) {
 //			if (Input.GetKeyDown ("x")) {
 //				GlobalController.Instance.changeSecondCamera (puzzleCamera);
 //				GlobalController.Instance.toggleCamera ();
 //			}
 //		}
-	}
+	//}
 
 	void OnTriggerExit2D(Collider2D other){
 		prompt.enabled = false;

@@ -134,7 +134,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	//Changes Camera.cam ortho size on toggle mapped to "Q" key.
 	public void zoomOut(){
-		cam.orthographicSize = 14.0f;
+		cam.orthographicSize = 16.0f;
 	}
 	public void zoomIn(){
 		cam.orthographicSize = 7;

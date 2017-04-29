@@ -48,21 +48,23 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 		}
 		//reset puzzle and platforms
 		if (Input.GetKeyDown(KeyCode.R)) {
-			//GlobalController.Instance.resetBoxBools();
-			resetTiles ();
-			resetSlots ();
-			resetActive ();
-			//resetBarriers();
-			resetCheckValues ();
-			camToggled = false;
-			puzzleFinished = false;
-
-			//lower additive
-			GlobalController.Instance.decAdditive();
+			resetPuzzle ();
 		}
 
+	}
 
+	public void resetPuzzle(){
+		//GlobalController.Instance.resetBoxBools();
+		resetTiles ();
+		resetSlots ();
+		resetActive ();
+		//resetBarriers();
+		resetCheckValues ();
+		camToggled = false;
+		puzzleFinished = false;
 
+		//lower additive
+		GlobalController.Instance.decAdditive ();
 	}
 
 	public void resetCheckValues(){

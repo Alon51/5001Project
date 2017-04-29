@@ -58,23 +58,27 @@ public class ArrayAccessCompletion : MonoBehaviour {
 		}
 		//reset puzzle and platforms
 		if (Input.GetKeyDown(KeyCode.R)) {
-			//GlobalController.Instance.resetBoxBools();
-			resetTiles ();
-			resetSlots ();
-			resetActive ();
-			resetPlatforms ();
-			resetCheckValues ();
-			//puzzleCam.enabled = true;
-			camToggled = false;
-			puzzleFinished = false;
-			errorValUsed = false;
-			errorMessage.enabled = false;
-			//lower additive
-			GlobalController.Instance.decAdditive();
+			resetPuzzle ();	
 		}
 
 			
 
+	}
+
+	public void resetPuzzle(){
+		//GlobalController.Instance.resetBoxBools();
+		resetTiles ();
+		resetSlots ();
+		resetActive ();
+		resetPlatforms ();
+		resetCheckValues ();
+		//puzzleCam.enabled = true;
+		camToggled = false;
+		puzzleFinished = false;
+		errorValUsed = false;
+		errorMessage.enabled = false;
+		//lower additive
+		GlobalController.Instance.decAdditive ();
 	}
 
 	public void switchToErrorScreen(){

@@ -46,21 +46,25 @@ public class ArraySumCompletion : MonoBehaviour {
 
 		//reset puzzle and boxes
 		if (Input.GetKeyDown(KeyCode.R)) {
-			//GlobalController.Instance.resetBoxBools();
-			resetTiles ();
-			resetSlots ();
-			resetActive ();
-			resetBoxesAndPlatforms ();
-			resetCheckValues ();
-			camToggled = false;
-			puzzleFinished = false;
-
-			//lower additive
-			GlobalController.Instance.decAdditive();
+			resetPuzzle ();
 		}
 
 	}
 
+	public void resetPuzzle(){
+		//GlobalController.Instance.resetBoxBools();
+		resetTiles ();
+		resetSlots ();
+		resetActive ();
+		resetBoxesAndPlatforms ();
+		resetCheckValues ();
+		camToggled = false;
+		puzzleFinished = false;
+
+		//lower additive
+		GlobalController.Instance.decAdditive();
+	}
+		
 	public void resetCheckValues(){
 		checkOne.resetSuccessBool ();
 		checkTwo.resetSuccessBool ();

@@ -56,7 +56,13 @@ public class CompletionCheck2 : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyDown(KeyCode.R) && GlobalController.Instance.camName == "NestedForLoopCamera"){
+		if (Input.GetKeyDown (KeyCode.R)) {
+			resetPuzzle ();
+		}
+	}
+
+	public void resetPuzzle(){
+		if (GlobalController.Instance.camName == "NestedForLoopCamera") {
 			closeDoor ();
 			doorOpened = false;
 			GlobalController.Instance.nestedForLoopComplete = false;
@@ -70,7 +76,7 @@ public class CompletionCheck2 : MonoBehaviour {
 			GlobalController.Instance.decAdditive ();
 		}
 	}
-
+		
 	public void resetCheckValues(){
 		threeSuccess.resetSuccessBool ();
 		fiveSuccess.resetSuccessBool ();

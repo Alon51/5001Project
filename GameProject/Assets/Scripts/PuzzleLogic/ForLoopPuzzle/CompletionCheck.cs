@@ -38,8 +38,8 @@ public class CompletionCheck : MonoBehaviour {
 		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
 
 		if (twoSuccess.success && replacementTwo.giveName == "Replacement2" &&
-			plusSuccess.success && replacementPlus.giveName == "Replacement+" &&
-			plusPlusSuccess.success && replacementPlusPlus.giveName == "Replacement+"){
+		    plusSuccess.success && replacementPlus.giveName == "Replacement+" &&
+		    plusPlusSuccess.success && replacementPlusPlus.giveName == "Replacement+") {
 			if (!camToggled) {
 				GlobalController.Instance.toggleCamera ();
 				camToggled = true;
@@ -56,7 +56,13 @@ public class CompletionCheck : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyDown(KeyCode.R) && GlobalController.Instance.camName == "SingleLoopCamera"){
+		if (Input.GetKeyDown (KeyCode.R)) {
+			resetPuzzle ();
+		}
+	}
+
+	public void resetPuzzle(){
+		if (GlobalController.Instance.camName == "SingleLoopCamera") {
 			closeDoor ();
 			doorOpened = false;
 			GlobalController.Instance.singleForLoopComplete = false;

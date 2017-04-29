@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 
@@ -14,6 +15,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 	public GameObject[] arrayTiles; // the tiles that will be dragged
 	public GameObject[] replacementTiles;
 	public Camera errorCam, puzzleCam;
+	public Text errorMessage;
 	public bool puzzleFinished, camToggled, errorValUsed, scoreChanged;
 	// Use this for initialization
 	void Start () {
@@ -22,6 +24,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 		camToggled = false;
 		errorValUsed = false;
 		scoreChanged = false;
+		errorMessage.enabled = false;
 	}
 
 	// Update is called once per frame
@@ -37,6 +40,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 					camToggled = true;
 					puzzleFinished = true;
 					errorValUsed = true;
+					errorMessage.enabled = true;
 				}
 				else {
 					GlobalController.Instance.toggleCamera ();
@@ -53,7 +57,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			} 
 		}
 		//reset puzzle and platforms
-		if (puzzleFinished && Input.GetKeyDown(KeyCode.R)) {
+		if (Input.GetKeyDown(KeyCode.R)) {
 			//GlobalController.Instance.resetBoxBools();
 			resetTiles ();
 			resetSlots ();
@@ -64,7 +68,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			camToggled = false;
 			puzzleFinished = false;
 			errorValUsed = false;
-
+			errorMessage.enabled = false;
 			//lower additive
 			GlobalController.Instance.decAdditive();
 		}
@@ -80,8 +84,8 @@ public class ArrayAccessCompletion : MonoBehaviour {
 	public bool errorValueUsed(){
 		//checks to see if the N array tile was placed, which will cause an out of bounds error
 		if (checkOne.giveName == "ReplacementN"
-		   || checkTwo.giveName == "ReplacementN"
-		   || checkThree.giveName == "ReplacementN") {
+		   || checkTwo.giveName == "Replacement1"
+		   || checkThree.giveName == "Replacement3") {
 			GlobalController.Instance.changeSecondCamera (errorCam);
 
 			return true;

@@ -78,7 +78,7 @@ public class JITScript : MonoBehaviour {
 				wordDisplay.text = "It seems some of the holo-platforms are disabled, which means you can't get across!" +
 					"\nUse this terminal to try and fix them. Turn on the First, Third, and Last platforms.\n" +
 					"Watch out for weird array indexes\n\n" +
-					"Press 'C' to change to look at the holo-platforms.";
+					"Press 'C' to change the camera and look at the holo-platforms.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				playDialogue ();
@@ -87,7 +87,8 @@ public class JITScript : MonoBehaviour {
 				wordDisplay.text = "The counter-weight platform is down, but you need to get across. " +
 					"Hmm, see those weighted boxed up there, they seem linked ot this terminal! " +
 					"It seems that you need a weight of 14 to align the counter-weight platform. " +
-					"Put your coding skills to the test and drop a total of 14lbs on the platform.";
+					"Put your coding skills to the test and drop a total of 14lbs on the platform." +
+					"Press 'V' to change the camera and look at the weighted boxes.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;

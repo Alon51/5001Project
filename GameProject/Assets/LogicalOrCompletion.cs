@@ -21,8 +21,8 @@ public class LogicalOrCompletion : MonoBehaviour {
 	public AudioSource solved, raisePillarSound, raiseDoor;
 
 	//GameObject spawn in locations
-	private float rightX = 138f;
-	private float leftX = 124f;
+	private float rightX = 116.4f;
+	private float leftX = 102.4f;
 	private float inSceneY = -20f;
 	private float offScreenY = -100f;
 
@@ -79,7 +79,13 @@ public class LogicalOrCompletion : MonoBehaviour {
 		}
 				
 
-		if (Input.GetKeyDown (KeyCode.R) && GlobalController.Instance.camName == "LogicalOrCamera") {
+		if (Input.GetKeyDown (KeyCode.R)) {
+			resetPuzzle ();
+		}
+	}
+
+	public void resetPuzzle(){
+		if (GlobalController.Instance.camName == "LogicalOrCamera") {
 			GlobalController.Instance.logicalOrComplete = false;
 			closeDoor ();
 			doorOpened = false;
@@ -96,6 +102,7 @@ public class LogicalOrCompletion : MonoBehaviour {
 			GlobalController.Instance.decAdditive ();
 		}
 	}
+		
 
 	public void controlLeft(){
 		if (!leftPylonFlag) {

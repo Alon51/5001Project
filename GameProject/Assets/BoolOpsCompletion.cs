@@ -66,7 +66,19 @@ public class BoolOpsCompletion : MonoBehaviour {
 			}	
 		}
 
-		if (Input.GetKeyDown(KeyCode.R) && GlobalController.Instance.camName == "BoolOpsCamera"){
+		if (Input.GetKeyDown (KeyCode.R)) {
+			resetPuzzle ();
+		}
+	}
+
+	public void resetCheckValues(){
+		upSuccess.resetSuccessBool ();
+		notUpSuccess.resetSuccessBool ();
+	}
+
+	public void resetPuzzle(){
+		if (GlobalController.Instance.camName == "BoolOpsCamera") {
+			
 			GlobalController.Instance.boolOpsComplete = false;
 			resetTiles ();
 			resetSlots ();
@@ -78,15 +90,9 @@ public class BoolOpsCompletion : MonoBehaviour {
 			floorLocation.down = false;
 			useElevator = false;
 			goingUp = false;
-
 		}
 	}
-
-	public void resetCheckValues(){
-		upSuccess.resetSuccessBool ();
-		notUpSuccess.resetSuccessBool ();
-	}
-
+		
 
 	public void resetSlots(){
 		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");

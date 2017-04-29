@@ -114,7 +114,14 @@ public class CompletionScriptThree : MonoBehaviour {
 		}
 
 		//The Reset Logic
-		if (Input.GetKeyDown (KeyCode.R) && GlobalController.Instance.camName == "SwitchCamera") {
+		if (Input.GetKeyDown (KeyCode.R)) {
+			resetPuzzle ();
+		}
+			
+	}
+
+	public void resetPuzzle(){
+		if (GlobalController.Instance.camName == "SwitchCamera") {
 			resetTiles ();
 			resetSlots ();
 			resetActive ();
@@ -131,8 +138,8 @@ public class CompletionScriptThree : MonoBehaviour {
 			arrayLevTag.SetActive (false);
 			loopLevTag.SetActive (false);
 		}
-			
 	}
+		
 		
 
 	public void resetCheckValues(){

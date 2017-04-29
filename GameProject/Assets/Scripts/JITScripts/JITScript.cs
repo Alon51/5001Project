@@ -76,8 +76,9 @@ public class JITScript : MonoBehaviour {
 				break;
 			case "ArrayChallenge1":
 				wordDisplay.text = "It seems some of the holo-platforms are disabled, which means you can't get across!" +
-					"\nUse this terminal to try and fix them. Turn on the First, Third, and Last platforms." +
-					" Watch out for weird array indexes";
+					"\nUse this terminal to try and fix them. Turn on the First, Third, and Last platforms.\n" +
+					"Watch out for weird array indexes\n\n" +
+					"Press 'C' to change to look at the holo-platforms.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				playDialogue ();

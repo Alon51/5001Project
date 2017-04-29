@@ -22,6 +22,7 @@ public class DesktopInteraction : MonoBehaviour {
 				GlobalController.Instance.changeSecondCamera (puzzleCamera);
 				GlobalController.Instance.toggleCamera ();
 			}
+
 		}
 	}
 

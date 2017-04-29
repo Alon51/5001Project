@@ -55,23 +55,27 @@ public class DataTypeCompletionCheck : MonoBehaviour {
 		}
 		//reset puzzle and platforms
 		if (Input.GetKeyDown(KeyCode.R)) {
-			//GlobalController.Instance.resetBoxBools();
-			resetTiles ();
-			resetSlots ();
-			resetActive ();
-			closeDoor ();
-			resetCheckValues ();
-			camToggled = false;
-			puzzleFinished = false;
-
-			//lower additive
-			GlobalController.Instance.decAdditive();
+			resetPuzzle ();
 		}
 
 
 
 	}
 
+	public void resetPuzzle(){
+		//GlobalController.Instance.resetBoxBools();
+		resetTiles ();
+		resetSlots ();
+		resetActive ();
+		closeDoor ();
+		resetCheckValues ();
+		camToggled = false;
+		puzzleFinished = false;
+
+		//lower additive
+		GlobalController.Instance.decAdditive ();
+	}
+		
 	public void resetCheckValues(){
 		foreach (GameObject slot in checkSlots) {
 			slot.GetComponent<ArrayReaction>().resetSuccessBool ();

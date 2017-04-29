@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -81,7 +82,7 @@ public class PlayerMovement : MonoBehaviour {
 			isJumping = false;
 		}
 		//allows player to zoom out the camera to see larger section of the map.
-		if (Input.GetKeyDown("q")) {
+		if (Input.GetKeyDown ("q")) {
 			if (!zoom) {
 				zoomOut ();
 				zoom = true;
@@ -90,15 +91,6 @@ public class PlayerMovement : MonoBehaviour {
 				zoom = false;
 			}
 		}
-		if (Input.GetKeyDown (KeyCode.T)) {
-			//gameManager.toggleCamera ();
-		}
-			
-		// if NOT on ground, and NOT jumping, then set falling to true
-		if (!isGrounded && anim.GetBool ("Jumping") == false) {
-			anim.SetBool ("Falling", true);
-		}
-
 
 		//Sets variables in order to change animations
 		anim.SetFloat("Speed", Mathf.Abs(myRigidBody.velocity.x));
@@ -142,6 +134,13 @@ public class PlayerMovement : MonoBehaviour {
 
 	public void setCamSize(float newCamSize){
 		cam.orthographicSize = newCamSize; //specific to final level
+	}
+
+	public void goToArrPlatforms(){
+		Camera tempcam = GameObject.Find ("ArrayPlatformCamera").GetComponent<Camera>();
+		GlobalController.Instance.changeSecondCamera (tempcam);
+		GlobalController.Instance.toggleCamera ();
+
 	}
 			
 	void OnCollisionEnter2D(Collision2D other){

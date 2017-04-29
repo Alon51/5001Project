@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ArrPlatCamController : MonoBehaviour {
+public class ArrCamsController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -14,9 +14,16 @@ public class ArrPlatCamController : MonoBehaviour {
 	void Update () {
 		//SPECIFIFC TO ARRAY LEVEL
 		if (SceneManager.GetActiveScene ().name.Equals("ArrayLevel")) {
+			//ACCES CAMERA
 			if (Input.GetKeyDown (KeyCode.C)) {
 				Camera arrCam = GameObject.Find ("ArrayPlatformCamera").GetComponent<Camera> ();
 				GlobalController.Instance.changeSecondCamera (arrCam);
+				GlobalController.Instance.toggleCamera ();
+			}
+			//SUMMATION CAMERA
+			if (Input.GetKeyDown (KeyCode.V)) {
+				Camera arrSumCam = GameObject.Find ("ArraySumCamera").GetComponent<Camera> ();
+				GlobalController.Instance.changeSecondCamera (arrSumCam);
 				GlobalController.Instance.toggleCamera ();
 			}
 		}

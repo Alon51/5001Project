@@ -85,9 +85,9 @@ public class JITScript : MonoBehaviour {
 				break;
 			case "ArrayChallenge2":
 				wordDisplay.text = "The counter-weight platform is down, but you need to get across. " +
-					"Hmm, see those weighted boxed up there, they seem linked ot this terminal! " +
+					"Hmm, see those weighted boxed up there, they seem linked ot this terminal!\n\n" +
 					"It seems that you need a weight of 14 to align the counter-weight platform. " +
-					"Put your coding skills to the test and drop a total of 14lbs on the platform." +
+					"Put your coding skills to the test and drop a total of 14lbs on the platform.\n\n" +
 					"Press 'V' to change the camera and look at the weighted boxes.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);

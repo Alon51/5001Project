@@ -211,7 +211,9 @@ public class JITScript : MonoBehaviour {
 				playDialogue ();
 				break;
 			case "LogicalAndScientistJIT":
-				wordDisplay.text = "Thanks for saving me! Let me help you get the ship under control!";
+				wordDisplay.text = "I don't know what happened, this door just shut behind me.\n" +
+					"We need to get out of here before we crash! I had a friend\n" +
+					"stationed on the basement floor, did you find him?";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GlobalController.Instance.incScientist ();
@@ -219,7 +221,10 @@ public class JITScript : MonoBehaviour {
 				playScientistChime ();
 				break;
 			case "LogicalOrScientistJIT":
-				wordDisplay.text = "Thanks for saving me! Let me help you get the ship under control!";
+				wordDisplay.text = "It was so weird, I was just minding my own business staring \n" +
+					"at this wall, and then BAM, big red door! \n" +
+					"Did you get my friend on the upper level? \n" +
+					"He owes me 20 space creds. Are we crashing?";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GlobalController.Instance.incScientist ();

@@ -45,7 +45,7 @@ public class ArraySumCompletion : MonoBehaviour {
 		}	
 
 		//reset puzzle and boxes
-		if (puzzleFinished && Input.GetKeyDown(KeyCode.R)) {
+		if (Input.GetKeyDown(KeyCode.R)) {
 			//GlobalController.Instance.resetBoxBools();
 			resetTiles ();
 			resetSlots ();

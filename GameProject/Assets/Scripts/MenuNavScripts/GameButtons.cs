@@ -35,7 +35,7 @@ public class GameButtons : MonoBehaviour {
 		SceneManager.LoadScene ("Introduction");
 	}
 	public void GoToInstructions(){
-		SceneManager.LoadScene ("Instuctions");
+		SceneManager.LoadScene ("Instructions");
 	}
 	public void StartGame(){
 		SceneManager.LoadScene ("HubLevel");

@@ -28,7 +28,7 @@ public class CreditsScript : MonoBehaviour {
 		ReturnToTitleButton.gameObject.SetActive (false);
 		QuitGameButton.gameObject.SetActive (false);
 
-		//setAlphaToZero ();
+		setAlphaToZero ();
 	}
 
 	// Update is called once per frame
@@ -45,8 +45,10 @@ public class CreditsScript : MonoBehaviour {
 			titleText.enabled = true;
 			ReturnToTitleButton.gameObject.SetActive (true);
 			QuitGameButton.gameObject.SetActive (true);
-			//increaseAlphas ();
+			increaseAlphas ();
 		}
+
+		//update these to be used in increaseAlphas
 		rtCol = ReturnToTitleButton.GetComponent<Image> ().color;
 		qgCol = QuitGameButton.GetComponent<Image> ().color;
 	}
@@ -59,17 +61,18 @@ public class CreditsScript : MonoBehaviour {
 	}
 	//sets title text, and buttons to be transparent
 	public void setAlphaToZero(){
-		titleText.color = new Color(0,0,0,0);
-		ReturnToTitleButton.GetComponent<Image> ().color = new Color(0,0,0,0);
-		QuitGameButton.GetComponent<Image> ().color = new Color(0,0,0,0);
-//		rtCol = ReturnToTitleButton.GetComponent<Image> ().color;
-//		qgCol = QuitGameButton.GetComponent<Image> ().color;
+		titleText.color = new Color (1.0f, 1.0f, 1.0f, 0.0f);
+		ReturnToTitleButton.GetComponent<Image> ().color = new Color(1.0f,1.0f,1.0f,0.0f);
+		QuitGameButton.GetComponent<Image> ().color = new Color(1.0f,1.0f,1.0f,0.0f);
+
 	}
 	//sets title text, and buttons to be visible
 	public void increaseAlphas(){
-		titleText.color = new Color(titleText.color.r,titleText.color.g,titleText.color.b,titleText.color.a + 1f);
-		ReturnToTitleButton.GetComponent<Image> ().color = new Color(rtCol.r,rtCol.g,rtCol.b,rtCol.a + 1f);
-		QuitGameButton.GetComponent<Image> ().color = new Color(qgCol.r,qgCol.g,qgCol.b,qgCol.a + 1f);
+		//Increase all color's alpha by 0.1 until max
+		titleText.color = new Color(titleText.color.r,titleText.color.g,titleText.color.b,titleText.color.a + 0.01f);
+		ReturnToTitleButton.GetComponent<Image> ().color = new Color(rtCol.r,rtCol.g,rtCol.b,rtCol.a + 0.01f);
+		QuitGameButton.GetComponent<Image> ().color = new Color(qgCol.r,qgCol.g,qgCol.b,qgCol.a + 0.01f);
+
 	}
 
 }

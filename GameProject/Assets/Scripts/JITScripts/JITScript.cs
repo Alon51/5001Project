@@ -313,6 +313,17 @@ public class JITScript : MonoBehaviour {
 				Destroy (this.gameObject);
 				playDialogue ();
 				break;
+			case "FinalBase":
+				wordDisplay.text = "Hey! You must be X839! Thank's so much for saving the scientists! " +
+					"The scientists were in trouble and you managed to get a lot done.\n\n" +
+					"You learned code!\n" +
+					"Honed your skills!\n" +
+					"And saved the day!\n\n" +
+					"Head to that portal over there to complete your mission. Thank you again!";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				playDialogue ();
+				break;
 
 
 			//MISC JITS

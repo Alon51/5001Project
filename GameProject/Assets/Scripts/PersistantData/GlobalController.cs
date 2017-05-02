@@ -50,6 +50,9 @@ public class GlobalController : MonoBehaviour {
 	//name of last scene that was loaded
 	public string previousSceneName;
 
+	//Upgrades
+	public bool hasBombs = false;
+
 	void Awake(){
 		if (Instance == null) {
 			DontDestroyOnLoad (gameObject);

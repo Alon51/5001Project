@@ -102,7 +102,8 @@ public class PlayerMovement : MonoBehaviour {
 
 		elapsedTime = Time.time - startTime;
 
-		if (Input.GetMouseButtonDown (0) && GlobalController.Instance.onMainCam && elapsedTime > 4.0f) {
+		if (Input.GetMouseButtonDown (0) && GlobalController.Instance.onMainCam && elapsedTime > 2.0f && 
+			GlobalController.Instance.hasBombs){
 			timer.resetTime ();
 			resetBombUseTimer ();
 			Instantiate (bomb, new Vector3 (this.transform.position.x + 2f, this.transform.position.y - .75f, 

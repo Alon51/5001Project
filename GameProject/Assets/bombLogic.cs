@@ -5,7 +5,7 @@ using UnityEngine;
 public class bombLogic : MonoBehaviour {
 
 	public float startTime, elapsedTime;
-	public GameObject explosion;
+	public GameObject explosion, secretDoor;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +14,7 @@ public class bombLogic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		elapsedTime = Time.time - startTime;
-		if (elapsedTime > 4.0f) {
+		if (elapsedTime > 2.0f) {
 			Destroy (this.gameObject);
 			explode ();
 			resetTime ();
@@ -29,4 +29,5 @@ public class bombLogic : MonoBehaviour {
 		GameObject clone = (GameObject)Instantiate (explosion, this.transform.position, Quaternion.identity);
 		Destroy (clone, 1.0f);
 	}
+		
 }

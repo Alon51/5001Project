@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class explodeLogic : MonoBehaviour {
-
+	
 	// Use this for initialization
 	void Start () {
 		
@@ -16,8 +16,8 @@ public class explodeLogic : MonoBehaviour {
 
 	public void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "secret") {
-			print ("in trigger function");
-			other.enabled = false;
+			print ("KABOOM");
+			Destroy (other.gameObject);
 		}
 	}
 }

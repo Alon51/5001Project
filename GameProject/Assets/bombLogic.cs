@@ -9,7 +9,6 @@ public class bombLogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -27,6 +26,7 @@ public class bombLogic : MonoBehaviour {
 	}
 
 	void explode(){
-		Instantiate (explosion, this.transform.position, Quaternion.identity);
+		GameObject clone = (GameObject)Instantiate (explosion, this.transform.position, Quaternion.identity);
+		Destroy (clone, 1.0f);
 	}
 }

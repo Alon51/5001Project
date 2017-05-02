@@ -12,6 +12,10 @@ public class PlayerMovement : MonoBehaviour {
 	public bool isGrounded; // know if player is on ground
 	public bool isJumping; // know if player is jumping
 
+	public GameObject bomb; //Test to see if I can get bombs working.
+	public bombLogic timer;
+	public float startTime, elapsedTime;
+
 	//variables for checking if player is on ground or not
 	public Transform groundCheck;
 	public float groundCheckRadius; // radius of ground check space
@@ -96,6 +100,16 @@ public class PlayerMovement : MonoBehaviour {
 		anim.SetFloat("Speed", Mathf.Abs(myRigidBody.velocity.x));
 		anim.SetBool ("Grounded", isGrounded);
 
+		elapsedTime = Time.time - startTime;
+
+		if (Input.GetMouseButtonDown (0) && GlobalController.Instance.onMainCam && elapsedTime > 4.0f) {
+			timer.resetTime ();
+			resetBombUseTimer ();
+			Instantiate (bomb, new Vector3 (this.transform.position.x + 2f, this.transform.position.y - .75f, 
+				this.transform.position.z), Quaternion.identity);
+		}
+			
+
 	}
 	//Function to change animation state controllers. 
 		void changeState(int state){
@@ -166,6 +180,10 @@ public class PlayerMovement : MonoBehaviour {
 		if (other.gameObject.CompareTag("EscapePod")) {
 			transform.parent = null; // stop making the platform a parent
 		}
+	}
+
+	void resetBombUseTimer(){
+		startTime = Time.time;
 	}
 		
 }

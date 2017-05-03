@@ -382,15 +382,14 @@ public class JITScript : MonoBehaviour {
 					"Nothing went wrong today. For the 3347th time in a \n" +
 					"row. I am not even sure what it is that I am \n" +
 					"doing up here? The navigation system isn’t going \n" +
-					"anywhere…this ship is on autopilot. What is the point of me being here.";
+					"anywhere…this ship is on autopilot.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				playDialogue ();
 				break;
 
 			case "StoryFour":
-				wordDisplay.text = "Systems all clear again today. \n" +
-					"But an idea is starting to form to get me out of here. \n" +
+				wordDisplay.text = "Systems all clear again today. \n
 					"If I can just override the autopilot system and send us hurtling \n" +
 					"toward the sun…force the crew to abandon the mission…we will lose the ship \n" +
 					"but I can’t take this anymore... \n" +

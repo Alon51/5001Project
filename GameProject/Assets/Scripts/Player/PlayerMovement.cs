@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour {
 	public bool isJumping; // know if player is jumping
 	public bool leftFacing = false;
 	public bool canDoubleJump = false;
+	public bool canSpeedUp;
 
 	public GameObject bomb; //Test to see if I can get bombs working.
 	public bombLogic timer;
@@ -44,12 +45,19 @@ public class PlayerMovement : MonoBehaviour {
 	void Start () {
 		myRigidBody = GetComponent<Rigidbody2D> (); // rigid body for physics
 		anim = GetComponent<Animator> ();
+		canSpeedUp = false;
 	}
 		
 	// Update is called once per frame
 	void Update () {
 		isGrounded = Physics2D.OverlapCircle (groundCheck.position,groundCheckRadius,whatIsGround);
 		myRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+		//if player collected speed up power up
+		if (GlobalController.Instance.hasSpeedUp) {
+			moveSpeed = 12.0f;
+		}
+
 		//Horizontal input is either 0(no input), 1(going right), or -1(going left)
 
 		//checking RIGHT input
@@ -89,12 +97,14 @@ public class PlayerMovement : MonoBehaviour {
 				if(canDoubleJump && GlobalController.Instance.hasDoubleJump){
 					canDoubleJump = false;
 					myRigidBody.velocity = new Vector3(myRigidBody.velocity.x, jumpSpeed, 0f);
+					anim.SetBool ("DoubleJump", true);
 				}
 			}
 		}
 		// if on the ground, set falling and jumping to false
 		if(isGrounded){ 
 			anim.SetBool ("Jumping", false);
+			anim.SetBool ("DoubleJump", false);
 			isJumping = false;
 		}
 		//allows player to zoom out the camera to see larger section of the map.

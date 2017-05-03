@@ -169,6 +169,7 @@ public class JITScript : MonoBehaviour {
 				Destroy (this.gameObject);
 				GameObject sci = GameObject.Find ("MidScientist");
 				GlobalController.Instance.incScientist ();
+				GlobalController.Instance.hasSpeedUp = true;
 				playScientistChime ();
 				Destroy (sci,7.0f);
 				break;

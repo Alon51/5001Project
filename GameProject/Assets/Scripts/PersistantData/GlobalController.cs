@@ -53,6 +53,7 @@ public class GlobalController : MonoBehaviour {
 	//Upgrades
 	public bool hasBombs = false;
 	public bool hasDoubleJump = false;
+	public bool hasSpeedUp;
 
 	void Awake(){
 		if (Instance == null) {
@@ -76,6 +77,7 @@ public class GlobalController : MonoBehaviour {
 		scoreText.text = "Score: " + score;
 		wordDisplay = GameObject.Find ("WordDisplayer").GetComponent<Text>();
 		previousSceneName = "";
+		hasSpeedUp = false;
 	}
 
 	void Update(){

@@ -213,19 +213,20 @@ public class JITScript : MonoBehaviour {
 				break;
 			case "LogicalAndScientistJIT":
 				wordDisplay.text = "I don't know what happened, this door just shut behind me.\n" +
-					"We need to get out of here before we crash! I had a friend\n" +
-					"stationed on the basement floor, did you find him?";
+				"We need to get out of here before we crash! I had a friend\n" +
+				"stationed on the basement floor, did you find him?";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GlobalController.Instance.incScientist ();
 				GlobalController.Instance.logicalAndComplete = true;
+				GlobalController.Instance.hasDoubleJump = true;
 				playScientistChime ();
 				break;
 			case "LogicalOrScientistJIT":
 				wordDisplay.text = "It was so weird, I was just minding my own business staring \n" +
-					"at this wall, and then BAM, big red door! \n" +
-					"Did you get my friend on the upper level? \n" +
-					"He owes me 20 space creds. Are we crashing?";
+				"at this wall, and then BAM, big red door! \n" +
+				"Did you get my friend on the upper level? \n" +
+				"He owes me 20 space creds. Are we crashing?";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GlobalController.Instance.incScientist ();
@@ -233,10 +234,14 @@ public class JITScript : MonoBehaviour {
 				playScientistChime ();
 				break;
 			case "ExitDoorScientistJIT":
-				wordDisplay.text = "Good work! Hurry through the portal, there are more like me to be helped!";
+				wordDisplay.text = "Good work! Hurry through the portal, there are more like me to be helped!\n" +
+					"Take these bombs too, don't use them on exterior walls though, because then\n" +
+					"you will get sucked out to space and you'll just be flying around out there until\n" +
+					"you run out of batteries or whatever. Tata!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GlobalController.Instance.incScientist ();
+				GlobalController.Instance.hasBombs = true;
 				playScientistChime ();
 				break;
 
@@ -336,6 +341,15 @@ public class JITScript : MonoBehaviour {
 //				Destroy(this.gameObject);
 				playScientistChime(); // actually plays escape pod launch sound
 				playDialogue(); // actually plays escape pod music
+				break;
+
+			case "BombBriefing":
+				wordDisplay.text = "Use the left-click to drop a bomb in front you. \n" +
+					"Keep a look out for walls like this as you look to escape the ship. \n" +
+					"Don't worry, they can't hurt you.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				playDialogue ();
 				break;
 			}
 		}

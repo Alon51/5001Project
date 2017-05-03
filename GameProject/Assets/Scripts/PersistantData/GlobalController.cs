@@ -51,7 +51,8 @@ public class GlobalController : MonoBehaviour {
 	public string previousSceneName;
 
 	//Upgrades
-	public bool hasBombs = true;
+	public bool hasBombs = false;
+	public bool hasDoubleJump = false;
 
 	void Awake(){
 		if (Instance == null) {

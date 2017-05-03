@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	public bool isGrounded; // know if player is on ground
 	public bool isJumping; // know if player is jumping
+	public bool leftFacing = false;
+	public bool canDoubleJump = false;
 
 	public GameObject bomb; //Test to see if I can get bombs working.
 	public bombLogic timer;
@@ -55,6 +57,7 @@ public class PlayerMovement : MonoBehaviour {
 			myRigidBody.velocity = new Vector3 (moveSpeed, myRigidBody.velocity.y, 0f);
 			transform.localScale = new Vector3 (4f, 4f, 1f); // 2 b/c that's the sprites scale
 			changeState(STATE_RIGHT);
+			leftFacing = false;
 		} 
 
 		//Checking LEFT input
@@ -62,6 +65,7 @@ public class PlayerMovement : MonoBehaviour {
 			myRigidBody.velocity = new Vector3 (-moveSpeed, myRigidBody.velocity.y, 0f);
 			transform.localScale = new Vector3 (-4f, 4f, 1f);
 			changeState (STATE_LEFT);
+			leftFacing = true;
 		} 
 			
 		//NO INPUT
@@ -72,16 +76,24 @@ public class PlayerMovement : MonoBehaviour {
 
 
 		// checking jump input(space or up)
-		if (Input.GetButtonDown ("Jump") && isGrounded) {
-			// put jumpSpeed in y to move up by moveSpeed
-			anim.SetBool ("Jumping", true);
-			myRigidBody.velocity = new Vector3 (myRigidBody.velocity.x, jumpSpeed, 0f);
-			isJumping = true;
-			anim.SetBool ("Jumping", true);
-			changeState (STATE_JUMP);
+		if (Input.GetButtonDown ("Jump")){
+			if(isGrounded){
+				// put jumpSpeed in y to move up by moveSpeed
+				anim.SetBool ("Jumping", true);
+				myRigidBody.velocity = new Vector3 (myRigidBody.velocity.x, jumpSpeed, 0f);
+				isJumping = true;
+				anim.SetBool ("Jumping", true);
+				changeState (STATE_JUMP);
+				canDoubleJump = true;
+			}else{
+				if(canDoubleJump && GlobalController.Instance.hasDoubleJump){
+					canDoubleJump = false;
+					myRigidBody.velocity = new Vector3(myRigidBody.velocity.x, jumpSpeed, 0f);
+				}
+			}
 		}
 		// if on the ground, set falling and jumping to false
-		else if(isGrounded){ 
+		if(isGrounded){ 
 			anim.SetBool ("Jumping", false);
 			isJumping = false;
 		}
@@ -103,10 +115,17 @@ public class PlayerMovement : MonoBehaviour {
 		elapsedTime = Time.time - startTime;
 
 		if (Input.GetMouseButtonDown (0) && GlobalController.Instance.onMainCam && elapsedTime > 2.0f){
-			timer.resetTime ();
-			resetBombUseTimer ();
-			Instantiate (bomb, new Vector3 (this.transform.position.x + 2f, this.transform.position.y - .75f, 
-				this.transform.position.z), Quaternion.identity);
+			if (GlobalController.Instance.hasBombs) {
+				timer.resetTime ();
+				resetBombUseTimer ();
+				if (!leftFacing) {
+					Instantiate (bomb, new Vector3 (this.transform.position.x + 2f, 
+						this.transform.position.y - .75f, this.transform.position.z), Quaternion.identity);
+				} else if (leftFacing) {
+					Instantiate (bomb, new Vector3 (this.transform.position.x - 2f, 
+						this.transform.position.y - .75f, this.transform.position.z), Quaternion.identity);
+				}
+			}
 		}
 			
 

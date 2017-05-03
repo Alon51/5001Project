@@ -352,6 +352,64 @@ public class JITScript : MonoBehaviour {
 				Destroy (this.gameObject);
 				playDialogue ();
 				break;
+
+
+				//Story Dialogue
+			
+			case "StoryOne":
+				wordDisplay.text = "I feel selfish writing this, knowing full well how vital our mission is to the planet. \n" +
+					"But the fact remains that we are millions of miles away from home and \n" +
+					"I have not seen my family in years. \n" +
+					"You take these assignments knowing the conditions, but you never appreciate \n" +
+					"the magnitude of the commitment.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				playDialogue ();
+				break;
+
+			case "StoryTwo":
+				wordDisplay.text = "Every month I get transmissions from my son, \n" +
+					"I left him when he was four…and now he is turning 14, and our assignment \n" +
+					"isn’t over for three more years. I missed so many milestones that a parent \n" +
+					"gets to experience just to wake up every day and look at the void. ";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				playDialogue ();
+				break;
+
+			case "StoryThree":
+				wordDisplay.text = "Another day another day of system checks. \n" +
+					"Nothing went wrong today. For the 3347th time in a \n" +
+					"row. I am not even sure what it is that I am \n" +
+					"doing up here? The navigation system isn’t going \n" +
+					"anywhere…this ship is on autopilot. What is the point of me being here.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				playDialogue ();
+				break;
+
+			case "StoryFour":
+				wordDisplay.text = "Systems all clear again today. \n" +
+					"But an idea is starting to form to get me out of here. \n" +
+					"If I can just override the autopilot system and send us hurtling \n" +
+					"toward the sun…force the crew to abandon the mission…we will lose the ship \n" +
+					"but I can’t take this anymore... \n" +
+					"I need to get out.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				playDialogue ();
+				break;
+
+			case "StoryFive":
+				wordDisplay.text = "It’s done. I don’t think any of my colleagues suspect me. \n" +
+					"Now I just need to wait it out until the Codex bot activates the escape protocols \n" +
+					"and we can get out of here. I hope he gets everyone. You can replace a ship, \n" +
+					"but I don’t want any of the eight other scientists on board to be left behind. \n";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				playDialogue ();
+				break;
+
 			}
 		}
 	}

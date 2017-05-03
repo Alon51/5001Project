@@ -410,6 +410,12 @@ public class JITScript : MonoBehaviour {
 				playDialogue ();
 				break;
 
+			case "SecretScientist":
+				wordDisplay.text = "TEST";
+				Time.timeScale = 0.0f;
+				playDialogue ();
+				GlobalController.Instance.incScientist ();
+				break;
 			}
 		}
 	}

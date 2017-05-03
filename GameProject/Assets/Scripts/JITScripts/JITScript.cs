@@ -380,7 +380,8 @@ public class JITScript : MonoBehaviour {
 			case "StoryThree":
 				wordDisplay.text = "Another day another day of system checks. \n" +
 					"Nothing went wrong today. For the 3347th time in a \n" +
-					"row. I am not even sure what it is that I am \n" +
+					"row. " +
+					"I am not even sure what it is that I am \n" +
 					"doing up here? The navigation system isn’t going \n" +
 					"anywhere…this ship is on autopilot.";
 				Time.timeScale = 0.0f;

@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		//checking RIGHT input
 		if (Input.GetAxisRaw ("Horizontal") > 0f) {         //don't change y value
-			myRigidBody.velocity = new Vector3 (moveSpeed, myRigidBody.velocity.y, 0f);
+			myRigidBody.velocity = new Vector3 (moveSpeed, myRigidBody.velocity.y, 0f);	
 			transform.localScale = new Vector3 (4f, 4f, 1f); // 2 b/c that's the sprites scale
 			changeState(STATE_RIGHT);
 			leftFacing = false;
@@ -81,8 +81,7 @@ public class PlayerMovement : MonoBehaviour {
 			myRigidBody.velocity = new Vector3 (0f, myRigidBody.velocity.y, 0f);
 			changeState(STATE_IDLE);
 		}
-
-
+			
 		// checking jump input(space or up)
 		if (Input.GetButtonDown ("Jump")){
 			if(isGrounded){
@@ -90,7 +89,6 @@ public class PlayerMovement : MonoBehaviour {
 				anim.SetBool ("Jumping", true);
 				myRigidBody.velocity = new Vector3 (myRigidBody.velocity.x, jumpSpeed, 0f);
 				isJumping = true;
-				anim.SetBool ("Jumping", true);
 				changeState (STATE_JUMP);
 				canDoubleJump = true;
 			}else{

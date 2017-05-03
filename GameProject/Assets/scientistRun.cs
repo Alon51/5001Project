@@ -15,8 +15,7 @@ public class scientistRun : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.tag == "Player") {
-			print ("here");
+		if (other.gameObject.tag == "Player"){
 			anim.enabled = true;
 		}
 	}

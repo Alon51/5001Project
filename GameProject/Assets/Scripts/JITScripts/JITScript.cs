@@ -389,7 +389,7 @@ public class JITScript : MonoBehaviour {
 				break;
 
 			case "StoryFour":
-				wordDisplay.text = "Systems all clear again today. \n
+				wordDisplay.text = "Systems all clear again today. \n" +
 					"If I can just override the autopilot system and send us hurtling \n" +
 					"toward the sun…force the crew to abandon the mission…we will lose the ship \n" +
 					"but I can’t take this anymore... \n" +

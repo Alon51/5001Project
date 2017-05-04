@@ -156,15 +156,22 @@ public class JITScript : MonoBehaviour {
 				break;
 			//Second generic scientis response
 			case "Scientist2":
-				wordDisplay.text = "Thanks for saving me! Let me help you find an escape route with the others!";
+				wordDisplay.text = "Thanks for saving me! Let me help you find an escape route with the others! " +
+					"\n\nHey before you go though, let me tinker with your boots so you can " +
+					"jump a little higher. All you have to do is press the space bar while you are" +
+					"still jumping to jump again and reach higher places. Who knows, maybe you'll" +
+					"find something cool! Or just hit your head. Only one way to find out!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
+				GlobalController.Instance.hasDoubleJump = true;
 				GlobalController.Instance.incScientist ();
 				playScientistChime ();
 				break;
 			case "MidLevelScientistArray":
 				//solves camera problem in array level
-				wordDisplay.text = "Thanks for saving me! We need to find a way to escape the ship ASAP!";
+				wordDisplay.text = "Thanks for saving me! We need to find a way to escape the ship ASAP! " +
+					"But before we do, I can upgrade your legs and make you move a little faster. " +
+					"There, got it. Okay, I am off to the escape vessel.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GameObject sci = GameObject.Find ("MidScientist");
@@ -215,17 +222,11 @@ public class JITScript : MonoBehaviour {
 			case "LogicalAndScientistJIT":
 				wordDisplay.text = "I don't know what happened, this door just shut behind me. " +
 				"We need to get out of here before we crash! I had a friend " +
-				"stationed on the basement floor, did you find him?" +
-				"\n\nHey before you go though, let me fix up your boots so you can " +
-				"jump an extra time in the air. Not sure of the practical use of " +
-				"doing that...you'll probably hit your head on the ceiling, but " +
-				"you have sweet jet boosters in your feet so why not? " +
-				"Hit the space bar twice and you can jump again.";
+				"stationed on the basement floor, did you find him?";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GlobalController.Instance.incScientist ();
 				GlobalController.Instance.logicalAndComplete = true;
-				GlobalController.Instance.hasDoubleJump = true;
 				playScientistChime ();
 				break;
 			case "LogicalOrScientistJIT":
@@ -373,9 +374,9 @@ public class JITScript : MonoBehaviour {
 				break;
 
 			case "StoryTwo":
-				wordDisplay.text = "Every month I get transmissions from my son, \n" +
-					"I left him when he was four…and now he is turning 14, and our assignment \n" +
-					"isn’t over for three more years. I missed so many milestones that a parent \n" +
+				wordDisplay.text = "Every month I get transmissions from my son, " +
+					"I left him when he was four…and now he is turning 14, and our assignment " +
+					"isn’t over for three more years. I missed so many milestones that a parent " +
 					"gets to experience just to wake up every day and look at the void. ";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
@@ -383,11 +384,11 @@ public class JITScript : MonoBehaviour {
 				break;
 
 			case "StoryThree":
-				wordDisplay.text = "Another day another day of system checks. \n" +
-					"Nothing went wrong today. For the 3347th time in a \n" +
+				wordDisplay.text = "Another day another round of system checks. " +
+					"Nothing went wrong today. For the 3347th time in a " +
 					"row. " +
-					"I am not even sure what it is that I am \n" +
-					"doing up here? The navigation system isn’t going \n" +
+					"I am not even sure what it is that I am " +
+					"doing up here? The navigation system isn’t going " +
 					"anywhere…this ship is on autopilot.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
@@ -395,10 +396,10 @@ public class JITScript : MonoBehaviour {
 				break;
 
 			case "StoryFour":
-				wordDisplay.text = "Systems all clear again today. \n" +
-					"If I can just override the autopilot system and send us hurtling \n" +
-					"toward the sun…force the crew to abandon the mission…we will lose the ship \n" +
-					"but I can’t take this anymore... \n" +
+				wordDisplay.text = "Systems all clear again today. " +
+					"If I can just override the autopilot system and send us hurtling " +
+					"toward the sun…force the crew to abandon the mission…we will lose the ship " +
+					"but I can’t take this anymore... " +
 					"I need to get out.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
@@ -406,17 +407,19 @@ public class JITScript : MonoBehaviour {
 				break;
 
 			case "StoryFive":
-				wordDisplay.text = "It’s done. I don’t think any of my colleagues suspect me. \n" +
-					"Now I just need to wait it out until the Codex bot activates the escape protocols \n" +
-					"and we can get out of here. I hope he gets everyone. You can replace a ship, \n" +
-					"but I don’t want any of the eight other scientists on board to be left behind. \n";
+				wordDisplay.text = "It’s done. I don’t think any of my colleagues suspect me. " +
+					"Now I just need to wait it out until the Codex bot activates the escape protocols " +
+					"and we can get out of here. I hope he gets everyone. You can replace a ship, " +
+					"but I don’t want any of the eight other scientists on board to be left behind. ";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				playDialogue ();
 				break;
 
 			case "SecretScientist":
-				wordDisplay.text = "TEST";
+				wordDisplay.text = "I can't believe it! It worked! Get me out of here! Please" +
+					"tell me you got the others. I couldn't handle if I hurt someone. I just" +
+					"miss my family so much. Let's go! We have to hurry!";
 				Time.timeScale = 0.0f;
 				playDialogue ();
 				GlobalController.Instance.incScientist ();

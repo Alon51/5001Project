@@ -5,7 +5,7 @@ using UnityEngine;
 public class bombLogic : MonoBehaviour {
 
 	public float startTime, elapsedTime;
-	public GameObject explosion, secretDoor;
+	public GameObject explosion;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +27,7 @@ public class bombLogic : MonoBehaviour {
 
 	void explode(){
 		GameObject clone = (GameObject)Instantiate (explosion, this.transform.position, Quaternion.identity);
-		Destroy (clone, 1.0f);
+		Destroy (clone, 4.0f);
 	}
 		
 }

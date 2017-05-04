@@ -77,9 +77,9 @@ public class GlobalController : MonoBehaviour {
 		scoreText.text = "Score: " + score;
 		wordDisplay = GameObject.Find ("WordDisplayer").GetComponent<Text>();
 		previousSceneName = "";
-		hasSpeedUp = true;
-		hasDoubleJump = true;
-		hasBombs = true;
+		hasSpeedUp = false;
+		hasDoubleJump = false;
+		hasBombs = false;
 	}
 
 	void Update(){

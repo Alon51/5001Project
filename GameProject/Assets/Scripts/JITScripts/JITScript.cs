@@ -213,9 +213,14 @@ public class JITScript : MonoBehaviour {
 				playDialogue ();
 				break;
 			case "LogicalAndScientistJIT":
-				wordDisplay.text = "I don't know what happened, this door just shut behind me.\n" +
-				"We need to get out of here before we crash! I had a friend\n" +
-				"stationed on the basement floor, did you find him?";
+				wordDisplay.text = "I don't know what happened, this door just shut behind me. " +
+				"We need to get out of here before we crash! I had a friend " +
+				"stationed on the basement floor, did you find him?" +
+				"\n\nHey before you go though, let me fix up your boots so you can " +
+				"jump an extra time in the air. Not sure of the practical use of " +
+				"doing that...you'll probably hit your head on the ceiling, but " +
+				"you have sweet jet boosters in your feet so why not? " +
+				"Hit the space bar twice and you can jump again.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				GlobalController.Instance.incScientist ();
@@ -224,9 +229,9 @@ public class JITScript : MonoBehaviour {
 				playScientistChime ();
 				break;
 			case "LogicalOrScientistJIT":
-				wordDisplay.text = "It was so weird, I was just minding my own business staring \n" +
-				"at this wall, and then BAM, big red door! \n" +
-				"Did you get my friend on the upper level? \n" +
+				wordDisplay.text = "It was so weird, I was just minding my own business staring " +
+				"at this wall, and then BAM, big red door! " +
+				"Did you get my friend on the upper level? " +
 				"He owes me 20 space creds. Are we crashing?";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
@@ -235,9 +240,9 @@ public class JITScript : MonoBehaviour {
 				playScientistChime ();
 				break;
 			case "ExitDoorScientistJIT":
-				wordDisplay.text = "Good work! Hurry through the portal, there are more like me to be helped!\n" +
-					"Take these bombs too, don't use them on exterior walls though, because then\n" +
-					"you will get sucked out to space and you'll just be flying around out there until\n" +
+				wordDisplay.text = "Good work! Hurry through the portal, there are more like me to be helped! " +
+					"Take these bombs too, don't use them on exterior walls though, because then " +
+					"you will get sucked out to space and you'll just be flying around out there until " +
 					"you run out of batteries or whatever. Tata!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);

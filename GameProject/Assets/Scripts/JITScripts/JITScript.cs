@@ -30,7 +30,7 @@ public class JITScript : MonoBehaviour {
 
 			//Hub Level
 			case "HubIntro":
-				wordDisplay.text = "Welcome to the Hub Room X839. This room has many teleporters that will" +
+				wordDisplay.text = "Welcome to the Hub Room Codex. This room has many teleporters that will" +
 					"send you to different parts of the ship in order to rescue the ship's scientists!\n\n" +
 					"Head over to the terminal in the middle of the room to pick which room to go to first.\n" +
 					"You can visit the rooms in any order you want, just be sure to save the scientists!";
@@ -140,7 +140,7 @@ public class JITScript : MonoBehaviour {
 					tempTxt = "Took you long enough. Now let's get off this forsaken ship. ASAP.";
 					break;
 				case 4:
-					tempTxt = "Is that you X-839? It is! I knew I was right in telling them to keep you operational!\n" +
+					tempTxt = "Is that you Codex? It is! I knew I was right in telling them to keep you operational!\n" +
 						"I'll head to the others and see if we can devise a way out of this mess.";
 					break;
 				case 5:
@@ -326,7 +326,7 @@ public class JITScript : MonoBehaviour {
 				playDialogue ();
 				break;
 			case "FinalBase":
-				wordDisplay.text = "Hey! You must be X839! Thank's so much for saving the scientists! " +
+				wordDisplay.text = "Hey! You must be Codex! Thank's so much for saving the scientists! " +
 					"The scientists were in trouble and you managed to get a lot done.\n\n" +
 					"You learned code!\n" +
 					"Honed your skills!\n" +
@@ -411,6 +411,15 @@ public class JITScript : MonoBehaviour {
 					"Now I just need to wait it out until the Codex bot activates the escape protocols " +
 					"and we can get out of here. I hope he gets everyone. You can replace a ship, " +
 					"but I don’t want any of the eight other scientists on board to be left behind. ";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				playDialogue ();
+				break;
+			case "StorySix":
+				wordDisplay.text = "I know that I've committed a crime, and I'll never be able get past this...\n\n" +
+					"But humans need love and interaction.None of that exists here...\n" +
+					"10 years of repetive work has taken it's toll...\n\n" +
+					"This is my final log...Codex is on his way...I'll see my son soon...";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				playDialogue ();

@@ -428,7 +428,7 @@ public class JITScript : MonoBehaviour {
 
 			case "SecretScientist":
 				wordDisplay.text = "I can't believe it! It worked! Get me out of here! Please" +
-					"tell me you got the others. I couldn't handle if I hurt someone. I just" +
+					"tell me you got the others. I just" +
 					"miss my family so much. Let's go! We have to hurry!";
 				Time.timeScale = 0.0f;
 				playDialogue ();

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameButtons : MonoBehaviour {
+	public Camera helpCamera;
 
 	// Use this for initialization
 	void Start () {
@@ -51,4 +52,14 @@ public class GameButtons : MonoBehaviour {
 		GlobalController.Instance.changeScene (GlobalController.Instance.previousSceneName);
 	}
 
+	public void helpScreenToggle(){
+		GlobalController.Instance.changeSecondCamera (helpCamera);
+		GlobalController.Instance.toggleCamera ();
+		helpCamera.depth = 0;
+	}
+
+	public void helpToggleOff(){
+		helpCamera.depth = -4;	
+		GlobalController.Instance.toggleCamera ();
+	}
 }

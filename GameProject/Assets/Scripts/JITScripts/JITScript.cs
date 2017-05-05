@@ -417,8 +417,9 @@ public class JITScript : MonoBehaviour {
 				break;
 			case "StorySix":
 				wordDisplay.text = "I know that I've committed a crime, and I'll never be able get past this...\n\n" +
-					"But humans need love and interaction.None of that exists here...\n" +
-					"10 years of repetive work has taken it's toll...\n\n" +
+					"But humans need love and interaction.\n\n" +
+					"None of that exists here...\n" +
+					"10 years of repetitive work has taken it's toll...\n\n" +
 					"This is my final log...Codex is on his way...I'll see my son soon...";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);

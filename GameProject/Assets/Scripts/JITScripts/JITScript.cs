@@ -298,10 +298,16 @@ public class JITScript : MonoBehaviour {
 				break;
 
 			//FINAL LEVEL JITS
-			case "IndentBriefing":
+			case "FinalIntro":
 				wordDisplay.text = "This is the escape room! All you need to do is get to the escape pod!\n\n" +
-					"There are a few obstacles in your way though. The first is about code indentation.\n\n" +
-					"Use the onscreen buttons to indent the code so that it's tabbed properly.\n" +
+				"There are a few obstacles in your way though.";
+				Time.timeScale = 0.0f;
+				Destroy (this.gameObject);
+				playDialogue ();
+				break;
+			case "IndentBriefing":
+				wordDisplay.text = "This test deals with code indentation.\n\n" +
+					"Use the onscreen buttons to indent the code so that it's tabbed properly.\n\n" +
 					"The convention is that all code in an if/while/loop statement is tabbed once.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);

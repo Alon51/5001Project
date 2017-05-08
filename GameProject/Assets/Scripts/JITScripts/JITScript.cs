@@ -66,9 +66,9 @@ public class JITScript : MonoBehaviour {
 
 			//Array Level
 			case "ArrayBriefing":
-				wordDisplay.text = "There are more scientists to be saved using Arrays! \n" +
-				"An array is a list of elements of the same type. \n " +
-				"Arrays count their elements starting at 0! Remember that! " +
+				wordDisplay.text = "There are more scientists to be saved using Arrays! \n\n" +
+				"An array is a list of elements of the same type. \n\n" +
+				"Arrays count their elements starting at 0! Remember that!\n\n" +
 				"Arrays can be accessed like this: array_Name[num] Where num is a number.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
@@ -85,8 +85,7 @@ public class JITScript : MonoBehaviour {
 				break;
 			case "ArrayChallenge2":
 				wordDisplay.text = "The counter-weight platform is down, but you need to get across. " +
-					"Hmm, see those weighted boxed up there, they seem linked ot this terminal!\n\n" +
-					"It seems that you need a weight of 14 to align the counter-weight platform. " +
+					"Hmm, see those weighted boxed up there, they seem linked to this terminal!\n\n" +
 					"Put your coding skills to the test and drop a total of 14lbs on the platform.\n\n" +
 					"Press 'V' to change the camera and look at the weighted boxes.";
 				Time.timeScale = 0.0f;
@@ -301,7 +300,7 @@ public class JITScript : MonoBehaviour {
 			//FINAL LEVEL JITS
 			case "IndentBriefing":
 				wordDisplay.text = "This is the escape room! All you need to do is get to the escape pod!\n\n" +
-					"There are a few obstacles in your way though. The first is about code indentation.\n" +
+					"There are a few obstacles in your way though. The first is about code indentation.\n\n" +
 					"Use the onscreen buttons to indent the code so that it's tabbed properly.\n" +
 					"The convention is that all code in an if/while/loop statement is tabbed once.";
 				Time.timeScale = 0.0f;

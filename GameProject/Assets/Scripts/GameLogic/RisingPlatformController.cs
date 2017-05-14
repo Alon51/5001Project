@@ -11,6 +11,7 @@ public class RisingPlatformController : MonoBehaviour {
 	public float sumWeight; // total weight so far
 	public SpriteRenderer[] sprites; //used to change color based on weight
 	public GameObject desktop; // used for placing the player when test is failed
+	public GameObject invisibleWall;
 	Vector3 initialPosition;
 	public bool scoreChanged;
 
@@ -53,7 +54,7 @@ public class RisingPlatformController : MonoBehaviour {
 			int wght = other.gameObject.GetComponent<ArrayBoxController> ().getWeight ();
 			sumWeight += wght; // increase sum
 			//change text
-			weightText.text = "Weight Needed: 14 \n Current Weight: " + sumWeight; // change weight
+			weightText.text = "Weight Needed: 14 \nCurrent Weight: " + sumWeight; // change weight
 			//move platform up specified amount
 			platformUp (wght);
 
@@ -80,6 +81,9 @@ public class RisingPlatformController : MonoBehaviour {
 				GlobalController.Instance.incScore ();
 				scoreChanged = true;
 			}
+
+			//disable invisible wall collider
+			invisibleWall.GetComponent<BoxCollider2D>().enabled = false;
 		}
 	}
 
@@ -89,8 +93,8 @@ public class RisingPlatformController : MonoBehaviour {
 			spr.color = Color.red;
 		}
 		sumWeight = 0;
-		weightText.text = "Weight Needed: 14 \n Current Weight: " + sumWeight; // change weight
-
+		weightText.text = "Weight Needed: 14 \nCurrent Weight: " + sumWeight; // change weight
+		invisibleWall.GetComponent<BoxCollider2D>().enabled = true;
 	}
 
 

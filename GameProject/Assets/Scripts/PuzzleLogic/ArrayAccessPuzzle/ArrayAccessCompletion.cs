@@ -88,8 +88,8 @@ public class ArrayAccessCompletion : MonoBehaviour {
 	public bool errorValueUsed(){
 		//checks to see if the N array tile was placed, which will cause an out of bounds error
 		if (checkOne.giveName == "ReplacementN"
-		   || checkTwo.giveName == "Replacement1"
-		   || checkThree.giveName == "Replacement3") {
+		   || checkTwo.giveName == "ReplacementN"
+		   || checkThree.giveName == "ReplacementN") {
 			GlobalController.Instance.changeSecondCamera (errorCam);
 
 			return true;

@@ -53,13 +53,16 @@ public class GameButtons : MonoBehaviour {
 	}
 
 	public void helpScreenToggle(){
-		GlobalController.Instance.changeSecondCamera (helpCamera);
+//		GlobalController.Instance.changeSecondCamera (helpCamera);
+//		GlobalController.Instance.toggleCamera ();
+//		helpCamera.depth = 0;
+		Camera arrCam = GameObject.Find ("AssistCamera").GetComponent<Camera> ();
+		GlobalController.Instance.changeSecondCamera (arrCam);
 		GlobalController.Instance.toggleCamera ();
-		helpCamera.depth = 0;
 	}
 
 	public void helpToggleOff(){
-		helpCamera.depth = -4;	
+		//helpCamera.depth = -4;	
 		GlobalController.Instance.toggleCamera ();
 	}
 }

@@ -56,6 +56,7 @@ public class GameButtons : MonoBehaviour {
 //		GlobalController.Instance.changeSecondCamera (helpCamera);
 //		GlobalController.Instance.toggleCamera ();
 //		helpCamera.depth = 0;
+		print("TOGGLED");
 		Camera arrCam = GameObject.Find ("AssistCamera").GetComponent<Camera> ();
 		GlobalController.Instance.changeSecondCamera (arrCam);
 		GlobalController.Instance.toggleCamera ();

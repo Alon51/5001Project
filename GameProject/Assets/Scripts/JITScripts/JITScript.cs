@@ -91,6 +91,15 @@ public class JITScript : MonoBehaviour {
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				break;
+				//Specifically for managing cams in Arrya level since there are many cameras
+			case "ArrayCams":
+				GameObject cam = GameObject.Find ("ErrorCamera");
+				GameObject cam2 = GameObject.Find ("SecondCamera");
+				cam2.GetComponent<Camera> ().enabled = false;
+				cam.GetComponent<Camera> ().enabled = false;
+				break;
+
+			//ARITH JITS
 			case "DataTypeBriefing":
 				wordDisplay.text = "There's only 1 scientist in here, blocked by 2 doors." +
 				"The theme of this room is initialization and arithmetic math. \n \n" +
@@ -109,7 +118,7 @@ public class JITScript : MonoBehaviour {
 			case "ArithBriefing":
 				wordDisplay.text = "There are 5 main operators that are used: +, -, *, /, and %. \n" +
 					"The % operator gives the remainder of a division. So 8 % 3 is 2.\n\n" +
-					"Also, remember that the precedence of the operators is (*,/,%), followed by (+,-).";
+					"Remember that the precedence of the operators is (), then *,/,%, followed by +,-.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
 				playDialogue ();
@@ -289,13 +298,7 @@ public class JITScript : MonoBehaviour {
 				Destroy (this.gameObject);
 				playDialogue ();
 				break;
-			//Specifically for managing cams in Arrya level since there are many cameras
-			case "ArrayCams":
-				GameObject cam = GameObject.Find ("ErrorCamera");
-				GameObject cam2 = GameObject.Find ("SecondCamera");
-				cam2.GetComponent<Camera> ().enabled = false;
-				cam.GetComponent<Camera> ().enabled = false;
-				break;
+			
 
 			//FINAL LEVEL JITS
 			case "FinalIntro":

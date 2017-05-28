@@ -105,6 +105,7 @@ public class LogicalAndCompletion : MonoBehaviour {
 	public void controlLeft(){
 		if (!leftPylonFlag) {
 			leftPylonRaised.transform.position = new Vector3 (leftX, inSceneY, 0);
+			leftPylonClosed.transform.position = new Vector3 (leftX, offScreenY, 0);
 			leftPylonFlag = true;
 			raisePillarSound.Play ();
 			raisePillarSound.loop = false;
@@ -114,6 +115,7 @@ public class LogicalAndCompletion : MonoBehaviour {
 	public void controlRight(){
 		if (!rightPylonFlag) {
 			rightPylonRaised.transform.position = new Vector3 (rightX, inSceneY, 0);
+			rightPylonClosed.transform.position = new Vector3 (rightX, offScreenY, 0);
 			rightPylonFlag = true;
 			raisePillarSound.Play ();
 			raisePillarSound.loop = false;
@@ -134,6 +136,8 @@ public class LogicalAndCompletion : MonoBehaviour {
 	public void resetPylon (){
 		leftPylonRaised.transform.position = new Vector3 (leftX, offScreenY, 0);
 		rightPylonRaised.transform.position = new Vector3 (rightX, offScreenY, 0);
+		leftPylonClosed.transform.position = new Vector3 (leftX, inSceneY - 3.0f, 0);
+		rightPylonClosed.transform.position = new Vector3 (rightX, inSceneY -3.0f, 0);
 	}
 
 	public void resetCheckValues(){

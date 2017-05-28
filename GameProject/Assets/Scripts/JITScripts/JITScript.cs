@@ -383,7 +383,7 @@ public class JITScript : MonoBehaviour {
 
 			case "StoryTwo":
 				wordDisplay.text = "Every month I get transmissions from my son, " +
-					"I left him when he was four…and now he is turning 14, and our assignment " +
+					"I left him when he was four... and now he is turning 14, and our assignment " +
 					"isn’t over for three more years. I missed so many milestones that a parent " +
 					"gets to experience just to wake up every day and look at the void. ";
 				Time.timeScale = 0.0f;
@@ -406,7 +406,7 @@ public class JITScript : MonoBehaviour {
 			case "StoryFour":
 				wordDisplay.text = "Systems all clear again today. " +
 					"If I can just override the autopilot system and send us hurtling " +
-					"toward the sun…force the crew to abandon the mission…we will lose the ship " +
+					"toward the sun…force the crew to abandon the mission...we will lose the ship " +
 					"but I can’t take this anymore... " +
 					"I need to get out.";
 				Time.timeScale = 0.0f;

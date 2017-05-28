@@ -3,8 +3,10 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class GameButtons : MonoBehaviour {
 	public Camera helpCamera;
+	public GoogleAnalyticsV4 googleAnalytics;
 
 	// Use this for initialization
 	void Start () {

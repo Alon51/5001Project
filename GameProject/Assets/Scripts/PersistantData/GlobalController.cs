@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class GlobalController : MonoBehaviour {
 
 	public static GlobalController Instance;
+	public GoogleAnalyticsV4 googleAnalytics;
+	public long noteButtonCounter;
+
 	//Teleporter Room Bools
 	public bool arrayPortalActive = false;
 	public bool loopPortalActive = false;
@@ -66,6 +69,7 @@ public class GlobalController : MonoBehaviour {
 
 
 	void Start(){
+		googleAnalytics.StartSession ();
 		thePlayer = FindObjectOfType<PlayerMovement> ();
 		glPlayerPos = thePlayer.transform.position;
 		onMainCam = true;
@@ -232,6 +236,14 @@ public class GlobalController : MonoBehaviour {
 
 	}
 		
+	public void Analytics(){
+		googleAnalytics.LogEvent ("Clicked for Help", "User Clicked", "Assist Page", noteButtonCounter);
+		googleAnalytics.LogEvent (new EventHitBuilder ()
+			.SetEventCategory ("Clicked for Help")
+			.SetEventAction ("User Clicked")
+			.SetEventLabel ("Assist Page")
+			.SetEventValue (noteButtonCounter));
+	}
 
 
 }

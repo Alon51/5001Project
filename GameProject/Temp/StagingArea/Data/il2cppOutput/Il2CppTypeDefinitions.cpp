@@ -121,6 +121,7 @@ extern const Il2CppType IComparable_1_t2740917260_0_0_3 = { &IComparable_1_t2740
 extern const Il2CppType Int64_t909078037_0_0_0 = { (void*)14, 0, IL2CPP_TYPE_I8, 0, 0, 0 };
 extern const Il2CppType Int64_t909078037_1_0_0 = { (void*)14, 0, IL2CPP_TYPE_I8, 0, 1, 0 };
 extern const Il2CppType Int64_t909078037_1_0_2 = { (void*)14, 2, IL2CPP_TYPE_I8, 0, 1, 0 };
+extern const Il2CppType Int64_t909078037_0_0_32854 = { (void*)14, 32854, IL2CPP_TYPE_I8, 0, 0, 0 };
 extern const Il2CppType Int64_t909078037_0_0_3 = { (void*)14, 3, IL2CPP_TYPE_I8, 0, 0, 0 };
 extern const Il2CppType Int64_t909078037_0_0_1 = { (void*)14, 1, IL2CPP_TYPE_I8, 0, 0, 0 };
 extern const Il2CppType Int64_t909078037_0_0_6 = { (void*)14, 6, IL2CPP_TYPE_I8, 0, 0, 0 };
@@ -14312,7 +14313,7 @@ extern const Il2CppType TypeTagU5BU5D_t582616213_0_0_0 = { (void*)&TypeTag_t1412
 
 extern const Il2CppType ITrackingHandler_t2759960940_0_0_0;
 extern const Il2CppType ITrackingHandlerU5BU5D_t194660197_0_0_0 = { (void*)&ITrackingHandler_t2759960940_0_0_0, 0, IL2CPP_TYPE_SZARRAY, 0, 0, 0 };
-extern const Il2CppType* const  g_Il2CppTypeTable[7559] = 
+extern const Il2CppType* const  g_Il2CppTypeTable[7560] = 
 {
 	&IEnumerator_1_t164973122_0_0_0,
 	&Il2CppObject_0_0_0,
@@ -16345,6 +16346,7 @@ extern const Il2CppType* const  g_Il2CppTypeTable[7559] =
 	&IEquatable_1_t2913394932_gp_0_0_0_0,
 	&Int64_t909078037_1_0_0,
 	&Int64_t909078037_1_0_2,
+	&Int64_t909078037_0_0_32854,
 	&Int64_t909078037_0_0_3,
 	&IComparable_1_t2740917260_0_0_3,
 	&IEquatable_1_t3113060206_0_0_4,
@@ -21705,13 +21707,13 @@ extern const Il2CppType* const  g_Il2CppTypeTable[7559] =
 	&WhileJIT_t2137105116_1_0_0,
 	&GameButtons_t3753496245_0_0_0,
 	&GameButtons_t3753496245_1_0_0,
-	&GoogleAnalyticsV4_t198817271_0_0_6,
 	&SettingsScript_t2637859674_0_0_0,
 	&SettingsScript_t2637859674_1_0_0,
 	&Slider_t297367283_0_0_6,
 	&GlobalController_t324951557_0_0_0,
 	&GlobalController_t324951557_1_0_0,
 	&GlobalController_t324951557_0_0_22,
+	&GoogleAnalyticsV4_t198817271_0_0_6,
 	&CameraFollow_t1493855402_0_0_0,
 	&CameraFollow_t1493855402_1_0_0,
 	&PlayerMovement_t3166138480_0_0_0,

@@ -14,8 +14,6 @@
 
 // UnityEngine.Camera
 struct Camera_t189460977;
-// GoogleAnalyticsV4
-struct GoogleAnalyticsV4_t198817271;
 
 
 
@@ -32,8 +30,6 @@ struct  GameButtons_t3753496245  : public MonoBehaviour_t1158329972
 public:
 	// UnityEngine.Camera GameButtons::helpCamera
 	Camera_t189460977 * ___helpCamera_2;
-	// GoogleAnalyticsV4 GameButtons::googleAnalytics
-	GoogleAnalyticsV4_t198817271 * ___googleAnalytics_3;
 
 public:
 	inline static int32_t get_offset_of_helpCamera_2() { return static_cast<int32_t>(offsetof(GameButtons_t3753496245, ___helpCamera_2)); }
@@ -43,15 +39,6 @@ public:
 	{
 		___helpCamera_2 = value;
 		Il2CppCodeGenWriteBarrier(&___helpCamera_2, value);
-	}
-
-	inline static int32_t get_offset_of_googleAnalytics_3() { return static_cast<int32_t>(offsetof(GameButtons_t3753496245, ___googleAnalytics_3)); }
-	inline GoogleAnalyticsV4_t198817271 * get_googleAnalytics_3() const { return ___googleAnalytics_3; }
-	inline GoogleAnalyticsV4_t198817271 ** get_address_of_googleAnalytics_3() { return &___googleAnalytics_3; }
-	inline void set_googleAnalytics_3(GoogleAnalyticsV4_t198817271 * value)
-	{
-		___googleAnalytics_3 = value;
-		Il2CppCodeGenWriteBarrier(&___googleAnalytics_3, value);
 	}
 };
 

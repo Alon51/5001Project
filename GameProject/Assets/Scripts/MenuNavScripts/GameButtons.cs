@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class GameButtons : MonoBehaviour {
 	public Camera helpCamera;
-	public GoogleAnalyticsV4 googleAnalytics;
+
 
 	// Use this for initialization
 	void Start () {
-
+		
 	}
 
 	// Update is called once per frame
@@ -55,17 +55,17 @@ public class GameButtons : MonoBehaviour {
 	}
 
 	public void helpScreenToggle(){
-//		GlobalController.Instance.changeSecondCamera (helpCamera);
-//		GlobalController.Instance.toggleCamera ();
-//		helpCamera.depth = 0;
-		print("TOGGLED");
 		Camera arrCam = GameObject.Find ("AssistCamera").GetComponent<Camera> ();
 		GlobalController.Instance.changeSecondCamera (arrCam);
 		GlobalController.Instance.toggleCamera ();
+		if (GlobalController.Instance.camName != "AssistCamera") {
+			GlobalController.Instance.noteButtonCounter++;
+			GlobalController.Instance.Analytics ();
+		}
+
 	}
 
 	public void helpToggleOff(){
-		//helpCamera.depth = -4;	
 		GlobalController.Instance.toggleCamera ();
 	}
 }

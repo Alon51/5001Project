@@ -489,10 +489,9 @@ extern const int32_t g_FieldOffsetTable1736[2] =
 	WhileJIT_t2137105116::get_offset_of_down_3(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1737 = { sizeof (GameButtons_t3753496245), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1737[2] = 
+extern const int32_t g_FieldOffsetTable1737[1] = 
 {
 	GameButtons_t3753496245::get_offset_of_helpCamera_2(),
-	GameButtons_t3753496245::get_offset_of_googleAnalytics_3(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1738 = { sizeof (SettingsScript_t2637859674), -1, 0, 0 };
 extern const int32_t g_FieldOffsetTable1738[1] = 
@@ -500,36 +499,38 @@ extern const int32_t g_FieldOffsetTable1738[1] =
 	SettingsScript_t2637859674::get_offset_of_volumeSlider_2(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1739 = { sizeof (GlobalController_t324951557), -1, sizeof(GlobalController_t324951557_StaticFields), 0 };
-extern const int32_t g_FieldOffsetTable1739[28] = 
+extern const int32_t g_FieldOffsetTable1739[30] = 
 {
 	GlobalController_t324951557_StaticFields::get_offset_of_Instance_2(),
-	GlobalController_t324951557::get_offset_of_arrayPortalActive_3(),
-	GlobalController_t324951557::get_offset_of_loopPortalActive_4(),
-	GlobalController_t324951557::get_offset_of_mainCam_5(),
-	GlobalController_t324951557::get_offset_of_secondCam_6(),
-	GlobalController_t324951557::get_offset_of_onMainCam_7(),
-	GlobalController_t324951557::get_offset_of_camName_8(),
-	GlobalController_t324951557::get_offset_of_scientistSprites_9(),
-	GlobalController_t324951557::get_offset_of_singleForLoopComplete_10(),
-	GlobalController_t324951557::get_offset_of_nestedForLoopComplete_11(),
-	GlobalController_t324951557::get_offset_of_whileLoopComplete_12(),
-	GlobalController_t324951557::get_offset_of_boolOpsComplete_13(),
-	GlobalController_t324951557::get_offset_of_logicalOrComplete_14(),
-	GlobalController_t324951557::get_offset_of_logicalAndComplete_15(),
-	GlobalController_t324951557::get_offset_of_indentComplete_16(),
-	GlobalController_t324951557::get_offset_of_thePlayer_17(),
-	GlobalController_t324951557::get_offset_of_glPlayerPos_18(),
-	GlobalController_t324951557::get_offset_of_scoreText_19(),
-	GlobalController_t324951557::get_offset_of_scientistText_20(),
-	GlobalController_t324951557::get_offset_of_score_21(),
-	GlobalController_t324951557::get_offset_of_scientistCount_22(),
-	GlobalController_t324951557::get_offset_of_totalScientists_23(),
-	GlobalController_t324951557::get_offset_of_scrAdditive_24(),
-	GlobalController_t324951557::get_offset_of_wordDisplay_25(),
-	GlobalController_t324951557::get_offset_of_previousSceneName_26(),
-	GlobalController_t324951557::get_offset_of_hasBombs_27(),
-	GlobalController_t324951557::get_offset_of_hasDoubleJump_28(),
-	GlobalController_t324951557::get_offset_of_hasSpeedUp_29(),
+	GlobalController_t324951557::get_offset_of_googleAnalytics_3(),
+	GlobalController_t324951557::get_offset_of_noteButtonCounter_4(),
+	GlobalController_t324951557::get_offset_of_arrayPortalActive_5(),
+	GlobalController_t324951557::get_offset_of_loopPortalActive_6(),
+	GlobalController_t324951557::get_offset_of_mainCam_7(),
+	GlobalController_t324951557::get_offset_of_secondCam_8(),
+	GlobalController_t324951557::get_offset_of_onMainCam_9(),
+	GlobalController_t324951557::get_offset_of_camName_10(),
+	GlobalController_t324951557::get_offset_of_scientistSprites_11(),
+	GlobalController_t324951557::get_offset_of_singleForLoopComplete_12(),
+	GlobalController_t324951557::get_offset_of_nestedForLoopComplete_13(),
+	GlobalController_t324951557::get_offset_of_whileLoopComplete_14(),
+	GlobalController_t324951557::get_offset_of_boolOpsComplete_15(),
+	GlobalController_t324951557::get_offset_of_logicalOrComplete_16(),
+	GlobalController_t324951557::get_offset_of_logicalAndComplete_17(),
+	GlobalController_t324951557::get_offset_of_indentComplete_18(),
+	GlobalController_t324951557::get_offset_of_thePlayer_19(),
+	GlobalController_t324951557::get_offset_of_glPlayerPos_20(),
+	GlobalController_t324951557::get_offset_of_scoreText_21(),
+	GlobalController_t324951557::get_offset_of_scientistText_22(),
+	GlobalController_t324951557::get_offset_of_score_23(),
+	GlobalController_t324951557::get_offset_of_scientistCount_24(),
+	GlobalController_t324951557::get_offset_of_totalScientists_25(),
+	GlobalController_t324951557::get_offset_of_scrAdditive_26(),
+	GlobalController_t324951557::get_offset_of_wordDisplay_27(),
+	GlobalController_t324951557::get_offset_of_previousSceneName_28(),
+	GlobalController_t324951557::get_offset_of_hasBombs_29(),
+	GlobalController_t324951557::get_offset_of_hasDoubleJump_30(),
+	GlobalController_t324951557::get_offset_of_hasSpeedUp_31(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1740 = { sizeof (CameraFollow_t1493855402), -1, 0, 0 };
 extern const int32_t g_FieldOffsetTable1740[6] = 

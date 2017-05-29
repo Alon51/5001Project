@@ -11105,6 +11105,7 @@ extern "C" void GlobalController_decAdditive_m3477473938 ();
 extern "C" void GlobalController_resetAdditive_m2190641455 ();
 extern "C" void GlobalController_spawnScientists_m1631904118 ();
 extern "C" void GlobalController_resetWhenSceneChanged_m1099144313 ();
+extern "C" void GlobalController_Analytics_m598071146 ();
 extern "C" void HelpButtons__ctor_m1875669979 ();
 extern "C" void HelpButtons_Start_m2413878775 ();
 extern "C" void HelpButtons_Update_m2531229230 ();
@@ -11378,7 +11379,7 @@ extern "C" void WhileLoopDesktopInteraction_Update_m1939526589 ();
 extern "C" void WhileLoopDesktopInteraction_OnTriggerEnter2D_m1172419074 ();
 extern "C" void WhileLoopDesktopInteraction_OnTriggerExit2D_m3889437744 ();
 extern "C" void WhileLoopDesktopInteraction_toggleCamera_m3662504967 ();
-extern const Il2CppMethodPointer g_MethodPointers[11364] = 
+extern const Il2CppMethodPointer g_MethodPointers[11365] = 
 {
 	Locale_GetText_m1954433032,
 	Locale_GetText_m2553164138,
@@ -22471,6 +22472,7 @@ extern const Il2CppMethodPointer g_MethodPointers[11364] =
 	GlobalController_resetAdditive_m2190641455,
 	GlobalController_spawnScientists_m1631904118,
 	GlobalController_resetWhenSceneChanged_m1099144313,
+	GlobalController_Analytics_m598071146,
 	HelpButtons__ctor_m1875669979,
 	HelpButtons_Start_m2413878775,
 	HelpButtons_Update_m2531229230,

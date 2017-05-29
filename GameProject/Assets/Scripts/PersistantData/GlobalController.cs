@@ -226,6 +226,7 @@ public class GlobalController : MonoBehaviour {
 		scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<Text>();
 		scientistText = GameObject.FindGameObjectWithTag ("ScientistText").GetComponent<Text>();
 		wordDisplay = GameObject.FindGameObjectWithTag ("JITDisplay").GetComponent<Text>();
+		googleAnalytics = GameObject.FindGameObjectWithTag ("ANALYTICS").GetComponent<GoogleAnalyticsV4> ();
 
 		//display that text
 		scoreText.text = "Score: " + score;

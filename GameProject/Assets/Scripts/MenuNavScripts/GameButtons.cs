@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameButtons : MonoBehaviour {
 	public Camera helpCamera;
+	public AnalyticsByLevel levelAnalytics;
 
 
 	// Use this for initialization
@@ -59,8 +60,8 @@ public class GameButtons : MonoBehaviour {
 		GlobalController.Instance.changeSecondCamera (arrCam);
 		GlobalController.Instance.toggleCamera ();
 		if (GlobalController.Instance.camName != "AssistCamera") {
-			GlobalController.Instance.noteButtonCounter++;
-			GlobalController.Instance.Analytics ();
+			levelAnalytics.noteButtonCounter++;
+			levelAnalytics.NotesAnalytics ();
 		}
 
 	}

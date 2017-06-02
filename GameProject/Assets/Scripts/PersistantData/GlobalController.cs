@@ -8,7 +8,14 @@ public class GlobalController : MonoBehaviour {
 
 	public static GlobalController Instance;
 	public GoogleAnalyticsV4 googleAnalytics;
-	public long noteButtonCounter;
+
+	public static float timer;
+	public bool timeStarted;
+	string niceTime;
+	long minutes;
+
+	//use for analytics
+	public long failedAttempts;
 
 	//Teleporter Room Bools
 	public bool arrayPortalActive = false;
@@ -76,6 +83,7 @@ public class GlobalController : MonoBehaviour {
 		camName = mainCam.name;
 		score = 0;
 		scientistCount = 0;
+		failedAttempts = 0;
 		totalScientists = 9;
 		scrAdditive = 100;
 		scoreText.text = "Score: " + score;
@@ -84,6 +92,7 @@ public class GlobalController : MonoBehaviour {
 		hasSpeedUp = false;
 		hasDoubleJump = false;
 		hasBombs = false;
+		timeStarted = true;
 	}
 
 	void Update(){
@@ -101,6 +110,10 @@ public class GlobalController : MonoBehaviour {
 		if (!SceneManager.GetActiveScene ().name.Equals("Settings")) {
 			savePlayerPos ();
 		}
+
+		if (timeStarted == true) {
+			timer += Time.deltaTime;
+		}    
 	}
 
 	/*
@@ -147,7 +160,8 @@ public class GlobalController : MonoBehaviour {
 
 		//set the previous scene name to be reloaded
 		previousSceneName = SceneManager.GetActiveScene ().name;
-
+		//mark the global timer in the specific scene and send to Analytics.
+		sceneTimerAnalytics();
 		SceneManager.LoadScene (sceneName);
 	}
 
@@ -194,6 +208,9 @@ public class GlobalController : MonoBehaviour {
 	// decreases additive
 	public void decAdditive(){
 		scrAdditive -= 10;
+		//decrease in score implies failed attempt. Log in Analytics.
+		failedAttempts++;
+		failureAnalytics ();
 	}
 	//resets the additive for the score
 	public void resetAdditive(){
@@ -209,6 +226,14 @@ public class GlobalController : MonoBehaviour {
 			print ("Spawning");
 			scientistSprites [i].GetComponent<SpriteRenderer> ().enabled = false;
 		}
+	}
+
+	void OnGUI() {
+		minutes = Mathf.FloorToInt(timer / 60F);
+		int seconds = Mathf.FloorToInt(timer - minutes * 60);
+		niceTime = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+		GUI.Label(new Rect(10,10,250,100), niceTime);
 	}
 
 	/*
@@ -232,19 +257,43 @@ public class GlobalController : MonoBehaviour {
 		scoreText.text = "Score: " + score;
 		scientistText.text = "x " + scientistCount;
 
+		//set failed attempts back to 0 to see how many times per scene the player is failing
+		failedAttempts = 0;
+
+		 
+
 		//put player back in correct spot
 		//setPlayerPos();
 
 	}
-		
-	public void Analytics(){
-		googleAnalytics.LogEvent ("Clicked for Help", "User Clicked", "Assist Page", noteButtonCounter);
+
+	public void failureAnalytics(){
+		googleAnalytics.LogEvent ("Challenge in " + camName, "Number of Failures", "Failed a Challenge", failedAttempts);
 		googleAnalytics.LogEvent (new EventHitBuilder ()
-			.SetEventCategory ("Clicked for Help")
-			.SetEventAction ("User Clicked")
-			.SetEventLabel ("Assist Page")
-			.SetEventValue (noteButtonCounter));
+			.SetEventCategory ("Challenge in " + camName)
+			.SetEventAction ("Number of Failures")
+			.SetEventLabel ("Failed a Challenge")
+			.SetEventValue (failedAttempts));
 	}
+
+	public void sceneTimerAnalytics(){
+		googleAnalytics.LogEvent ("Time in " + SceneManager.GetActiveScene ().name, "Time in Scene", "Timer", minutes);
+		googleAnalytics.LogEvent (new EventHitBuilder ()
+			.SetEventCategory ("Time in " + SceneManager.GetActiveScene ().name)
+			.SetEventAction ("Time in Scene")
+			.SetEventLabel ("Timer")
+			.SetEventValue (minutes));
+	}
+
+	public void scientistAnalytics(){
+		googleAnalytics.LogEvent ("Scientists located", "Scientists located", "Number found", (long)scientistCount);
+		googleAnalytics.LogEvent (new EventHitBuilder ()
+			.SetEventCategory ("Scientists located")
+			.SetEventAction ("Scientists located")
+			.SetEventLabel ("Number found")
+			.SetEventValue (scientistCount));
+	}
+		
 
 
 }

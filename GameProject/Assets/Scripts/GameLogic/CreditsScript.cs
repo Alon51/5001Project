@@ -29,6 +29,7 @@ public class CreditsScript : MonoBehaviour {
 		QuitGameButton.gameObject.SetActive (false);
 
 		setAlphaToZero ();
+		GlobalController.Instance.scientistAnalytics ();
 	}
 
 	// Update is called once per frame

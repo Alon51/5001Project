@@ -64,6 +64,16 @@ public class JITScript : MonoBehaviour {
 				}
 				break;
 
+			case "NestedForCamera":
+				if (toggleZoom) {
+					player.GetComponent<PlayerMovement> ().setCamSize (8.0f);
+					toggleZoom = !toggleZoom;
+				} else {
+					player.GetComponent<PlayerMovement> ().setCamSize(12.0f);
+					toggleZoom = !toggleZoom;
+				}
+				break;
+
 			//Array Level
 			case "ArrayBriefing":
 				wordDisplay.text = "There are more scientists to be saved using Arrays! \n\n" +

@@ -7,6 +7,7 @@ using UnityEngine.EventSystems; //allows us to get name of buttons that are clic
 public class HelpButtons : MonoBehaviour {
 
 	public Text helpText;
+	public AnalyticsByLevel levelAnalytics;
 
 
 	// Use this for initialization
@@ -232,6 +233,8 @@ public class HelpButtons : MonoBehaviour {
 
 	void OnMouseEnter(){
 		showHelpText ();
+		levelAnalytics.helpButtonCounter++;
+		levelAnalytics.HelpButtonAnalytics ();
 	}
 	void OnMouseExit(){
 		helpText.text = "";

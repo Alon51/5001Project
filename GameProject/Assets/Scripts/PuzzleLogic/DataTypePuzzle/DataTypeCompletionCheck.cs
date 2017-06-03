@@ -16,6 +16,7 @@ public class DataTypeCompletionCheck : MonoBehaviour {
 
 	public GameObject door;
 	Vector3 initialDoorPosition;
+	public AudioSource solved, raiseDoor;
 
 	public bool puzzleFinished, camToggled, scoreChanged;
 	// Use this for initialization
@@ -38,9 +39,11 @@ public class DataTypeCompletionCheck : MonoBehaviour {
 				//open the door
 				openDoor ();
 				puzzleFinished = true;
-
+				solved.Play ();
 				//add to score
 				if (!scoreChanged) {
+					raiseDoor.Play ();
+					raiseDoor.loop = false;
 					GlobalController.Instance.incScore ();
 					scoreChanged = true;
 				}
@@ -130,6 +133,7 @@ public class DataTypeCompletionCheck : MonoBehaviour {
 			checkSlots [2].GetComponent<ArrayReaction>().giveName == "ReplacementDouble" &&
 			checkSlots [3].GetComponent<ArrayReaction>().giveName == "ReplacementChar") 
 		{
+			
 			return true;
 		}
 		return false;

@@ -16,6 +16,7 @@ public class ArithCompletionCheck : MonoBehaviour {
 
 	public GameObject door;
 	Vector3 initialDoorPosition;
+	public AudioSource solved, raiseDoor;
 
 	public bool puzzleFinished, camToggled, scoreChanged;
 	// Use this for initialization
@@ -38,9 +39,12 @@ public class ArithCompletionCheck : MonoBehaviour {
 				//open the door
 				openDoor ();
 				puzzleFinished = true;
+				solved.Play ();
 
 				//add to score
 				if (!scoreChanged) {
+					raiseDoor.Play ();
+					raiseDoor.loop = false;
 					GlobalController.Instance.incScore ();
 					scoreChanged = true;
 				}
@@ -132,6 +136,7 @@ public class ArithCompletionCheck : MonoBehaviour {
 			checkSlots [3].GetComponent<ArrayReaction>().giveName == "Replacement-" &&
 			checkSlots [4].GetComponent<ArrayReaction>().giveName == "ReplacementMOD") 
 		{
+			
 			return true;
 		}
 		return false;

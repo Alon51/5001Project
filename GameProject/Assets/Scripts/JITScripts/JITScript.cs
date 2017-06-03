@@ -104,7 +104,7 @@ public class JITScript : MonoBehaviour {
 				//Specifically for managing cams in Arrya level since there are many cameras
 			case "ArrayCams":
 				GameObject cam = GameObject.Find ("ErrorCamera");
-				GameObject cam2 = GameObject.Find ("SecondCamera");
+				GameObject cam2 = GameObject.Find ("SecondCameraARRAYACCESS");
 				cam2.GetComponent<Camera> ().enabled = false;
 				cam.GetComponent<Camera> ().enabled = false;
 				break;

@@ -19,7 +19,7 @@ public class ReturnToHomePortal : MonoBehaviour {
 	void Update () {
 		if (inArea) {
 			if (Input.GetKeyDown ("x")) {
-				GlobalController.Instance.changeScene ("HubLevel");
+				GlobalController.Instance.changeScene ("HubLevelReturn");
 			}
 		}
 	}

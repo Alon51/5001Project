@@ -45,7 +45,9 @@ public class GameButtons : MonoBehaviour {
 		SceneManager.LoadScene ("HubLevel");
 	}
 	public void ReturnToTitle(){
+		
 		SceneManager.LoadScene ("STARTUP");
+		Time.timeScale = 1.0f;
 	}
 	public void QuitGame(){
 		Application.Quit ();

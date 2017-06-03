@@ -17,9 +17,6 @@ public class GlobalController : MonoBehaviour {
 	//use for analytics
 	public long failedAttempts;
 
-	//Teleporter Room Bools
-	public bool arrayPortalActive = false;
-	public bool loopPortalActive = false;
 
 	//Camera variables
 	public Camera mainCam;
@@ -29,6 +26,16 @@ public class GlobalController : MonoBehaviour {
 
 	//Final Level Objects
 	public GameObject [] scientistSprites;
+
+	//Check for level Completions
+	public bool arithComplete = false;
+	public bool condComplete = false;
+	public bool arrayComplete = false;
+	public bool loopComplete = false;
+
+	//Teleporter Controller
+	public bool arrayPortalActive = false;
+	public bool loopPortalActive = false;
 
 	//Loop Level Completion Bools
 	public bool singleForLoopComplete = false;

@@ -355,6 +355,19 @@ public class JITScript : MonoBehaviour {
 				playDialogue ();
 				break;
 
+			//COMPLETE THE LEVEL CONDITIONS
+			case "ArithComplete":
+				GlobalController.Instance.arithComplete = true;
+				break;
+			case "CondComplete":
+				GlobalController.Instance.condComplete = true;
+				break;
+			case "ArrayComplete":
+				GlobalController.Instance.arrayComplete = true;
+				break;
+			case "LoopComplete":
+				GlobalController.Instance.loopComplete = true;
+				break;
 
 			//MISC JITS
 			case "RaiseBarriers":

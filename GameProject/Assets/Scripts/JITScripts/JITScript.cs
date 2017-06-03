@@ -175,9 +175,9 @@ public class JITScript : MonoBehaviour {
 			//Second generic scientis response
 			case "Scientist2":
 				wordDisplay.text = "Thanks for saving me! Let me help you find an escape route with the others! " +
-					"\n\nHey before you go though, let me tinker with your boots so you can " +
-					"jump a little higher. All you have to do is press the space bar while you are" +
-					"still jumping to jump again and reach higher places. Who knows, maybe you'll" +
+					"\nHey before you go though, let me tinker with your boots so you can " +
+					"jump a little higher. All you have to do is press the space bar while you are " +
+					"still jumping to jump again and reach higher places. Who knows, maybe you'll " +
 					"find something cool! Or just hit your head. Only one way to find out!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
@@ -445,8 +445,8 @@ public class JITScript : MonoBehaviour {
 				break;
 
 			case "SecretScientist":
-				wordDisplay.text = "I can't believe it! It worked! Get me out of here! Please" +
-					"tell me you got the others. I just" +
+				wordDisplay.text = "I can't believe it! It worked! Get me out of here! Please " +
+					"tell me you got the others. I just " +
 					"miss my family so much. Let's go! We have to hurry!";
 				Time.timeScale = 0.0f;
 				playDialogue ();

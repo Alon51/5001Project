@@ -48,7 +48,7 @@ public class JITScript : MonoBehaviour {
 				playDialogue ();
 				break;
 			case "HubFinal":
-				wordDisplay.text = "This final room has been locked and you can only get past after saving" +
+				wordDisplay.text = "This final room has been locked and you can only get past after saving " +
 					"at least 7 scientists! It will unlock itself once at least 7 scientistd are safe.";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);

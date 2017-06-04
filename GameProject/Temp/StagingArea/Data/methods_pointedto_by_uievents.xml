@@ -1,0 +1,92 @@
+<linker>
+	<assembly fullname="Assembly-CSharp">
+		<type fullname="GameButtons">
+			<method name="GoToIntroduction"/>
+			<method name="QuitGame"/>
+			<method name="GoToInstructions"/>
+			<method name="ClearWordDisplay"/>
+			<method name="helpScreenToggle"/>
+			<method name="ClearWordDisplay"/>
+			<method name="helpToggleOff"/>
+			<method name="helpScreenToggle"/>
+			<method name="helpScreenToggle"/>
+			<method name="ClearWordDisplay"/>
+			<method name="ClearWordDisplay"/>
+			<method name="helpToggleOff"/>
+			<method name="helpScreenToggle"/>
+			<method name="ClearWordDisplay"/>
+			<method name="helpScreenToggle"/>
+			<method name="helpToggleOff"/>
+			<method name="ClearWordDisplay"/>
+			<method name="QuitGame"/>
+			<method name="ReturnToTitle"/>
+			<method name="ReturnToPrevScene"/>
+			<method name="StartGame"/>
+			<method name="ClearWordDisplay"/>
+		</type>
+		<type fullname="CompletionScriptThree">
+			<method name="resetPuzzle"/>
+			<method name="resetPuzzle"/>
+		</type>
+		<type fullname="ArithCompletionCheck">
+			<method name="resetPuzzle"/>
+		</type>
+		<type fullname="P2">
+			<method name="showTextTwo"/>
+			<method name="showTextThree"/>
+			<method name="showTextOne"/>
+		</type>
+		<type fullname="DataTypeCompletionCheck">
+			<method name="resetPuzzle"/>
+		</type>
+		<type fullname="HelpButtons">
+			<method name="showHelpText"/>
+			<method name="showHelpText"/>
+		</type>
+		<type fullname="LogicalOrCompletion">
+			<method name="resetPuzzle"/>
+		</type>
+		<type fullname="LogicalAndCompletion">
+			<method name="resetPuzzle"/>
+		</type>
+		<type fullname="BoolOpsCompletion">
+			<method name="resetPuzzle"/>
+		</type>
+		<type fullname="ArrayAccessCompletion">
+			<method name="resetPuzzle"/>
+		</type>
+		<type fullname="ArraySumCompletion">
+			<method name="resetPuzzle"/>
+		</type>
+		<type fullname="CompletionScriptFour">
+			<method name="resetPuzzle"/>
+		</type>
+		<type fullname="CompletionCheck2">
+			<method name="resetPuzzle"/>
+		</type>
+		<type fullname="CompletionCheck">
+			<method name="resetPuzzle"/>
+		</type>
+		<type fullname="IndentPuzzle">
+			<method name="unindentButtonTwo"/>
+			<method name="unindentButtonFour"/>
+			<method name="indentButtonTwo"/>
+			<method name="indentButtonThree"/>
+			<method name="indentButtonOne"/>
+			<method name="unindentButtonFive"/>
+			<method name="unindentButtonOne"/>
+			<method name="unindentButtonThree"/>
+			<method name="indentButtonFive"/>
+			<method name="indentButtonFour"/>
+		</type>
+		<type fullname="FinalPuzzleCompletionCheck">
+			<method name="resetPuzzle"/>
+		</type>
+		<type fullname="submitButton">
+			<method name="submitClick"/>
+		</type>
+		<type fullname="SettingsScript">
+			<method name="toggleFullscreen"/>
+		</type>
+	</assembly>
+</linker>

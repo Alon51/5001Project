@@ -152,18 +152,18 @@ public class JITScript : MonoBehaviour {
 					break;
 				case 2:
 					tempTxt = "I never thought I'd get out of here! We either have to regain control of the ship" +
-						"or bail out of here, and I'd rather bail!";
+					"or bail out of here, and I'd rather bail!";
 					break;
 				case 3:
 					tempTxt = "Took you long enough. Now let's get off this forsaken ship. ASAP.";
 					break;
 				case 4:
 					tempTxt = "Is that you Codex? It is! I knew I was right in telling them to keep you operational!\n" +
-						"I'll head to the others and see if we can devise a way out of this mess.";
+					"I'll head to the others and see if we can devise a way out of this mess.";
 					break;
 				case 5:
 					tempTxt = "Thank the heavens you're here. I don't know what I'd do if you didn't come for me!\n" +
-						"We need to take an escape pod and head back to central base!";
+					"We need to take an escape pod and head back to central base!";
 					break;
 				}
 				wordDisplay.text = tempTxt;
@@ -332,6 +332,7 @@ public class JITScript : MonoBehaviour {
 				"This is the final push! Time to finsh what you started!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);
+				GlobalController.Instance.scientistAnalytics ();
 				playDialogue ();
 				break;
 			case "FinalCompletion":

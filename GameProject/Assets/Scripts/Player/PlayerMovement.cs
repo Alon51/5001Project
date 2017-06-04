@@ -115,6 +115,7 @@ public class PlayerMovement : MonoBehaviour {
 				zoom = false;
 			}
 		}
+			
 
 		//Sets variables in order to change animations
 		anim.SetFloat("Speed", Mathf.Abs(myRigidBody.velocity.x));

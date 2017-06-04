@@ -16,6 +16,7 @@ public class GameButtons : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
 		
 	}
 

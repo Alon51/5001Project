@@ -19,6 +19,7 @@ public class BoolOpsCompletion : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		resetPuzzle ();
 		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
 		puzzleFinished = false;
 		camToggled = false;

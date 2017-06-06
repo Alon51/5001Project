@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Main/ArithmeticLevel.unity
+- path: Assets/Scenes/Main/HubLevel 1.unity
   isLoaded: 1
   isActive: 1

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FinalPuzzleCompletionCheck : MonoBehaviour {
 
@@ -8,10 +9,10 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 
 
 	public GameObject[] checkSlots; //manually set in inspector
-	public GameObject[] barriers;//manually set in inspector
 	public GameObject[] arrayTiles; // the tiles that will be dragged
 	public GameObject[] replacementTiles;
-
+	public GameObject elevator;
+	public Text errorMessage;
 	public bool puzzleFinished, camToggled, scoreChanged;
 	// Use this for initialization
 	void Start () {
@@ -19,17 +20,18 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 		puzzleFinished = false;
 		camToggled = false;
 		scoreChanged = false;
+		errorMessage.enabled = false;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		//if all 5 spots are filled
+		//if all 5 spots are filled and is correct
 		if (checkInputSuccess () && checkInputName ()) {
 			if (!camToggled) {
 				GlobalController.Instance.toggleCamera ();
 				camToggled = true;
-				//raise the barriers
-				openBarriers();
+				//activate the elevator
+				activateElevator();
 				puzzleFinished = true;
 
 				//add to score
@@ -39,11 +41,12 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 				}
 			}
 
-		} else if (checkInputSuccess ()) {
+		} else if (checkInputSuccess ()) { // if input is done, but is incorrct
 			if (!camToggled) {
 				GlobalController.Instance.toggleCamera ();
 				camToggled = true;
 				puzzleFinished = true;
+				errorMessage.enabled = true;
 			}
 		}
 		//reset puzzle and platforms
@@ -58,11 +61,10 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 		resetTiles ();
 		resetSlots ();
 		resetActive ();
-		//resetBarriers();
 		resetCheckValues ();
 		camToggled = false;
 		puzzleFinished = false;
-
+		errorMessage.enabled = false;
 		//lower additive
 		GlobalController.Instance.decAdditive ();
 	}
@@ -73,22 +75,12 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 		}
 	}
 
-	public void openBarriers(){
-		//open the first barrier
-		//barriers [0].GetComponent<BarrierController> ().moveBarrier ();
-//		foreach (GameObject barr in barriers) {
-//			barr.GetComponent<BarrierController> ().moveBarrier ();
-//		}
+	public void activateElevator(){
 		GameObject temp = GameObject.FindGameObjectWithTag ("RisingPlatform");
 		temp.GetComponent<MovingObject> ().enabled = true;
+
 	}
-	public void resetBarriers(){
-		//place back in original pos
-		foreach (GameObject barr in barriers) {
-			barr.GetComponent<OneWayMovingObjectTrigger> ().resetPosition ();
-			barr.GetComponent<OneWayMovingObjectTrigger> ().triggerCollider.gameObject.SetActive (true);
-		}
-	}
+
 	//reset slots to empty
 	public void resetSlots(){
 		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");

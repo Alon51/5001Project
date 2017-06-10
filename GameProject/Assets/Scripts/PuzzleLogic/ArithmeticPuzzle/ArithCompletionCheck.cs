@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 
@@ -17,7 +18,7 @@ public class ArithCompletionCheck : MonoBehaviour {
 	public GameObject door;
 	Vector3 initialDoorPosition;
 	public AudioSource solved, raiseDoor;
-
+	public Text errorMessage;
 	public bool puzzleFinished, camToggled, scoreChanged;
 	// Use this for initialization
 	void Start () {
@@ -27,12 +28,13 @@ public class ArithCompletionCheck : MonoBehaviour {
 		camToggled = false;
 		scoreChanged = false;
 		initialDoorPosition = door.transform.position;
+		errorMessage.enabled = false;
 	}
 
 	// Update is called once per frame
 	void Update () {
 		//if all 5 spots are filled
-		if (checkInputSuccess () && checkInputName ()) {
+		if (checkInputSuccess () && checkInputName ()) { //complete and correct
 			if (!camToggled) {
 				GlobalController.Instance.toggleCamera ();
 				camToggled = true;
@@ -50,11 +52,12 @@ public class ArithCompletionCheck : MonoBehaviour {
 				}
 			}
 
-		} else if (checkInputSuccess ()) {
+		} else if (checkInputSuccess ()) { // incorrect but complete
 			if (!camToggled) {
 				GlobalController.Instance.toggleCamera ();
 				camToggled = true;
 				puzzleFinished = true;
+				errorMessage.enabled = true;
 			}
 		}
 		//reset puzzle and platforms
@@ -75,7 +78,7 @@ public class ArithCompletionCheck : MonoBehaviour {
 		resetCheckValues ();
 		camToggled = false;
 		puzzleFinished = false;
-
+		errorMessage.enabled = false;
 		//lower additive
 		GlobalController.Instance.decAdditive ();
 	}

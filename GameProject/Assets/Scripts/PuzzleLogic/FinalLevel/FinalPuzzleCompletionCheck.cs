@@ -22,12 +22,13 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 		scoreChanged = false;
 		errorMessage.enabled = false;
 	}
-
+	//
 	// Update is called once per frame
 	void Update () {
 		//if all 5 spots are filled and is correct
-		if (checkInputSuccess () && checkInputName ()) {
+		if (checkInputName () && checkInputSuccess ()) {
 			if (!camToggled) {
+				Debug.Log("No Cam toggled");
 				GlobalController.Instance.toggleCamera ();
 				camToggled = true;
 				//activate the elevator
@@ -41,7 +42,7 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 				}
 			}
 
-		} else if (checkInputSuccess ()) { // if input is done, but is incorrct
+		} else if (checkInputName() && checkInputSuccess()) { // if input is done, but is incorrct
 			if (!camToggled) {
 				GlobalController.Instance.toggleCamera ();
 				camToggled = true;
@@ -124,6 +125,7 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 			checkSlots [3].GetComponent<ArrayReaction>().giveName == "ReplacementMOD" &&
 			checkSlots [4].GetComponent<ArrayReaction>().giveName == "ReplacementX") 
 		{
+			GlobalController.Instance.toggleCamera ();	
 			return true;
 		}
 		return false;

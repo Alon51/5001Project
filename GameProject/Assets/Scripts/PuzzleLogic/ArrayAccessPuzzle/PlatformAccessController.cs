@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/**
+ * Controls the platforms in the array level's first challenge
+ */ 
 public class PlatformAccessController : MonoBehaviour {
-
-	public bool isVisible; //whether or not it should be visible
-	public BoxCollider2D bCol; // box collider for this object
-	public SpriteRenderer spr; // sprite used to control color of obj
-	public SpriteRenderer indexNumSpr; // used for the number on the platform
+	///whether or not it should be visible
+	public bool isVisible; 
+	/// box collider for this object
+	public BoxCollider2D bCol;
+	/// sprite used to control color of obj
+	public SpriteRenderer spr;
+	// used for the number on the platform
+	public SpriteRenderer indexNumSpr; 
 
 	// Use this for initialization
 	void Start () {
@@ -29,7 +34,7 @@ public class PlatformAccessController : MonoBehaviour {
 		
 	}
 
-	//enabled box collider2d, and makes obj visible
+	///enables box collider2d, and makes obj visible
 	public void SetVisibleAndActive(){
 		//temp color
 		Color tempColor = new Color(255,255,255,1f);
@@ -38,7 +43,7 @@ public class PlatformAccessController : MonoBehaviour {
 		spr.color = tempColor;
 		indexNumSpr.enabled = true;
 	}
-
+	///disables box collider2d, and makes obj invisible
 	public void SetInvisibleAndInactive(){
 		//temp color
 		Color tempColor = new Color(255,255,255,0.5f);

@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/**
+ * Manages the slots that tiles are dragged into
+ * Manages whether or not they are fileld or not
+ * Places a replacement tile based on the tile's name
+ */ 
 public class ArrayReaction : MonoBehaviour {
 
 	public bool success;

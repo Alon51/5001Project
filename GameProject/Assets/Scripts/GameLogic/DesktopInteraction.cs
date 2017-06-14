@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+/**
+ * Class used to allows all desktops to show their respective challenges
+ * Also displays a interact prompt when near them
+ */
 public class DesktopInteraction : MonoBehaviour {
 
 	public Text prompt; //text to display

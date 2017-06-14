@@ -9,9 +9,13 @@ public class DataTypeCompletionCheck : MonoBehaviour {
 
 	// LEVEL MANAGER FOR THE ARRAY LEVEL
 
+	///manually set in inspector, slots to be filled by tiles
 	public GameObject[] checkSlots;
-
+	/// the tiles that will be dragged
 	public GameObject[] arrayTiles; // the tiles that will be dragged
+	/// <summary>
+	/// The replacement tiles that go into the slots
+	/// </summary>
 	public GameObject[] replacementTiles;
 
 	public GameObject door;

@@ -5,27 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour {
 
-
-	public float moveSpeed; // how fast the player moves 
-	public float jumpSpeed; // how high player jumps
-
-	public bool isGrounded; // know if player is on ground
-	public bool isJumping; // know if player is jumping
+	/// how fast the player moves 
+	public float moveSpeed;
+	/// how high player jumps
+	public float jumpSpeed; 
+	/// know if player is on ground
+	public bool isGrounded;
+	/// know if player is jumping
+	public bool isJumping;
+	/// Is the player facing left or not
 	public bool leftFacing = false;
+	/// Can the player jump twice or not
 	public bool canDoubleJump = false;
+	/// Does the player run faster or not
 	public bool canSpeedUp;
-
-	public GameObject bomb; //Test to see if I can get bombs working.
+	/// Test to see if I can get bombs working.
+	public GameObject bomb;
+	/// Timer for the use of bombs
 	public bombLogic timer;
 	public float startTime, elapsedTime;
 
-	//variables for checking if player is on ground or not
+	///variables for checking if player is on ground or not
 	public Transform groundCheck;
-	public float groundCheckRadius; // radius of ground check space
+	/// radius of ground check space
+	public float groundCheckRadius; 
 	public LayerMask whatIsGround;
-
-	private Rigidbody2D myRigidBody; // rigid body used for moving and jumping
-	public bool zoom = false; //flag for using Camera ZoomIn/Out functions.
+	/// rigid body used for moving and jumping
+	private Rigidbody2D myRigidBody; 
+	/// flag for using Camera ZoomIn/Out functions.
+	public bool zoom = false; 
 
 	private Animator anim;
 	public Camera cam;
@@ -33,7 +41,7 @@ public class PlayerMovement : MonoBehaviour {
 	public GlobalController gameManager;
 	public RespawnController respawnManager;
 
-//Animation States 
+///Animation States 
 	const int STATE_IDLE = 0;
 	const int STATE_RIGHT = 1;
 	const int STATE_LEFT = 2;
@@ -53,7 +61,7 @@ public class PlayerMovement : MonoBehaviour {
 		isGrounded = Physics2D.OverlapCircle (groundCheck.position,groundCheckRadius,whatIsGround);
 		myRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-		//if player collected speed up power up
+		///if player collected speed up power up
 		if (GlobalController.Instance.hasSpeedUp) {
 			moveSpeed = 12.0f;
 		}
@@ -139,7 +147,7 @@ public class PlayerMovement : MonoBehaviour {
 			
 
 	}
-	//Function to change animation state controllers. 
+	///Function to change animation state controllers. 
 		void changeState(int state){
 			if (currentAnimState == state) {
 				return;
@@ -166,18 +174,19 @@ public class PlayerMovement : MonoBehaviour {
 		currentAnimState = state;
 	}
 
-	//Changes Camera.cam ortho size on toggle mapped to "Q" key.
+	///Changes Camera.cam ortho size on toggle mapped to "Q" key.
 	public void zoomOut(){
 		cam.orthographicSize = 16.0f;
 	}
+	///Changes Camera.cam ortho size on toggle mapped to "Q" key.
 	public void zoomIn(){
 		cam.orthographicSize = 7;
 	}
-
+	/// Sets the camera size to the value of the argument
 	public void setCamSize(float newCamSize){
 		cam.orthographicSize = newCamSize; //specific to final level
 	}
-
+	/// Togles camera so player can see platforms in array scene
 	public void goToArrPlatforms(){
 		Camera tempcam = GameObject.Find ("ArrayPlatformCamera").GetComponent<Camera>();
 		GlobalController.Instance.changeSecondCamera (tempcam);

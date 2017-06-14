@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/**
+ * Class responsible for allowing tiled to be dragged in challenge scenes
+ */ 
 public class TileDrag : MonoBehaviour {
-
+	/// <summary>
+	/// Positions of x, y, and z
+	/// </summary>
 	float x;
 	float y;
 	float z;
@@ -33,11 +37,11 @@ public class TileDrag : MonoBehaviour {
 		}
 	}
 
-	//Reset the initial location of tile when needed.
+	///Reset the initial location of tile when needed.
 	public void onReset(){
 		this.gameObject.transform.position = initialPosition;
 	}
-
+	/// Disables the tile's box collider
 	public void disableBoxCol(){
 		this.GetComponent<BoxCollider2D> ().enabled = false;
 	}

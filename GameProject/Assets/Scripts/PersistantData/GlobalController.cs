@@ -4,9 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/**
+ * Manages all fo the game's persistent data
+ * Manages things like:
+ * Powerups, Google Analytics, Timer for the game,
+ * Camera toggles, scientist count, and more
+*/
 public class GlobalController : MonoBehaviour {
-
+	/// Public instance of the glass to be used in all other classes
 	public static GlobalController Instance;
+	/// Google Analytics object to manage sending relevant event data
 	public GoogleAnalyticsV4 googleAnalytics;
 
 	public static float timer;
@@ -14,60 +21,64 @@ public class GlobalController : MonoBehaviour {
 	string niceTime;
 	long minutes;
 
-	//use for analytics
+	///use for analytics
 	public long failedAttempts;
 
 
-	//Camera variables
+	///Camera variables
 	public Camera mainCam;
 	public Camera secondCam;
 	public bool onMainCam;
 	public string camName;
 
-	//Final Level Objects
+	///Final Level Objects
 	public GameObject [] scientistSprites;
 
-	//Check for level Completions
+	///Check for level Completions
 	public bool arithComplete = false;
 	public bool condComplete = false;
 	public bool arrayComplete = false;
 	public bool loopComplete = false;
 
-	//Teleporter Controller
+	///Teleporter Controller
 	public bool arrayPortalActive = false;
 	public bool loopPortalActive = false;
 
-	//Loop Level Completion Bools
+	///Loop Level Completion Bools
 	public bool singleForLoopComplete = false;
 	public bool nestedForLoopComplete = false;
 	public bool whileLoopComplete = false;
 
-	//Conditional Level Completion Bools
+	///Conditional Level Completion Bools
 	public bool boolOpsComplete = false;
 	public bool logicalOrComplete = false;
 	public bool logicalAndComplete = false;
 
-	//IndentPuzzle Completion
+	///IndentPuzzle Completion
 	public bool indentComplete = false;
 
-	//Reference to the Player
+	///Reference to the Player
 	public PlayerMovement thePlayer;
+	///global player pos for scene transitions -- not used as of now
+	public Vector3 glPlayerPos; 
+	///text to display score and num of scientists
+	public Text scoreText, scientistText; 
+	/// used to track the player's score
+	public int score;
+	/// num of scientists
+	public int scientistCount; 
+	/// max amount of scientists in the game
+	public int totalScientists; 
+	/// what is added or subtracted from the score
+	public int scrAdditive; 
 
-	public Vector3 glPlayerPos; //global player pos for scene transitions
-
-	public Text scoreText, scientistText; //text to display score and num of scientists
-	public int score; // used to track the player's score
-	public int scientistCount; // num of scientists
-	public int totalScientists; // max amount of scientists in the game
-	public int scrAdditive; // what is added or subtracted from the score
-
-	//text for displaying briefings and such
+	///text for displaying briefings and such
 	public Text wordDisplay;
 
-	//name of last scene that was loaded
+	///name of last scene that was loaded
 	public string previousSceneName;
 
-	//Upgrades
+	///Upgrades for player booleans
 	public bool hasBombs;
 	public bool hasDoubleJump;
 	public bool hasSpeedUp;
@@ -123,7 +134,7 @@ public class GlobalController : MonoBehaviour {
 		}    
 	}
 
-	/*
+	/**
 	 * To call a function when a new scene is loaded, you need to add OnSceneLoaded
 	 * as a delegate for SceneManager.sceneLoaded in OnEnable and OnDisable
 	 * Then in OnSceneLoaded, add the code you want to run when a new scene loads
@@ -136,7 +147,10 @@ public class GlobalController : MonoBehaviour {
 	void OnDisable() {
 		SceneManager.sceneLoaded -= OnSceneLoaded;
 	}
-
+	/**
+	 * Calls cetain methods to reset connections to objects when switching between scenes
+	 * 
+	*/
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
 		//Reset all cameras and text
 		resetWhenSceneChanged ();
@@ -153,16 +167,16 @@ public class GlobalController : MonoBehaviour {
 
 
 
-	//save the players position for use between scenes
+	///save the players position for use between scenes
 	public void savePlayerPos(){
 		glPlayerPos = thePlayer.transform.position;
 	}
-	//sets the players position when returning to scene
+	///sets the players position when returning to scene
 	public void setPlayerPos(){
 		thePlayer.transform.position = glPlayerPos;
 	}
 
-	//changes the scene based on the name
+	///changes the scene based on the name
 	public void changeScene(string sceneName){
 
 		//set the previous scene name to be reloaded
@@ -172,7 +186,7 @@ public class GlobalController : MonoBehaviour {
 		SceneManager.LoadScene (sceneName);
 	}
 
-	//toggles between the main camera and the specified second camera	
+	///toggles between the main camera and the specified second camera	
 	public void toggleCamera(){
 		if (onMainCam) {
 			mainCam.enabled = false;
@@ -187,43 +201,44 @@ public class GlobalController : MonoBehaviour {
 			camName = mainCam.name;
 		}
 	}
-	//changes the second camera in order to allow togling between multiple camera
+	///changes the second camera in order to allow togling between multiple camera
 	public void changeSecondCamera(Camera newCam){
 		secondCam = newCam;
 	}
-
+	/// Increases the number of scientists
 	public void incScientist(){
 		scientistCount += 1;
 		scientistText.text = "x " + scientistCount;
 	}
+	/// Returns the number of sciensts the player has
 	public int getScientistCount(){
 		return scientistCount;
 	}
-	//increases score
+	///increases score
 	public void incScore(){
 		score += scrAdditive;
 		scoreText.text = "Score: " + score;
 	}
-	//decreases the score
+	///decreases the score
 	public void decScore(){
 		score -= scrAdditive;
 	}
-	//increases additive
+	///increases additive to score
 	public void incAdditive(){
 		scrAdditive += 10;
 	}
-	// decreases additive
+	/// decreases additive to score
 	public void decAdditive(){
 		scrAdditive -= 10;
 		//decrease in score implies failed attempt. Log in Analytics.
 		failedAttempts++;
 		failureAnalytics ();
 	}
-	//resets the additive for the score
+	///resets the additive for the score
 	public void resetAdditive(){
 		scrAdditive = 100;
 	}
-	// loads the apt amount of scientists in the final level based on how many were saved
+	/// loads the apt amount of scientists in the final level based on how many were saved
 	public void spawnScientists(){ 
 		print ("In SPSci");
 		scientistCount = 3;
@@ -243,7 +258,7 @@ public class GlobalController : MonoBehaviour {
 		GUI.Label(new Rect(10,10,250,100), niceTime);
 	}
 
-	/*
+	/**
 	 * Resets the following when the scene is changed
 	 * Player
 	 * Main Camera

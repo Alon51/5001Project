@@ -20,24 +20,24 @@ void \hyperlink{class_array_access_completion_ac2350f79701c5e7a953e44e788347c6c}
 void \hyperlink{class_array_access_completion_ac3834cd64df95140d0becf11f7eb15de}{make\+Platforms\+Visible} ()
 \item 
 void \hyperlink{class_array_access_completion_a7d73c45ea206180019c5cc0e7a73eb92}{reset\+Slots} ()
-\item 
+\begin{DoxyCompactList}\small\item\em reset slots to empty \end{DoxyCompactList}\item 
 void \hyperlink{class_array_access_completion_a0975baec709eab99fa831cefd45a2069}{reset\+Tiles} ()
-\item 
+\begin{DoxyCompactList}\small\item\em reset tiles to active and in original position \end{DoxyCompactList}\item 
 void \hyperlink{class_array_access_completion_ac8b88581ac5e6fe71128b6a4c5c64c12}{reset\+Active} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Resets all of the tiles to be active when resetting. \end{DoxyCompactList}\item 
 void \hyperlink{class_array_access_completion_af92ecc71a759308e06bf8b4d96ca3c78}{reset\+Platforms} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Makes the platforms invisible during resetting. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_array_reaction}{Array\+Reaction} \hyperlink{class_array_access_completion_a5b7d8357b6c82703f06eaabee00d0f2f}{check\+One}
-\item 
+\begin{DoxyCompactList}\small\item\em The slots that will be checked \end{DoxyCompactList}\item 
 Game\+Object \mbox{[}$\,$\mbox{]} \hyperlink{class_array_access_completion_ae8c88b6f2dd0fe851c866097911df8e4}{array\+Tiles}
-\item 
+\begin{DoxyCompactList}\small\item\em the tiles that will be dragged \end{DoxyCompactList}\item 
 Game\+Object \mbox{[}$\,$\mbox{]} \hyperlink{class_array_access_completion_a97c6ec1f65786273d1186f23ce5b0f6c}{replacement\+Tiles}
-\item 
+\begin{DoxyCompactList}\small\item\em The replacement tiles that go into the slots \end{DoxyCompactList}\item 
 Camera \hyperlink{class_array_access_completion_a0e0e013df2a9203aa27344b6090a56aa}{error\+Cam}
-\item 
+\begin{DoxyCompactList}\small\item\em Cameras that manage the blue screen and the puzzle camera for avoiding problems. \end{DoxyCompactList}\item 
 Text \hyperlink{class_array_access_completion_a03988dc3e4e687e24f0c2c57d75a03b0}{error\+Message}
 \item 
 bool \hyperlink{class_array_access_completion_a1cddf9521f110a2868afa36514c9dcb4}{puzzle\+Finished}
@@ -57,11 +57,15 @@ bool \hyperlink{class_array_access_completion_a1cddf9521f110a2868afa36514c9dcb4}
 \subsubsection{\texorpdfstring{make\+Platforms\+Visible()}{makePlatformsVisible()}}
 {\footnotesize\ttfamily void Array\+Access\+Completion.\+make\+Platforms\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_array_access_completion_ac8b88581ac5e6fe71128b6a4c5c64c12}\label{class_array_access_completion_ac8b88581ac5e6fe71128b6a4c5c64c12}} 
+Makes the transparent platforms visible by calling their member functions \mbox{\Hypertarget{class_array_access_completion_ac8b88581ac5e6fe71128b6a4c5c64c12}\label{class_array_access_completion_ac8b88581ac5e6fe71128b6a4c5c64c12}} 
 \index{Array\+Access\+Completion@{Array\+Access\+Completion}!reset\+Active@{reset\+Active}}
 \index{reset\+Active@{reset\+Active}!Array\+Access\+Completion@{Array\+Access\+Completion}}
 \subsubsection{\texorpdfstring{reset\+Active()}{resetActive()}}
 {\footnotesize\ttfamily void Array\+Access\+Completion.\+reset\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets all of the tiles to be active when resetting. 
 
 \mbox{\Hypertarget{class_array_access_completion_ac2350f79701c5e7a953e44e788347c6c}\label{class_array_access_completion_ac2350f79701c5e7a953e44e788347c6c}} 
 \index{Array\+Access\+Completion@{Array\+Access\+Completion}!reset\+Check\+Values@{reset\+Check\+Values}}
@@ -69,11 +73,15 @@ bool \hyperlink{class_array_access_completion_a1cddf9521f110a2868afa36514c9dcb4}
 \subsubsection{\texorpdfstring{reset\+Check\+Values()}{resetCheckValues()}}
 {\footnotesize\ttfamily void Array\+Access\+Completion.\+reset\+Check\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_array_access_completion_af92ecc71a759308e06bf8b4d96ca3c78}\label{class_array_access_completion_af92ecc71a759308e06bf8b4d96ca3c78}} 
+Resets the slot\textquotesingle{}s success bools so they can be used again \mbox{\Hypertarget{class_array_access_completion_af92ecc71a759308e06bf8b4d96ca3c78}\label{class_array_access_completion_af92ecc71a759308e06bf8b4d96ca3c78}} 
 \index{Array\+Access\+Completion@{Array\+Access\+Completion}!reset\+Platforms@{reset\+Platforms}}
 \index{reset\+Platforms@{reset\+Platforms}!Array\+Access\+Completion@{Array\+Access\+Completion}}
 \subsubsection{\texorpdfstring{reset\+Platforms()}{resetPlatforms()}}
 {\footnotesize\ttfamily void Array\+Access\+Completion.\+reset\+Platforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Makes the platforms invisible during resetting. 
 
 \mbox{\Hypertarget{class_array_access_completion_a317a8a4cc02701f79003290ba3b00f02}\label{class_array_access_completion_a317a8a4cc02701f79003290ba3b00f02}} 
 \index{Array\+Access\+Completion@{Array\+Access\+Completion}!reset\+Puzzle@{reset\+Puzzle}}
@@ -87,11 +95,19 @@ Resets the puzzle Resets the Tiles, slots, check values, camera flag and error m
 \subsubsection{\texorpdfstring{reset\+Slots()}{resetSlots()}}
 {\footnotesize\ttfamily void Array\+Access\+Completion.\+reset\+Slots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+reset slots to empty 
+
 \mbox{\Hypertarget{class_array_access_completion_a0975baec709eab99fa831cefd45a2069}\label{class_array_access_completion_a0975baec709eab99fa831cefd45a2069}} 
 \index{Array\+Access\+Completion@{Array\+Access\+Completion}!reset\+Tiles@{reset\+Tiles}}
 \index{reset\+Tiles@{reset\+Tiles}!Array\+Access\+Completion@{Array\+Access\+Completion}}
 \subsubsection{\texorpdfstring{reset\+Tiles()}{resetTiles()}}
 {\footnotesize\ttfamily void Array\+Access\+Completion.\+reset\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+reset tiles to active and in original position 
 
 \mbox{\Hypertarget{class_array_access_completion_a46a4adc2ab93ea43fb9acb31a3770624}\label{class_array_access_completion_a46a4adc2ab93ea43fb9acb31a3770624}} 
 \index{Array\+Access\+Completion@{Array\+Access\+Completion}!switch\+To\+Error\+Screen@{switch\+To\+Error\+Screen}}
@@ -108,17 +124,29 @@ Resets the puzzle Resets the Tiles, slots, check values, camera flag and error m
 \subsubsection{\texorpdfstring{array\+Tiles}{arrayTiles}}
 {\footnotesize\ttfamily Game\+Object \mbox{[}$\,$\mbox{]} Array\+Access\+Completion.\+array\+Tiles}
 
+
+
+the tiles that will be dragged 
+
 \mbox{\Hypertarget{class_array_access_completion_a5b7d8357b6c82703f06eaabee00d0f2f}\label{class_array_access_completion_a5b7d8357b6c82703f06eaabee00d0f2f}} 
 \index{Array\+Access\+Completion@{Array\+Access\+Completion}!check\+One@{check\+One}}
 \index{check\+One@{check\+One}!Array\+Access\+Completion@{Array\+Access\+Completion}}
 \subsubsection{\texorpdfstring{check\+One}{checkOne}}
 {\footnotesize\ttfamily \hyperlink{class_array_reaction}{Array\+Reaction} Array\+Access\+Completion.\+check\+One}
 
+
+
+The slots that will be checked 
+
 \mbox{\Hypertarget{class_array_access_completion_a0e0e013df2a9203aa27344b6090a56aa}\label{class_array_access_completion_a0e0e013df2a9203aa27344b6090a56aa}} 
 \index{Array\+Access\+Completion@{Array\+Access\+Completion}!error\+Cam@{error\+Cam}}
 \index{error\+Cam@{error\+Cam}!Array\+Access\+Completion@{Array\+Access\+Completion}}
 \subsubsection{\texorpdfstring{error\+Cam}{errorCam}}
 {\footnotesize\ttfamily Camera Array\+Access\+Completion.\+error\+Cam}
+
+
+
+Cameras that manage the blue screen and the puzzle camera for avoiding problems. 
 
 \mbox{\Hypertarget{class_array_access_completion_a03988dc3e4e687e24f0c2c57d75a03b0}\label{class_array_access_completion_a03988dc3e4e687e24f0c2c57d75a03b0}} 
 \index{Array\+Access\+Completion@{Array\+Access\+Completion}!error\+Message@{error\+Message}}
@@ -137,6 +165,10 @@ Resets the puzzle Resets the Tiles, slots, check values, camera flag and error m
 \index{replacement\+Tiles@{replacement\+Tiles}!Array\+Access\+Completion@{Array\+Access\+Completion}}
 \subsubsection{\texorpdfstring{replacement\+Tiles}{replacementTiles}}
 {\footnotesize\ttfamily Game\+Object \mbox{[}$\,$\mbox{]} Array\+Access\+Completion.\+replacement\+Tiles}
+
+
+
+The replacement tiles that go into the slots 
 
 
 

@@ -10,9 +10,13 @@ public class ArithCompletionCheck : MonoBehaviour {
 
 	// LEVEL MANAGER FOR THE ARRAY LEVEL
 
+	///manually set in inspector, slots to be filled by tiles
 	public GameObject[] checkSlots;
-
+	/// the tiles that will be dragged
 	public GameObject[] arrayTiles; // the tiles that will be dragged
+	/// <summary>
+	/// The replacement tiles that go into the slots
+	/// </summary>
 	public GameObject[] replacementTiles;
 
 	public GameObject door;
@@ -100,7 +104,7 @@ public class ArithCompletionCheck : MonoBehaviour {
 	public void closeDoor(){
 		door.SetActive (true);
 	}
-	//reset slots to empty
+	///reset slots to empty
 	public void resetSlots(){
 		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
 
@@ -109,7 +113,7 @@ public class ArithCompletionCheck : MonoBehaviour {
 		}
 	}
 
-	// reset tiles to active and in original position
+	/// reset tiles to active and in original position
 	public void resetTiles(){
 		for (int i = 0; i < arrayTiles.Length; i++) {
 			//arrayTiles [i].gameObject.SetActive (false);
@@ -118,7 +122,7 @@ public class ArithCompletionCheck : MonoBehaviour {
 
 
 	}
-
+	/// Resets all of the tiles to be active when resetting
 	public void resetActive()
 	{
 		for (int i = 0; i < arrayTiles.Length; i++) 
@@ -126,7 +130,7 @@ public class ArithCompletionCheck : MonoBehaviour {
 			arrayTiles[i].gameObject.SetActive(true);
 		}
 	}
-
+	/// Checks to be sure that all slots are filled
 	public bool checkInputSuccess(){
 		foreach (GameObject slot in checkSlots) {
 			if (!slot.GetComponent<ArrayReaction>().success) {
@@ -135,7 +139,7 @@ public class ArithCompletionCheck : MonoBehaviour {
 		}
 		return true;
 	}
-
+	/// Checks to see if the input is correct and in the right order
 	public bool checkInputName(){
 		if (checkSlots [0].GetComponent<ArrayReaction>().giveName == "ReplacementParenO" &&
 			checkSlots [1].GetComponent<ArrayReaction>().giveName == "Replacement-" &&

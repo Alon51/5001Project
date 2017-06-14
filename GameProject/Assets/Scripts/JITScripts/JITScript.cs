@@ -3,6 +3,9 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/**
+ * Handles all Just In Time Instructions and Promts in the game using an extensive switch statement
+ */ 
 public class JITScript : MonoBehaviour { 
 	// JUST IN TIME INSTRUCTIONS
 
@@ -23,7 +26,10 @@ public class JITScript : MonoBehaviour {
 	void Update () {
 
 	}
-
+	/**
+	 * Uses a switch sttement to change the text of the word displayer
+	 * Also manages other objects in certain levels
+	 */ 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "Player") {
 			switch (this.jitName) {
@@ -469,12 +475,12 @@ public class JITScript : MonoBehaviour {
 			}
 		}
 	}
-
+	/// Plays the chime when you save a scientist
 	void playScientistChime(){
 		getScientistChime.Play ();
 		getScientistChime.loop = false;
 	}
-
+	/// plays the chime when you enter e text box
 	void playDialogue(){
 		enterBriefDialogue.Play ();
 		getScientistChime.loop = false;

@@ -23,6 +23,7 @@ public class OneWayMovingObject : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		// uses move towards to let the object move towards it's goal on a one way trip.
 		if (objToMove != null) {
 			objToMove.transform.position = Vector3.MoveTowards (objToMove.transform.position, currentTarget, moveSpeed * Time.deltaTime);
 		}

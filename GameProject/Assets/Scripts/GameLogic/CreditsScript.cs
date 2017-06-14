@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/**
+ * Rolls the credits in the Credits scene and manages the buttons that come up afterward
+ */ 
 public class CreditsScript : MonoBehaviour {
 
 	public GameObject objToMove; // object to be moved
@@ -53,21 +56,21 @@ public class CreditsScript : MonoBehaviour {
 		rtCol = ReturnToTitleButton.GetComponent<Image> ().color;
 		qgCol = QuitGameButton.GetComponent<Image> ().color;
 	}
-	//checks if obj is done moving and returns answer
+	///checks if obj is done moving and returns answer
 	public bool isFinishedMoving(){
 		if (finishedMoving) {
 			return true;
 		} 
 		return false;
 	}
-	//sets title text, and buttons to be transparent
+	///sets title text, and buttons to be transparent
 	public void setAlphaToZero(){
 		titleText.color = new Color (1.0f, 1.0f, 1.0f, 0.0f);
 		ReturnToTitleButton.GetComponent<Image> ().color = new Color(1.0f,1.0f,1.0f,0.0f);
 		QuitGameButton.GetComponent<Image> ().color = new Color(1.0f,1.0f,1.0f,0.0f);
 
 	}
-	//sets title text, and buttons to be visible
+	///sets title text, and buttons to be visible
 	public void increaseAlphas(){
 		//Increase all color's alpha by 0.1 until max
 		titleText.color = new Color(titleText.color.r,titleText.color.g,titleText.color.b,titleText.color.a + 0.01f);

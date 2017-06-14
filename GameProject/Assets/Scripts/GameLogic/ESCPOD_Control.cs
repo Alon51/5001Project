@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/**
+ * Controls the walls on the escape pod so thet the player doesn't fall tot heir doom
+ * 
+*/
 public class ESCPOD_Control : MonoBehaviour {
 
 	public GameObject wall1, wall2, wall3, wall4;

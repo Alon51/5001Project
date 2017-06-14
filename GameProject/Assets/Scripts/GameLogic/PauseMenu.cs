@@ -18,7 +18,13 @@ public class PauseMenu : MonoBehaviour {
 		Time.timeScale = 1;
 	
 	}
-
+	/** 
+	 * Creates a pause menu that hovers above the screen and allows the player to do things like:
+	 * Quit the Game
+	 * Resume Play
+	 * Go to the Settings
+	 * Return to the Ttile Screen
+	*/
 	void OnGUI(){
 		if (paused) {
 			GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), ((Screen.height / 2) - (groupHeight / 2)), groupWidth, groupHeight));

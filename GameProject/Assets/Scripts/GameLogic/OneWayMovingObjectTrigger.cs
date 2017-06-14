@@ -30,6 +30,7 @@ public class OneWayMovingObjectTrigger : MonoBehaviour {
 	}
 
 	public void moveObjectOneWay(){
+		// uses move towards to let the object move towards it's goal
 		if (objToMove != null) {
 			objToMove.transform.position = Vector3.MoveTowards (objToMove.transform.position, currentTarget, moveSpeed * Time.deltaTime);
 		}

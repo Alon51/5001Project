@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/**
+ * Allows an object to move back and forth between 2 specified points
+ * 
+*/
 public class MovingObject : MonoBehaviour {
 
 	public GameObject objectToMove; // object to be moved

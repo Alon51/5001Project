@@ -9,14 +9,21 @@ using UnityEngine.UI;
 public class ArrayAccessCompletion : MonoBehaviour {
 
 	// LEVEL MANAGER FOR THE ARRAY LEVEL
-
+	/// <summary>
+	/// The slots that will be checked
+	/// </summary>
 	public ArrayReaction checkOne, checkTwo, checkThree;
-
+	/// the tiles that will be dragged
 	public GameObject[] arrayTiles; // the tiles that will be dragged
+	/// <summary>
+	/// The replacement tiles that go into the slots
+	/// </summary>
 	public GameObject[] replacementTiles;
+	/// Cameras that manage the blue screen and the puzzle camera for avoiding problems
 	public Camera errorCam, puzzleCam;
 	public Text errorMessage;
 	public bool puzzleFinished, camToggled, errorValUsed, scoreChanged;
+
 	// Use this for initialization
 	void Start () {
 		arrayTiles = GameObject.FindGameObjectsWithTag ("ArrayTile");
@@ -100,13 +107,17 @@ public class ArrayAccessCompletion : MonoBehaviour {
 		}
 		return false;
 	}
-
+	/**
+	 * Resets the slot's success bools so they can be used again 
+	*/
 	public void resetCheckValues(){
 		checkOne.resetSuccessBool ();
 		checkTwo.resetSuccessBool ();
 		checkThree.resetSuccessBool ();
 	}
-
+	/**
+	 * Makes the transparent platforms visible by calling their member functions
+	*/
 	public void makePlatformsVisible(){
 		foreach (GameObject temp in arrayTiles) {
 			// if this tile was used as part of the sum
@@ -119,20 +130,16 @@ public class ArrayAccessCompletion : MonoBehaviour {
 		}
 		//resetCheckValues ();
 	}
-	//reset slots to empty
+	///reset slots to empty
 	public void resetSlots(){
 		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
 
 		foreach (GameObject repTile in replacementTiles) {
 			Destroy (repTile);
 		}
-
-
-		//THIS LINE ALSO CAUSES PROBLEMS
-		//resetCheckValues ();
 	}
 
-	// reset tiles to active and in original position
+	/// reset tiles to active and in original position
 	public void resetTiles(){
 		for (int i = 0; i < arrayTiles.Length; i++) {
 			//arrayTiles [i].gameObject.SetActive (false);
@@ -146,7 +153,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 
 
 	}
-
+	/// Resets all of the tiles to be active when resetting
 	public void resetActive()
 	{
 		for (int i = 0; i < arrayTiles.Length; i++) 
@@ -154,7 +161,7 @@ public class ArrayAccessCompletion : MonoBehaviour {
 			arrayTiles[i].gameObject.SetActive(true);
 		}
 	}
-
+	/// Makes the platforms invisible during resetting
 	public void resetPlatforms(){
 		//set all platforms back to original state of being inactive
 		foreach (GameObject temp in arrayTiles) {

@@ -8,13 +8,24 @@ using UnityEngine.SceneManagement;
 public class ArraySumCompletion : MonoBehaviour {
 
 	// LEVEL MANAGER FOR THE ARRAY LEVEL
-
+	/// <summary>
+	/// The slots that will be checked
+	/// </summary>
 	public ArrayReaction checkOne, checkTwo, checkThree;
-	public GameObject risingPlatform; // rising counter-weight platform
-	public GameObject[] arrayTiles; // the tiles that will be dragged
+	/// rising counter-weight platform
+	public GameObject risingPlatform; 
+	/// the tiles that will be dragged
+	public GameObject[] arrayTiles; 
+	/// <summary>
+	/// The replacement tiles that go into the slots
+	/// </summary>
 	public GameObject[] replacementTiles;
-	public List<Vector3> arrayTilePositions; // their positions, used for resetting challenge
-
+	/// their positions, used for resetting challenge
+	public List<Vector3> arrayTilePositions; 
+	/// <summary>
+	/// Bools to detect if the puzzle is done and the camera was toggled.
+	/// Used in resetting and toggling of the camera
+	/// </summary>
 	public bool puzzleFinished, camToggled;
 	// Use this for initialization
 	void Start () {
@@ -68,13 +79,17 @@ public class ArraySumCompletion : MonoBehaviour {
 		//lower additive
 		GlobalController.Instance.decAdditive();
 	}
-		
+	/**
+	 * Resets the slot's success bools so they can be used again 
+	*/
 	public void resetCheckValues(){
 		checkOne.resetSuccessBool ();
 		checkTwo.resetSuccessBool ();
 		checkThree.resetSuccessBool ();
 	}
-
+	/**
+	 * Calls each Box's method to let them fall for the weight challenge
+	*/
 	public void dropTilePlatforms(){
 		foreach (GameObject temp in arrayTiles) {
 			// if this tile was used as part of the sum
@@ -85,9 +100,8 @@ public class ArraySumCompletion : MonoBehaviour {
 			}
 				
 		}
-		//resetCheckValues ();
 	}
-	//reset slots to empty
+	///reset slots to empty
 	public void resetSlots(){
 		replacementTiles = GameObject.FindGameObjectsWithTag ("ReplaceTile");
 
@@ -98,7 +112,7 @@ public class ArraySumCompletion : MonoBehaviour {
 		resetCheckValues ();
 	}
 
-	// reset tiles to active and in original position
+	/// reset tiles to active and in original position
 	public void resetTiles(){
 		for (int i = 0; i < arrayTiles.Length; i++) {
 			arrayTiles [i].transform.position = arrayTilePositions [i]; // move to original position
@@ -109,7 +123,7 @@ public class ArraySumCompletion : MonoBehaviour {
 		}
 	}
 
-
+	/// Resets all of the tiles to be active when resetting
 	public void resetActive()
 	{
 		for (int i = 0; i < arrayTiles.Length; i++) 
@@ -117,7 +131,7 @@ public class ArraySumCompletion : MonoBehaviour {
 			arrayTiles[i].gameObject.SetActive(true);
 		}
 	}
-
+	/// Places the boxes and their platforms back at the starting postions to be used again
 	public void resetBoxesAndPlatforms(){
 		//set all boxes to their spot back in the air
 		foreach (GameObject temp in arrayTiles) {

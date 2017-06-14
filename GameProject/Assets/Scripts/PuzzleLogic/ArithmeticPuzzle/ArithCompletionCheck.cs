@@ -68,7 +68,11 @@ public class ArithCompletionCheck : MonoBehaviour {
 
 
 	}
-
+	/**
+	 * Resets the puzzle
+	 * Resets the Tiles, slots, check values, 
+	 * camera flag and error message
+	*/
 	public void resetPuzzle(){
 		//GlobalController.Instance.resetBoxBools();
 		resetTiles ();

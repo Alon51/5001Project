@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/**
+ * This script is used to check the final puzzle in the game
+ * 
+*/
 public class FinalPuzzleCompletionCheck : MonoBehaviour {
 
 	// LEVEL MANAGER FOR THE ARRAY LEVEL
 
-
-	public GameObject[] checkSlots; //manually set in inspector
-	public GameObject[] arrayTiles; // the tiles that will be dragged
+	///manually set in inspector, slots to be filled by tiles
+	public GameObject[] checkSlots; 
+	/// the tiles that will be dragged
+	public GameObject[] arrayTiles; 
+	/// <summary>
+	/// The replacement tiles that go into the slots
+	/// </summary>
 	public GameObject[] replacementTiles;
-	public GameObject elevator;
-	public Text errorMessage;
+	/// error message for the canvas
+	public Text errorMessage;  
 	public bool puzzleFinished, camToggled, scoreChanged;
 	// Use this for initialization
 	void Start () {
@@ -25,7 +33,9 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 	//
 	// Update is called once per frame
 	void Update () {
+		/**
 		//if all 5 spots are filled and is correct
+		*/
 		if (checkInputName () && checkInputSuccess ()) {
 			if (!camToggled) {
 				Debug.Log("No Cam toggled");
@@ -56,7 +66,11 @@ public class FinalPuzzleCompletionCheck : MonoBehaviour {
 		}
 
 	}
-
+	/**
+	 * Resets the puzzle
+	 * Resets the Tiles, slots, check values, 
+	 * camera flag and error message
+	*/
 	public void resetPuzzle(){
 		//GlobalController.Instance.resetBoxBools();
 		resetTiles ();

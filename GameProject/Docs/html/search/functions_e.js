@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['pausegame',['PauseGame',['../class_game_buttons.html#aa6666b810a7a0caff54b55d473be24c9',1,'GameButtons']]],
-  ['productfieldforindex_3asuffix_3a',['productFieldForIndex:suffix:',['../interface_g_a_i_ecommerce_fields.html#a09a834b91ffa68556617e00b2309c803',1,'GAIEcommerceFields']]],
-  ['productimpressionforlist_3aindex_3asuffix_3a',['productImpressionForList:index:suffix:',['../interface_g_a_i_ecommerce_fields.html#a4004413f22575b6d5de39cdc0a9b8129',1,'GAIEcommerceFields']]],
-  ['promotionforindex_3asuffix_3a',['promotionForIndex:suffix:',['../interface_g_a_i_ecommerce_fields.html#a67b530cdd0f8ce34c6bec5c4d9f17311',1,'GAIEcommerceFields']]]
+  ['togglecamera',['toggleCamera',['../class_nested_for_desk_top_interaction.html#aa3cd864ad705ec50279c5ad57ba8d81f',1,'NestedForDeskTopInteraction.toggleCamera()'],['../class_while_loop_desktop_interaction.html#a0f02cea34c5163b343a80c3f0f496c89',1,'WhileLoopDesktopInteraction.toggleCamera()'],['../class_global_controller.html#af4ff92ac33a69fb09fd302cd775b9e96',1,'GlobalController.toggleCamera()']]],
+  ['togglefullscreen',['toggleFullscreen',['../class_settings_script.html#a180f9bd5c3489838bf85b8d7e6377b53',1,'SettingsScript']]]
 ];

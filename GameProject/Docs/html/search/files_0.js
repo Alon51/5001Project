@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['advertiseroptinattribute_2ecs',['AdvertiserOptInAttribute.cs',['../_advertiser_opt_in_attribute_8cs.html',1,'']]],
-  ['analyticsbylevel_2ecs',['AnalyticsByLevel.cs',['../_analytics_by_level_8cs.html',1,'']]],
-  ['analyticsdependencies_2ecs',['AnalyticsDependencies.cs',['../_analytics_dependencies_8cs.html',1,'']]],
-  ['appviewhitbuilder_2ecs',['AppViewHitBuilder.cs',['../_app_view_hit_builder_8cs.html',1,'']]],
   ['arithcompletioncheck_2ecs',['ArithCompletionCheck.cs',['../_arith_completion_check_8cs.html',1,'']]],
   ['arithmeticteleporter_2ecs',['arithmeticTeleporter.cs',['../arithmetic_teleporter_8cs.html',1,'']]],
   ['arrayaccesscompletion_2ecs',['ArrayAccessCompletion.cs',['../_array_access_completion_8cs.html',1,'']]],

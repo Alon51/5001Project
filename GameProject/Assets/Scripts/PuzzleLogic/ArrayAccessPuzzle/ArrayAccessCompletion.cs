@@ -4,7 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
+/**
+ * Checks the respective challenge and makes changes to the game if the user is correct or not
+ * Challenge: Array Challenge 1
+ */ 
 
 public class ArrayAccessCompletion : MonoBehaviour {
 

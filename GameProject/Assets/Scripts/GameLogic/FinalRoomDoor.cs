@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/**
+ * Manages the door that clocks the fnial level in the Hub LEvel of the game
+ */ 
 public class FinalRoomDoor : MonoBehaviour {
 	
 	public GameObject doorOne;
@@ -22,7 +24,7 @@ public class FinalRoomDoor : MonoBehaviour {
 			openDoor ();
 		}
 	}
-
+	/// Opens the door if the player has enough scientsts
 	void openDoor(){
 		doorOne.transform.position = doorOneOpenPosition;
 		doorOpened = true;

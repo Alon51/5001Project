@@ -6,11 +6,17 @@ using UnityEngine.UI;
 public class RisingPlatformController : MonoBehaviour {
 
 	public GameObject risingPlatform;
-	public float unit; //test number so that 14 increments makes the water the correct level
-	public Text weightText; // text showing weight on platform
-	public float sumWeight; // total weight so far
-	public SpriteRenderer[] sprites; //used to change color based on weight
-	public GameObject desktop; // used for placing the player when test is failed
+	/// number so that 14 increments makes the platform the correct height
+	public float unit; 
+	/// text showing weight on platform
+	public Text weightText;
+	/// total weight so far
+	public float sumWeight;
+	/// used to change color based on weight
+	public SpriteRenderer[] sprites;
+	/// used for placing the player when test is failed
+	public GameObject desktop; 
+	/// Wall to stop player from cheating and jumping across with powerups
 	public GameObject invisibleWall;
 	Vector3 initialPosition;
 	public bool scoreChanged;
@@ -34,12 +40,12 @@ public class RisingPlatformController : MonoBehaviour {
 		
 	}
 
-	//increase platform height
+	///increase platform height
 	void platformUp(int boxWeight){
 		float adjust = unit * boxWeight;
 		transform.position = new Vector3 (transform.position.x, transform.position.y+adjust, 0); // move water upward
 	}
-	//decrease platform height
+	///decrease platform height
 	void platformDown(int boxWeight){
 		float adjust = unit * boxWeight;
 		transform.position = new Vector3 (transform.position.x, transform.position.y-adjust, 0); // move water downward
@@ -70,7 +76,7 @@ public class RisingPlatformController : MonoBehaviour {
 
 
 	}
-	//change color based on the weight
+	///change color based on the weight
 	public void checkWeightColor(){
 		if (sumWeight == 14) {
 			foreach (SpriteRenderer spr in sprites) {
@@ -86,7 +92,7 @@ public class RisingPlatformController : MonoBehaviour {
 			invisibleWall.GetComponent<BoxCollider2D>().enabled = false;
 		}
 	}
-
+	/// Resets the position of the platform changes the color and resets the weight
 	public void resetPlatformTotally (){
 		this.transform.position = initialPosition;
 		foreach (SpriteRenderer spr in sprites) {

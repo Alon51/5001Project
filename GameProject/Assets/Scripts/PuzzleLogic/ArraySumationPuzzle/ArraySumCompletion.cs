@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
+/**
+ * Checks the respective challenge and makes changes to the game if the user is correct or not
+ * Challenge: Array challenge 2
+ */ 
 
 public class ArraySumCompletion : MonoBehaviour {
 

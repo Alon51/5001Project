@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Manages the submit button in the final level's indent challenge
+ */ 
 public class submitButton : MonoBehaviour {
 
 	public InsertPuzzleCompletion complete;

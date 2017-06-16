@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['belowthreshold',['belowThreshold',['../class_google_analytics_v4.html#a2636156a1842ec77c486978a3d33d39e',1,'GoogleAnalyticsV4']]],
-  ['build',['build',['../interface_g_a_i_dictionary_builder.html#ac56ea44d460f729d1298d52d56d34cd9',1,'GAIDictionaryBuilder::build()'],['../interface_g_a_i_ecommerce_product_action.html#ab5070c54e30543649778dede1145ed33',1,'GAIEcommerceProductAction::build()']]],
-  ['buildwithindex_3a',['buildWithIndex:',['../interface_g_a_i_ecommerce_product.html#a3ff6808550d4b30b9d83e862fc32f1ad',1,'GAIEcommerceProduct::buildWithIndex:()'],['../interface_g_a_i_ecommerce_promotion.html#a284b242448537df1f38fea7f8833f057',1,'GAIEcommercePromotion::buildWithIndex:()']]],
-  ['buildwithlistindex_3aindex_3a',['buildWithListIndex:index:',['../interface_g_a_i_ecommerce_product.html#aa29f4f1f5c8339397ae37672d9b41f2b',1,'GAIEcommerceProduct']]]
+  ['decadditive',['decAdditive',['../class_global_controller.html#aca3ee9a56dbfaeaf1af53422d6afea44',1,'GlobalController']]],
+  ['decscore',['decScore',['../class_global_controller.html#a3c6c2fe54c92b170a0f0cc41c7230a09',1,'GlobalController']]],
+  ['disableboxcol',['disableBoxCol',['../class_tile_drag.html#a2ac05ed0439d4c9467aef8a0304d5432',1,'TileDrag']]],
+  ['dropplatform',['dropPlatform',['../class_array_box_controller.html#a926861290e0d8414a771456f9d573659',1,'ArrayBoxController']]],
+  ['droptileplatforms',['dropTilePlatforms',['../class_array_sum_completion.html#ac1c819eeab2598e8c2c2e1e78e15a666',1,'ArraySumCompletion']]]
 ];

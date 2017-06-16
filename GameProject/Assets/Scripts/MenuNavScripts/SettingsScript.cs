@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/**
+ * Manages the setting in the game: Fullscreen and Volume.
+ */ 
 public class SettingsScript : MonoBehaviour {
 
 	public Slider volumeSlider;

@@ -9,5 +9,16 @@ var dir_929f517a5c9c06067c29486a888ead3e =
     [ "PuzzleLogic", "dir_7d1a475ab2a99014d336a3feb43308e5.html", "dir_7d1a475ab2a99014d336a3feb43308e5" ],
     [ "TileDrag", "dir_c87f4921ecfb78a68b4b48525ce8e05c.html", "dir_c87f4921ecfb78a68b4b48525ce8e05c" ],
     [ "Z-NOT USED", "dir_bf99ef94f4e59aaa7aaa1036844be1fa.html", "dir_bf99ef94f4e59aaa7aaa1036844be1fa" ],
-    [ "PlatformDrop.cs", "_platform_drop_8cs.html", null ]
+    [ "levelCompleteArith.cs", "level_complete_arith_8cs.html", [
+      [ "levelCompleteArith", "classlevel_complete_arith.html", "classlevel_complete_arith" ]
+    ] ],
+    [ "levelCompleteArray.cs", "level_complete_array_8cs.html", [
+      [ "levelCompleteArray", "classlevel_complete_array.html", "classlevel_complete_array" ]
+    ] ],
+    [ "levelCompleteCond.cs", "level_complete_cond_8cs.html", [
+      [ "levelCompleteCond", "classlevel_complete_cond.html", "classlevel_complete_cond" ]
+    ] ],
+    [ "levelCompleteLoop.cs", "level_complete_loop_8cs.html", [
+      [ "levelCompleteLoop", "classlevel_complete_loop.html", "classlevel_complete_loop" ]
+    ] ]
 ];

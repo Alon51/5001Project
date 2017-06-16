@@ -4,7 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
+/**
+ * Checks the respective challenge and makes changes to the game if the user is correct or not
+ * Challenge: Arith challenge 2
+ */ 
 
 public class ArithCompletionCheck : MonoBehaviour {
 

@@ -29,7 +29,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CodeControl
+   &#160;<span id="projectnumber">Version 1.0 -- June 2017</span>
    </div>
+   <div id="projectbrief">Created by Kwan Holloway and Mike Williams. https://github.com/mike200385/5001Project</div>
   </td>
  </tr>
  </tbody>
@@ -99,6 +101,7 @@ Inheritance diagram for OneWayMovingObject:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a09d08513eaa584681898a1c13d33de1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_one_way_moving_object.html#a09d08513eaa584681898a1c13d33de1c">isFinishedMoving</a> ()</td></tr>
+<tr class="memdesc:a09d08513eaa584681898a1c13d33de1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks to see if the object is done moving.  <a href="#a09d08513eaa584681898a1c13d33de1c">More...</a><br /></td></tr>
 <tr class="separator:a09d08513eaa584681898a1c13d33de1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -106,15 +109,21 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a738199df4fd9102323b3031b91f27cee"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_one_way_moving_object.html#a738199df4fd9102323b3031b91f27cee">objToMove</a></td></tr>
 <tr class="separator:a738199df4fd9102323b3031b91f27cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada34abca5c152d343ca7ce4f8d526386"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_one_way_moving_object.html#ada34abca5c152d343ca7ce4f8d526386">endPoint</a></td></tr>
+<tr class="memdesc:ada34abca5c152d343ca7ce4f8d526386"><td class="mdescLeft">&#160;</td><td class="mdescRight">point that object will move towards  <a href="#ada34abca5c152d343ca7ce4f8d526386">More...</a><br /></td></tr>
 <tr class="separator:ada34abca5c152d343ca7ce4f8d526386"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57d03a6a88136b9c0a2fb931d3753fbd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_one_way_moving_object.html#a57d03a6a88136b9c0a2fb931d3753fbd">moveSpeed</a></td></tr>
+<tr class="memdesc:a57d03a6a88136b9c0a2fb931d3753fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">how fast the object moves  <a href="#a57d03a6a88136b9c0a2fb931d3753fbd">More...</a><br /></td></tr>
 <tr class="separator:a57d03a6a88136b9c0a2fb931d3753fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3373e130216d4a6ef9f6ba38083aee8b"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_one_way_moving_object.html#a3373e130216d4a6ef9f6ba38083aee8b">initialPosition</a></td></tr>
+<tr class="memdesc:a3373e130216d4a6ef9f6ba38083aee8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">initial pos of the object  <a href="#a3373e130216d4a6ef9f6ba38083aee8b">More...</a><br /></td></tr>
 <tr class="separator:a3373e130216d4a6ef9f6ba38083aee8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa188d5bd0f6dd799966acebc9088471f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_one_way_moving_object.html#aa188d5bd0f6dd799966acebc9088471f">finishedMoving</a></td></tr>
+<tr class="memdesc:aa188d5bd0f6dd799966acebc9088471f"><td class="mdescLeft">&#160;</td><td class="mdescRight">is obj at final position  <a href="#aa188d5bd0f6dd799966acebc9088471f">More...</a><br /></td></tr>
 <tr class="separator:aa188d5bd0f6dd799966acebc9088471f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages objects that are designed to move toward a goal only once </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a09d08513eaa584681898a1c13d33de1c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09d08513eaa584681898a1c13d33de1c">&#9670;&nbsp;</a></span>isFinishedMoving()</h2>
 
@@ -129,6 +138,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Checks to see if the object is done moving. </p>
 
 </div>
 </div>
@@ -145,6 +156,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>point that object will move towards </p>
+
 </div>
 </div>
 <a id="aa188d5bd0f6dd799966acebc9088471f"></a>
@@ -158,6 +171,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>is obj at final position </p>
 
 </div>
 </div>
@@ -173,6 +188,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>initial pos of the object </p>
+
 </div>
 </div>
 <a id="a57d03a6a88136b9c0a2fb931d3753fbd"></a>
@@ -186,6 +203,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>how fast the object moves </p>
 
 </div>
 </div>

@@ -3,7 +3,11 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
+/**
+ * Manages various game buttons that are uses within the canvas, among other objects.
+ * Provides functionality for pausing, quiting the game.
+ * Also toggling help pages and more.
+ */ 
 public class GameButtons : MonoBehaviour {
 	public Camera helpCamera;
 	public AnalyticsByLevel levelAnalytics;
@@ -27,7 +31,7 @@ public class GameButtons : MonoBehaviour {
 	public void ResumeGame(){
 		Time.timeScale = 1.0f;
 	}
-
+	/// Clears the messagePanel and it's WordDisplayer
 	public void ClearWordDisplay() {
 		GameObject.FindGameObjectWithTag ("JITDisplay").GetComponent<Text> ().text = "";
 
@@ -57,7 +61,9 @@ public class GameButtons : MonoBehaviour {
 	public void ReturnToPrevScene(){
 		GlobalController.Instance.changeScene (GlobalController.Instance.previousSceneName);
 	}
-
+	/**
+	 * Toggles the help screen by finding the right camera and toggling
+	 */ 
 	public void helpScreenToggle(){
 		Camera arrCam = GameObject.Find ("AssistCamera").GetComponent<Camera> ();
 		GlobalController.Instance.changeSecondCamera (arrCam);

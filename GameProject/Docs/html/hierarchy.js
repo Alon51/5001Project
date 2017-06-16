@@ -1,39 +1,6 @@
 var hierarchy =
 [
-    [ "AssetPostprocessor", null, [
-      [ "AnalyticsDependencies", "class_analytics_dependencies.html", null ]
-    ] ],
-    [ "Field", "class_field.html", null ],
-    [ "Fields", "class_fields.html", null ],
-    [ "GoogleAnalyticsiOSV3", "class_google_analyticsi_o_s_v3.html", null ],
-    [ "GoogleAnalyticsMPV3", "class_google_analytics_m_p_v3.html", null ],
-    [ "HitBuilder< T >", "class_hit_builder.html", null ],
-    [ "HitBuilder< AppViewHitBuilder >", "class_hit_builder.html", [
-      [ "AppViewHitBuilder", "class_app_view_hit_builder.html", null ]
-    ] ],
-    [ "HitBuilder< EventHitBuilder >", "class_hit_builder.html", [
-      [ "EventHitBuilder", "class_event_hit_builder.html", null ]
-    ] ],
-    [ "HitBuilder< ExceptionHitBuilder >", "class_hit_builder.html", [
-      [ "ExceptionHitBuilder", "class_exception_hit_builder.html", null ]
-    ] ],
-    [ "HitBuilder< ItemHitBuilder >", "class_hit_builder.html", [
-      [ "ItemHitBuilder", "class_item_hit_builder.html", null ]
-    ] ],
-    [ "HitBuilder< SocialHitBuilder >", "class_hit_builder.html", [
-      [ "SocialHitBuilder", "class_social_hit_builder.html", null ]
-    ] ],
-    [ "HitBuilder< TimingHitBuilder >", "class_hit_builder.html", [
-      [ "TimingHitBuilder", "class_timing_hit_builder.html", null ]
-    ] ],
-    [ "HitBuilder< TransactionHitBuilder >", "class_hit_builder.html", [
-      [ "TransactionHitBuilder", "class_transaction_hit_builder.html", null ]
-    ] ],
-    [ "IDisposable", null, [
-      [ "GoogleAnalyticsAndroidV4", "class_google_analytics_android_v4.html", null ]
-    ] ],
     [ "MonoBehaviour", null, [
-      [ "AnalyticsByLevel", "class_analytics_by_level.html", null ],
       [ "ArithCompletionCheck", "class_arith_completion_check.html", null ],
       [ "arithmeticTeleporter", "classarithmetic_teleporter.html", null ],
       [ "ArrayAccessCompletion", "class_array_access_completion.html", null ],
@@ -67,7 +34,6 @@ var hierarchy =
       [ "ForLoopDeskTopInteraction", "class_for_loop_desk_top_interaction.html", null ],
       [ "GameButtons", "class_game_buttons.html", null ],
       [ "GlobalController", "class_global_controller.html", null ],
-      [ "GoogleAnalyticsV4", "class_google_analytics_v4.html", null ],
       [ "HelpButtons", "class_help_buttons.html", null ],
       [ "IndentPuzzle", "class_indent_puzzle.html", null ],
       [ "InsertPuzzleCompletion", "class_insert_puzzle_completion.html", null ],
@@ -126,30 +92,5 @@ var hierarchy =
       [ "TitleScreenController", "class_title_screen_controller.html", null ],
       [ "WhileJIT", "class_while_j_i_t.html", null ],
       [ "WhileLoopDesktopInteraction", "class_while_loop_desktop_interaction.html", null ]
-    ] ],
-    [ "NSObject", null, [
-      [ "GAI", "interface_g_a_i.html", null ],
-      [ "GAIDictionaryBuilder", "interface_g_a_i_dictionary_builder.html", null ],
-      [ "GAIEcommerceFields", "interface_g_a_i_ecommerce_fields.html", null ],
-      [ "GAIEcommerceProduct", "interface_g_a_i_ecommerce_product.html", null ],
-      [ "GAIEcommerceProductAction", "interface_g_a_i_ecommerce_product_action.html", null ],
-      [ "GAIEcommercePromotion", "interface_g_a_i_ecommerce_promotion.html", null ],
-      [ "GAIFields", "interface_g_a_i_fields.html", null ],
-      [ "GAIHandler", "class_g_a_i_handler.html", null ]
-    ] ],
-    [ "<NSObject>", null, [
-      [ "<GAILogger>", "protocol_g_a_i_logger-p.html", null ],
-      [ "<GAITracker>", "protocol_g_a_i_tracker-p.html", null ]
-    ] ],
-    [ "PropertyAttribute", null, [
-      [ "AdvertiserOptInAttribute", "class_advertiser_opt_in_attribute.html", null ],
-      [ "RangedTooltipAttribute", "class_ranged_tooltip_attribute.html", null ],
-      [ "TooltipAttribute", "class_tooltip_attribute.html", null ]
-    ] ],
-    [ "PropertyDrawer", null, [
-      [ "TooltipDrawer", "class_tooltip_drawer.html", null ]
-    ] ],
-    [ "UIViewController", null, [
-      [ "GAITrackedViewController", "interface_g_a_i_tracked_view_controller.html", null ]
     ] ]
 ];

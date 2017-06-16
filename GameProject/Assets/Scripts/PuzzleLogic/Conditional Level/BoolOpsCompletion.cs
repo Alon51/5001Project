@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Checks the respective challenge and makes changes to the game if the user is correct or not
+ * Challenge: Elevator controller in Conditional
+ */ 
+
 public class BoolOpsCompletion : MonoBehaviour {
 	
 	public ArrayReaction upSuccess, notUpSuccess;

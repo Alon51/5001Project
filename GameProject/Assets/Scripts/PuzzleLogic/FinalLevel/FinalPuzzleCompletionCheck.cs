@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /**
- * This script is used to check the final puzzle in the game
- * 
-*/
+ * Checks the respective challenge and makes changes to the game if the user is correct or not
+ * Challenge: Final challenge 2
+ */ 
 public class FinalPuzzleCompletionCheck : MonoBehaviour {
 
 	// LEVEL MANAGER FOR THE ARRAY LEVEL

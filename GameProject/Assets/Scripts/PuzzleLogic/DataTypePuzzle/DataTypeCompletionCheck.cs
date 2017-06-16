@@ -4,7 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
+/**
+ * Checks the respective challenge and makes changes to the game if the user is correct or not
+ * Challenge: Arith challenge 1
+ */ 
 public class DataTypeCompletionCheck : MonoBehaviour {
 
 	// LEVEL MANAGER FOR THE ARRAY LEVEL

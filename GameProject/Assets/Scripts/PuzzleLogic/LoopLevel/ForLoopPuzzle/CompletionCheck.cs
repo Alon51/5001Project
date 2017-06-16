@@ -2,6 +2,10 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+/**
+ * Checks the respective challenge and makes changes to the game if the user is correct or not
+ * Challenge: Loop challenge 1
+ */ 
 public class CompletionCheck : MonoBehaviour {
 
 	public ArrayReaction twoSuccess, plusSuccess, plusPlusSuccess;

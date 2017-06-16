@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/**
+ * Allows the player to toggle between camera that show the platforms or boxes in the array level
+ */ 
 public class ArrCamsController : MonoBehaviour {
 
 	// Use this for initialization

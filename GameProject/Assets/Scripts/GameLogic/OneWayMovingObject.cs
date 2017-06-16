@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/**
+ * Manages objects that are designed to move toward a goal only once
+ */
 public class OneWayMovingObject : MonoBehaviour {
 
 	public GameObject objToMove; // object to be moved
 
-	//point that object will move towards
-	public Transform endPoint; // ending point
-	public float moveSpeed; // how fast the object moves
-	private Vector3 currentTarget; // the current point it's going to
-	public Vector3 initialPosition; // initial pos of the object
-
-	public bool finishedMoving; // is obj at final position
+	/// point that object will move towards
+	public Transform endPoint; 
+	/// how fast the object moves
+	public float moveSpeed; 
+	/// the current point it's going to
+	private Vector3 currentTarget;
+	/// initial pos of the object
+	public Vector3 initialPosition; 
+	/// is obj at final position
+	public bool finishedMoving; 
 
 	// Use this for initialization
 	void Start () {
@@ -32,7 +37,7 @@ public class OneWayMovingObject : MonoBehaviour {
 			finishedMoving = true;
 		}
 	}
-
+	/// Checks to see if the object is done moving
 	public bool isFinishedMoving(){
 		if (finishedMoving) {
 			return true;

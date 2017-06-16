@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Checks the respective challenge and makes changes to the game if the user is correct or not
+ * Challenge: Final challenge 1
+ */ 
 public class InsertPuzzleCompletion : MonoBehaviour {
 
 	public IndentPuzzle lineOne;

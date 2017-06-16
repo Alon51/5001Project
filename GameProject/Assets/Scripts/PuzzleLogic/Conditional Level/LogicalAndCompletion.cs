@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Checks the respective challenge and makes changes to the game if the user is correct or not
+ * Challenge: Conditional challenge 1
+ */ 
 public class LogicalAndCompletion : MonoBehaviour {
 
 	//Draggable Tiles and their Replacements, and flag bools

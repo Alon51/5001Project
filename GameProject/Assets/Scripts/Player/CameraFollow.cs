@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/**
+ * Manages the camera and allows it to follow the player
+ */ 
 public class CameraFollow : MonoBehaviour {
 
 	private Vector3 playerTransform;

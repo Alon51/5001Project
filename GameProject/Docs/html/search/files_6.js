@@ -1,22 +1,5 @@
 var searchData=
 [
-  ['gai_2eh',['GAI.h',['../_g_a_i_8h.html',1,'']]],
-  ['gaidictionarybuilder_2eh',['GAIDictionaryBuilder.h',['../_g_a_i_dictionary_builder_8h.html',1,'']]],
-  ['gaiecommercefields_2eh',['GAIEcommerceFields.h',['../_g_a_i_ecommerce_fields_8h.html',1,'']]],
-  ['gaiecommerceproduct_2eh',['GAIEcommerceProduct.h',['../_g_a_i_ecommerce_product_8h.html',1,'']]],
-  ['gaiecommerceproductaction_2eh',['GAIEcommerceProductAction.h',['../_g_a_i_ecommerce_product_action_8h.html',1,'']]],
-  ['gaiecommercepromotion_2eh',['GAIEcommercePromotion.h',['../_g_a_i_ecommerce_promotion_8h.html',1,'']]],
-  ['gaifields_2eh',['GAIFields.h',['../_g_a_i_fields_8h.html',1,'']]],
-  ['gaihandler_2ecs',['GAIHandler.cs',['../_g_a_i_handler_8cs.html',1,'']]],
-  ['gaihandler_2eh',['GAIHandler.h',['../_g_a_i_handler_8h.html',1,'']]],
-  ['gaihandler_2em',['GAIHandler.m',['../_g_a_i_handler_8m.html',1,'']]],
-  ['gailogger_2eh',['GAILogger.h',['../_g_a_i_logger_8h.html',1,'']]],
-  ['gaitrackedviewcontroller_2eh',['GAITrackedViewController.h',['../_g_a_i_tracked_view_controller_8h.html',1,'']]],
-  ['gaitracker_2eh',['GAITracker.h',['../_g_a_i_tracker_8h.html',1,'']]],
   ['gamebuttons_2ecs',['GameButtons.cs',['../_game_buttons_8cs.html',1,'']]],
-  ['globalcontroller_2ecs',['GlobalController.cs',['../_global_controller_8cs.html',1,'']]],
-  ['googleanalyticsandroidv4_2ecs',['GoogleAnalyticsAndroidV4.cs',['../_google_analytics_android_v4_8cs.html',1,'']]],
-  ['googleanalyticsiosv3_2ecs',['GoogleAnalyticsiOSV3.cs',['../_google_analyticsi_o_s_v3_8cs.html',1,'']]],
-  ['googleanalyticsmpv3_2ecs',['GoogleAnalyticsMPV3.cs',['../_google_analytics_m_p_v3_8cs.html',1,'']]],
-  ['googleanalyticsv4_2ecs',['GoogleAnalyticsV4.cs',['../_google_analytics_v4_8cs.html',1,'']]]
+  ['globalcontroller_2ecs',['GlobalController.cs',['../_global_controller_8cs.html',1,'']]]
 ];

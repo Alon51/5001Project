@@ -2,6 +2,10 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+/**
+ * Checks the respective challenge and makes changes to the game if the user is correct or not
+ * Challenge: Hub Level Switch challenge
+ */ 
 public class CompletionScriptThree : MonoBehaviour {
 
 	public ArrayReaction oneSuccess, twoSuccess, threeSuccess, fourSuccess, fiveSuccess,

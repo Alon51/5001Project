@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems; //allows us to get name of buttons that are clicked
-
+/**
+ * Manages all of the help buttons in the game
+ * Show's each buttons's text when it is hovered over
+ */ 
 public class HelpButtons : MonoBehaviour {
 
 	public Text helpText;

@@ -6,6 +6,9 @@ var dir_bf99ef94f4e59aaa7aaa1036844be1fa =
     [ "Console.cs", "_console_8cs.html", [
       [ "Console", "class_console.html", "class_console" ]
     ] ],
+    [ "DesktopControllerBoxArray.cs", "_desktop_controller_box_array_8cs.html", [
+      [ "DesktopControllerBoxArray", "class_desktop_controller_box_array.html", "class_desktop_controller_box_array" ]
+    ] ],
     [ "LeftLaserInteraction.cs", "_left_laser_interaction_8cs.html", [
       [ "LeftLaserInteraction", "class_left_laser_interaction.html", "class_left_laser_interaction" ]
     ] ],
@@ -15,6 +18,7 @@ var dir_bf99ef94f4e59aaa7aaa1036844be1fa =
     [ "P2.cs", "_p2_8cs.html", [
       [ "P2", "class_p2.html", "class_p2" ]
     ] ],
+    [ "PlatformDrop.cs", "_platform_drop_8cs.html", null ],
     [ "reactToBreakOne.cs", "react_to_break_one_8cs.html", [
       [ "reactToBreakOne", "classreact_to_break_one.html", "classreact_to_break_one" ]
     ] ],

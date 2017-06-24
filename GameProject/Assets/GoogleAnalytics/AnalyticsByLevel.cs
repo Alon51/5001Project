@@ -20,19 +20,19 @@ public class AnalyticsByLevel : MonoBehaviour {
 	}
 
 	public void NotesAnalytics(){
-		googleAnalytics.LogEvent ("Notes in " + SceneManager.GetActiveScene ().name, "User Clicked", "Assist Page", noteButtonCounter);
+		googleAnalytics.LogEvent (GlobalController.Instance.userName + SceneManager.GetActiveScene ().name, "User Clicked Notes", "Assist Page", noteButtonCounter);
 		googleAnalytics.LogEvent (new EventHitBuilder ()
-			.SetEventCategory ("Notes in " + SceneManager.GetActiveScene ().name)
-			.SetEventAction ("User Clicked")
+			.SetEventCategory (GlobalController.Instance.userName + SceneManager.GetActiveScene ().name)
+			.SetEventAction ("User Clicked Notes")
 			.SetEventLabel ("Assist Page")
 			.SetEventValue (noteButtonCounter));
 	}
 
 	public void HelpButtonAnalytics(){
-		googleAnalytics.LogEvent ("Help in " + GlobalController.Instance.camName, "User Hovered", "HelpButton", helpButtonCounter);
+		googleAnalytics.LogEvent (GlobalController.Instance.userName + GlobalController.Instance.camName, "User Hovered Over Help", "HelpButton", helpButtonCounter);
 		googleAnalytics.LogEvent (new EventHitBuilder ()
-			.SetEventCategory ("Help in " + GlobalController.Instance.camName)
-			.SetEventAction ("User Hovered")
+			.SetEventCategory (GlobalController.Instance.userName + GlobalController.Instance.camName)
+			.SetEventAction ("User Hovered Over Help")
 			.SetEventLabel ("Assist Page")
 			.SetEventValue (helpButtonCounter));
 	}

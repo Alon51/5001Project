@@ -21,6 +21,8 @@ public class GlobalController : MonoBehaviour {
 	string niceTime;
 	long minutes;
 
+	public string userName = "";
+
 	///use for analytics
 	public long failedAttempts;
 
@@ -95,6 +97,7 @@ public class GlobalController : MonoBehaviour {
 
 	void Start(){
 		googleAnalytics.StartSession ();
+		userName = PlayerPrefs.GetString("SAVENAME");
 		thePlayer = FindObjectOfType<PlayerMovement> ();
 		glPlayerPos = thePlayer.transform.position;
 		onMainCam = true;
@@ -114,6 +117,7 @@ public class GlobalController : MonoBehaviour {
 	}
 
 	void Update(){
+			
 		//if word display is open because text isn't empty
 		if (!wordDisplay.text.Equals ("")) {
 			//pressing x will close and clear the box
@@ -290,27 +294,27 @@ public class GlobalController : MonoBehaviour {
 	}
 
 	public void failureAnalytics(){
-		googleAnalytics.LogEvent ("Challenge in " + camName, "Number of Failures", "Failed a Challenge", failedAttempts);
+		googleAnalytics.LogEvent (GlobalController.Instance.userName + camName, "Number of Failures", "Failed a Challenge", failedAttempts);
 		googleAnalytics.LogEvent (new EventHitBuilder ()
-			.SetEventCategory ("Challenge in " + camName)
+			.SetEventCategory (GlobalController.Instance.userName + camName)
 			.SetEventAction ("Number of Failures")
 			.SetEventLabel ("Failed a Challenge")
 			.SetEventValue (failedAttempts));
 	}
 
 	public void sceneTimerAnalytics(){
-		googleAnalytics.LogEvent ("Time in " + SceneManager.GetActiveScene ().name, "Time in Scene", "Timer", minutes);
+		googleAnalytics.LogEvent (GlobalController.Instance.userName + SceneManager.GetActiveScene ().name, "Time in Scene", "Timer", minutes);
 		googleAnalytics.LogEvent (new EventHitBuilder ()
-			.SetEventCategory ("Time in " + SceneManager.GetActiveScene ().name)
+			.SetEventCategory (GlobalController.Instance.userName + SceneManager.GetActiveScene ().name)
 			.SetEventAction ("Time in Scene")
 			.SetEventLabel ("Timer")
 			.SetEventValue (minutes));
 	}
 
 	public void scientistAnalytics(){
-		googleAnalytics.LogEvent ("Scientists located", "Scientists located", "Number found", (long)scientistCount);
+		googleAnalytics.LogEvent (GlobalController.Instance.userName, "Scientists located", "Number found", (long)scientistCount);
 		googleAnalytics.LogEvent (new EventHitBuilder ()
-			.SetEventCategory ("Scientists located")
+			.SetEventCategory (GlobalController.Instance.userName)
 			.SetEventAction ("Scientists located")
 			.SetEventLabel ("Number found")
 			.SetEventValue (scientistCount));

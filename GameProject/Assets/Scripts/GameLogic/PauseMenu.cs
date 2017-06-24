@@ -7,11 +7,14 @@ using UnityEngine.Audio;
 public class PauseMenu : MonoBehaviour {
 
 	private int buttonWidth = 200;
-	private int buttonHeight = 50;
+	private int buttonHeight = 40;
 	private int groupWidth = 200;
 	private int groupHeight = 270;
 
 	bool paused = false;
+	bool showControls = false;
+
+	public Rect windowRect = new Rect(100, 100, 120, 50);
 
 	// Use this for initialization
 	void Start () {
@@ -33,26 +36,35 @@ public class PauseMenu : MonoBehaviour {
 				GlobalController.Instance.changeScene ("Settings");
 			}
 
-			if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), "Resume Game")) {
+			if (GUI.Button (new Rect (0, 50, buttonWidth, buttonHeight), "Resume Game")) {
 				paused = togglePause ();
 			}
 
-			if (GUI.Button (new Rect (0, 120, buttonWidth, buttonHeight), "Return To Title")) {
+			if (GUI.Button (new Rect (0, 100, buttonWidth, buttonHeight), "Return To Title")) {
 				GlobalController.Instance.changeScene ("STARTUP");
 			}
 
-			if (GUI.Button (new Rect (0, 180, buttonWidth, buttonHeight), "Quit Game")) {
+			if (GUI.Button (new Rect (0, 150, buttonWidth, buttonHeight), "Quit Game")) {
 				Application.Quit();
 			}
 
+			if(GUI.Button (new Rect(0, 200, buttonWidth, buttonHeight), "Controls")){
+				showControls = true;
+			}
 			GUI.EndGroup ();
+
+			if (showControls) {
+				ExtraGUI ();
+			}
 		}
+			
 	}
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyUp (KeyCode.Escape)) {
 			paused = togglePause ();
 		}
+			
 	}
 
 	bool togglePause(){
@@ -65,4 +77,12 @@ public class PauseMenu : MonoBehaviour {
 		}
 	}
 		
+	void ExtraGUI () {
+		GUI.Button (new Rect (640, 200, 400, 100), "Use WASD or Arrows to Move \n " +
+			"Use SpaceBar to Jump \n" +
+			"Use X to toggle between desktop challenges and game world \n" +
+			"Use R to reset puzzles or onscreen buttons");
+		if (GUI.Button (new Rect (640, 325,100,20), "Close"))
+			showControls = false;
+	}
 }

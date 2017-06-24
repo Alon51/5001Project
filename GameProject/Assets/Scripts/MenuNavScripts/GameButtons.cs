@@ -12,7 +12,6 @@ public class GameButtons : MonoBehaviour {
 	public Camera helpCamera;
 	public AnalyticsByLevel levelAnalytics;
 
-
 	// Use this for initialization
 	void Start () {
 		
@@ -61,6 +60,7 @@ public class GameButtons : MonoBehaviour {
 	public void ReturnToPrevScene(){
 		GlobalController.Instance.changeScene (GlobalController.Instance.previousSceneName);
 	}
+
 	/**
 	 * Toggles the help screen by finding the right camera and toggling
 	 */ 

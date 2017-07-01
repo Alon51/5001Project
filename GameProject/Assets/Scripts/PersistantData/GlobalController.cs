@@ -58,6 +58,8 @@ public class GlobalController : MonoBehaviour {
 
 	///IndentPuzzle Completion
 	public bool indentComplete = false;
+	///FinalPuzzle Completion
+	public bool finalComplete = false;
 
 	///Reference to the Player
 	public PlayerMovement thePlayer;
@@ -117,6 +119,7 @@ public class GlobalController : MonoBehaviour {
 	}
 
 	void Update(){
+		
 			
 		//if word display is open because text isn't empty
 		if (!wordDisplay.text.Equals ("")) {

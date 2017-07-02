@@ -38,7 +38,7 @@ public class JITScript : MonoBehaviour {
 			case "HubIntro":
 				wordDisplay.text = "Welcome to the Hub Room Codex. This room has many teleporters that will" +
 					"send you to different parts of the ship in order to rescue the ship's scientists!\n\n" +
-					"Head over to the terminal in the middle of the room to pick which room to go to first.\n" +
+					"Head over to the terminal in the middle of the room to pick which room to go to first.\n\n" +
 					"You can visit the rooms in any order you want, just be sure to save the scientists!";
 				Time.timeScale = 0.0f;
 				Destroy (this.gameObject);

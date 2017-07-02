@@ -247,12 +247,8 @@ public class GlobalController : MonoBehaviour {
 	}
 	/// loads the apt amount of scientists in the final level based on how many were saved
 	public void spawnScientists(){ 
-		print ("In SPSci");
-		scientistCount = 3;
 		int tempMax = totalScientists - scientistCount;
-		print (tempMax);
 		for (int i = 0; i < tempMax; i++) {
-			print ("Spawning");
 			scientistSprites [i].GetComponent<SpriteRenderer> ().enabled = false;
 		}
 	}
